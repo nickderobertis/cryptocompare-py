@@ -1,4 +1,6 @@
 from typing import Any, List, TypeVar, Callable, Type, cast
+import pandas as pd
+
 
 T = TypeVar("T")
 
@@ -174,6 +176,9 @@ class HistoricalData:
         result["RateLimit"] = to_class(RateLimit, self.rate_limit)
         result["HasWarning"] = from_bool(self.has_warning)
         return result
+
+    def to_df(self) -> pd.DataFrame:
+        return pd.DataFrame(self.to_dict()['Data'])
 
 
 def historical_data_from_dict(s: Any) -> HistoricalData:
