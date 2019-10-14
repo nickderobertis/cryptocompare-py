@@ -1,11 +1,11 @@
 from typing import Sequence, Optional
 
 from cryptocompsdk.history.parse import HistoricalData, historical_data_from_dict, CouldNotGetHistoryException
-from cryptocompsdk.request import _APIBase
+from cryptocompsdk.request import APIBase
 from cryptocompsdk.urls import DAILY_HISTORY_URL, HOURLY_HISTORY_URL, MINUTE_HISTORY_URL
 
 
-class HistoryAPI(_APIBase):
+class HistoryAPI(APIBase):
 
     def get(self, from_symbol: str = 'BTC', to_symbol: Sequence[str] = 'USD', freq: str = 'd',
             exchange: Optional[str] = None, aggregate: Optional[int] = None, end_time: Optional[int] = None,

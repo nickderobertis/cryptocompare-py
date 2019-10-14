@@ -13,7 +13,8 @@ class Request:
     def json(self) -> dict:
         return self.response.json()
 
-class _APIBase:
+
+class APIBase:
 
     def __init__(self, api_key: str):
         self.api_key = api_key

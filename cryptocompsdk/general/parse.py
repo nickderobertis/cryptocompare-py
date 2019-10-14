@@ -1,4 +1,4 @@
-from typing import Any, Callable, List, Type, cast, TypeVar, Dict
+from typing import Any, Callable, List, Type, cast, TypeVar, Dict, Union
 
 T = TypeVar("T")
 
@@ -80,6 +80,13 @@ def from_list(f: Callable[[Any], T], x: Any) -> List[T]:
     if isinstance(x, list):
         return [f(y) for y in x]
     raise NotListException(x)
+
+
+def from_int_or_str(x: Any) -> Union[str, int]:
+    try:
+        return int(from_str(x))
+    except ValueError:
+        return from_str(x)
 
 
 def to_class(c: Type[T], x: Any) -> dict:
