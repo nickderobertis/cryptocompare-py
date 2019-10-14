@@ -4,6 +4,7 @@ import pandas as pd
 
 from cryptocompsdk.general.parse import from_int, from_none, from_union, from_float, from_str, to_float, from_bool, \
     from_list, to_class
+from cryptocompsdk.response import ResponseAPIBase
 
 
 class HistoryRecord:
@@ -106,7 +107,7 @@ class RateLimit:
         return result
 
 
-class HistoricalData:
+class HistoricalData(ResponseAPIBase):
     response: Optional[str]
     message: Optional[str]
     param_with_error: Optional[str]
@@ -151,10 +152,6 @@ class HistoricalData:
 
     def to_df(self) -> pd.DataFrame:
         return pd.DataFrame(self.to_dict()['Data']['Data'])
-
-    @property
-    def has_error(self) -> bool:
-        return self.response == 'Error'
 
 
 def historical_data_from_dict(s: Any) -> HistoricalData:
