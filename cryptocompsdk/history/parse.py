@@ -1,4 +1,5 @@
-from typing import Optional, Any, List, TypeVar, Callable, Type, cast
+from typing import TypeVar, Any, Callable, List, Type, cast, Optional
+
 import pandas as pd
 
 T = TypeVar("T")
@@ -204,13 +205,13 @@ class HistoricalData:
         return self.response == 'Error'
 
 
-
 def historical_data_from_dict(s: Any) -> HistoricalData:
     return HistoricalData.from_dict(s)
 
 
 def historical_data_to_dict(x: HistoricalData) -> Any:
     return to_class(HistoricalData, x)
+
 
 class CouldNotGetHistoryException(Exception):
     pass
