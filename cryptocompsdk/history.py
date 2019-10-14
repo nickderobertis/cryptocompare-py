@@ -1,13 +1,4 @@
-# To use this code, make sure you
-#
-#     import json
-#
-# and then, to convert JSON from a string, do
-#
-#     result = historical_data_from_dict(json.loads(json_string))
-
 from typing import Any, List, TypeVar, Callable, Type, cast
-
 
 T = TypeVar("T")
 
@@ -69,7 +60,7 @@ class ConversionType:
         return result
 
 
-class Datum:
+class HistoryRecord:
     time: int
     close: float
     high: float
@@ -78,7 +69,8 @@ class Datum:
     volumefrom: float
     volumeto: float
 
-    def __init__(self, time: int, close: float, high: float, low: float, open: float, volumefrom: float, volumeto: float) -> None:
+    def __init__(self, time: int, close: float, high: float, low: float, open: float, volumefrom: float,
+                 volumeto: float) -> None:
         self.time = time
         self.close = close
         self.high = high
@@ -88,7 +80,7 @@ class Datum:
         self.volumeto = volumeto
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Datum':
+    def from_dict(obj: Any) -> 'HistoryRecord':
         assert isinstance(obj, dict)
         time = from_int(obj.get("time"))
         close = from_float(obj.get("close"))
@@ -97,7 +89,7 @@ class Datum:
         open = from_float(obj.get("open"))
         volumefrom = from_float(obj.get("volumefrom"))
         volumeto = from_float(obj.get("volumeto"))
-        return Datum(time, close, high, low, open, volumefrom, volumeto)
+        return HistoryRecord(time, close, high, low, open, volumefrom, volumeto)
 
     def to_dict(self) -> dict:
         result: dict = {}
@@ -131,7 +123,7 @@ class HistoricalData:
     response: str
     type: int
     aggregated: bool
-    data: List[Datum]
+    data: List[HistoryRecord]
     time_to: int
     time_from: int
     first_value_in_array: bool
@@ -139,7 +131,9 @@ class HistoricalData:
     rate_limit: RateLimit
     has_warning: bool
 
-    def __init__(self, response: str, type: int, aggregated: bool, data: List[Datum], time_to: int, time_from: int, first_value_in_array: bool, conversion_type: ConversionType, rate_limit: RateLimit, has_warning: bool) -> None:
+    def __init__(self, response: str, type: int, aggregated: bool, data: List[HistoryRecord], time_to: int,
+                 time_from: int, first_value_in_array: bool, conversion_type: ConversionType, rate_limit: RateLimit,
+                 has_warning: bool) -> None:
         self.response = response
         self.type = type
         self.aggregated = aggregated
@@ -157,21 +151,22 @@ class HistoricalData:
         response = from_str(obj.get("Response"))
         type = from_int(obj.get("Type"))
         aggregated = from_bool(obj.get("Aggregated"))
-        data = from_list(Datum.from_dict, obj.get("Data"))
+        data = from_list(HistoryRecord.from_dict, obj.get("Data"))
         time_to = from_int(obj.get("TimeTo"))
         time_from = from_int(obj.get("TimeFrom"))
         first_value_in_array = from_bool(obj.get("FirstValueInArray"))
         conversion_type = ConversionType.from_dict(obj.get("ConversionType"))
         rate_limit = RateLimit.from_dict(obj.get("RateLimit"))
         has_warning = from_bool(obj.get("HasWarning"))
-        return HistoricalData(response, type, aggregated, data, time_to, time_from, first_value_in_array, conversion_type, rate_limit, has_warning)
+        return HistoricalData(response, type, aggregated, data, time_to, time_from, first_value_in_array,
+                              conversion_type, rate_limit, has_warning)
 
     def to_dict(self) -> dict:
         result: dict = {}
         result["Response"] = from_str(self.response)
         result["Type"] = from_int(self.type)
         result["Aggregated"] = from_bool(self.aggregated)
-        result["Data"] = from_list(lambda x: to_class(Datum, x), self.data)
+        result["Data"] = from_list(lambda x: to_class(HistoryRecord, x), self.data)
         result["TimeTo"] = from_int(self.time_to)
         result["TimeFrom"] = from_int(self.time_from)
         result["FirstValueInArray"] = from_bool(self.first_value_in_array)
