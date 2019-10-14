@@ -4,7 +4,7 @@ import pandas as pd
 
 from cryptocompsdk.general.parse import from_int, from_none, from_union, from_float, from_str, to_float, from_bool, \
     from_list, to_class
-from cryptocompsdk.response import ResponseAPIBase
+from cryptocompsdk.response import ResponseAPIBase, ResponseException
 
 
 class HistoryRecord:
@@ -162,5 +162,5 @@ def historical_data_to_dict(x: HistoricalData) -> Any:
     return to_class(HistoricalData, x)
 
 
-class CouldNotGetHistoryException(Exception):
+class CouldNotGetHistoryException(ResponseException):
     pass
