@@ -2,7 +2,7 @@ from typing import Sequence, Optional
 
 from cryptocompsdk.history.parse import HistoricalData, historical_data_from_dict, CouldNotGetHistoryException
 from cryptocompsdk.request import _APIBase
-from cryptocompsdk.urls import DATA_V2_URL
+from cryptocompsdk.urls import DAILY_HISTORY_URL, HOURLY_HISTORY_URL, MINUTE_HISTORY_URL
 
 
 class HistoryAPI(_APIBase):
@@ -10,9 +10,7 @@ class HistoryAPI(_APIBase):
     def get(self, from_symbol: str = 'BTC', to_symbol: Sequence[str] = 'USD', freq: str = 'd',
             exchange: Optional[str] = None, aggregate: Optional[int] = None, end_time: Optional[int] = None,
             limit: int = 100) -> HistoricalData:
-        url_base = 'histo'
-        url_base += self._get_api_url_from_freq(freq)
-        url = DATA_V2_URL + url_base
+        url = self._get_api_url_from_freq(freq)
 
         payload = dict(
             fsym=from_symbol,
@@ -34,10 +32,10 @@ class HistoryAPI(_APIBase):
     def _get_api_url_from_freq(self, freq: str) -> str:
         parsed_freq = freq.lower().strip()[0]
         if parsed_freq == 'd':
-            return 'day'
+            return DAILY_HISTORY_URL
         elif parsed_freq == 'h':
-            return 'hour'
+            return HOURLY_HISTORY_URL
         elif parsed_freq == 'm':
-            return 'minute'
+            return MINUTE_HISTORY_URL
         else:
             raise ValueError(f'could not parse frequency {freq}, pass one of d, h, m')
