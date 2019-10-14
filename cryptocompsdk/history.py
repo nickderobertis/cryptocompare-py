@@ -1,6 +1,5 @@
-from typing import Any, List, TypeVar, Callable, Type, cast
+from typing import Optional, Any, List, TypeVar, Callable, Type, cast
 import pandas as pd
-
 
 T = TypeVar("T")
 
@@ -8,6 +7,20 @@ T = TypeVar("T")
 def from_str(x: Any) -> str:
     assert isinstance(x, str)
     return x
+
+
+def from_none(x: Any) -> Any:
+    assert x is None
+    return x
+
+
+def from_union(fs, x):
+    for f in fs:
+        try:
+            return f(x)
+        except:
+            pass
+    assert False
 
 
 def from_int(x: Any) -> int:
@@ -41,38 +54,38 @@ def to_class(c: Type[T], x: Any) -> dict:
 
 
 class ConversionType:
-    type: str
-    conversion_symbol: str
+    type: Optional[str]
+    conversion_symbol: Optional[str]
 
-    def __init__(self, type: str, conversion_symbol: str) -> None:
+    def __init__(self, type: Optional[str], conversion_symbol: Optional[str]) -> None:
         self.type = type
         self.conversion_symbol = conversion_symbol
 
     @staticmethod
     def from_dict(obj: Any) -> 'ConversionType':
         assert isinstance(obj, dict)
-        type = from_str(obj.get("type"))
-        conversion_symbol = from_str(obj.get("conversionSymbol"))
+        type = from_union([from_str, from_none], obj.get("type"))
+        conversion_symbol = from_union([from_str, from_none], obj.get("conversionSymbol"))
         return ConversionType(type, conversion_symbol)
 
     def to_dict(self) -> dict:
         result: dict = {}
-        result["type"] = from_str(self.type)
-        result["conversionSymbol"] = from_str(self.conversion_symbol)
+        result["type"] = from_union([from_str, from_none], self.type)
+        result["conversionSymbol"] = from_union([from_str, from_none], self.conversion_symbol)
         return result
 
 
 class HistoryRecord:
-    time: int
-    close: float
-    high: float
-    low: float
-    open: float
-    volumefrom: float
-    volumeto: float
+    time: Optional[int]
+    close: Optional[float]
+    high: Optional[float]
+    low: Optional[float]
+    open: Optional[float]
+    volumefrom: Optional[float]
+    volumeto: Optional[float]
 
-    def __init__(self, time: int, close: float, high: float, low: float, open: float, volumefrom: float,
-                 volumeto: float) -> None:
+    def __init__(self, time: Optional[int], close: Optional[float], high: Optional[float], low: Optional[float],
+                 open: Optional[float], volumefrom: Optional[float], volumeto: Optional[float]) -> None:
         self.time = time
         self.close = close
         self.high = high
@@ -84,24 +97,24 @@ class HistoryRecord:
     @staticmethod
     def from_dict(obj: Any) -> 'HistoryRecord':
         assert isinstance(obj, dict)
-        time = from_int(obj.get("time"))
-        close = from_float(obj.get("close"))
-        high = from_float(obj.get("high"))
-        low = from_float(obj.get("low"))
-        open = from_float(obj.get("open"))
-        volumefrom = from_float(obj.get("volumefrom"))
-        volumeto = from_float(obj.get("volumeto"))
+        time = from_union([from_int, from_none], obj.get("time"))
+        close = from_union([from_float, from_none], obj.get("close"))
+        high = from_union([from_float, from_none], obj.get("high"))
+        low = from_union([from_float, from_none], obj.get("low"))
+        open = from_union([from_float, from_none], obj.get("open"))
+        volumefrom = from_union([from_float, from_none], obj.get("volumefrom"))
+        volumeto = from_union([from_float, from_none], obj.get("volumeto"))
         return HistoryRecord(time, close, high, low, open, volumefrom, volumeto)
 
     def to_dict(self) -> dict:
         result: dict = {}
-        result["time"] = from_int(self.time)
-        result["close"] = to_float(self.close)
-        result["high"] = to_float(self.high)
-        result["low"] = to_float(self.low)
-        result["open"] = to_float(self.open)
-        result["volumefrom"] = to_float(self.volumefrom)
-        result["volumeto"] = to_float(self.volumeto)
+        result["time"] = from_union([from_int, from_none], self.time)
+        result["close"] = from_union([to_float, from_none], self.close)
+        result["high"] = from_union([to_float, from_none], self.high)
+        result["low"] = from_union([to_float, from_none], self.low)
+        result["open"] = from_union([to_float, from_none], self.open)
+        result["volumefrom"] = from_union([to_float, from_none], self.volumefrom)
+        result["volumeto"] = from_union([to_float, from_none], self.volumeto)
         return result
 
 
@@ -122,21 +135,27 @@ class RateLimit:
 
 
 class HistoricalData:
-    response: str
-    type: int
-    aggregated: bool
-    data: List[HistoryRecord]
-    time_to: int
-    time_from: int
-    first_value_in_array: bool
-    conversion_type: ConversionType
-    rate_limit: RateLimit
-    has_warning: bool
+    response: Optional[str]
+    message: Optional[str]
+    param_with_error: Optional[str]
+    type: Optional[int]
+    aggregated: Optional[bool]
+    data: Optional[List[HistoryRecord]]
+    time_to: Optional[int]
+    time_from: Optional[int]
+    first_value_in_array: Optional[bool]
+    conversion_type: Optional[ConversionType]
+    rate_limit: Optional[RateLimit]
+    has_warning: Optional[bool]
 
-    def __init__(self, response: str, type: int, aggregated: bool, data: List[HistoryRecord], time_to: int,
-                 time_from: int, first_value_in_array: bool, conversion_type: ConversionType, rate_limit: RateLimit,
-                 has_warning: bool) -> None:
+    def __init__(self, response: Optional[str], message: Optional[str], param_with_error: Optional[str],
+                 type: Optional[int], aggregated: Optional[bool], data: Optional[List[HistoryRecord]],
+                 time_to: Optional[int], time_from: Optional[int], first_value_in_array: Optional[bool],
+                 conversion_type: Optional[ConversionType], rate_limit: Optional[RateLimit],
+                 has_warning: Optional[bool]) -> None:
         self.response = response
+        self.message = message
+        self.param_with_error = param_with_error
         self.type = type
         self.aggregated = aggregated
         self.data = data
@@ -150,31 +169,37 @@ class HistoricalData:
     @staticmethod
     def from_dict(obj: Any) -> 'HistoricalData':
         assert isinstance(obj, dict)
-        response = from_str(obj.get("Response"))
-        type = from_int(obj.get("Type"))
-        aggregated = from_bool(obj.get("Aggregated"))
-        data = from_list(HistoryRecord.from_dict, obj.get("Data"))
-        time_to = from_int(obj.get("TimeTo"))
-        time_from = from_int(obj.get("TimeFrom"))
-        first_value_in_array = from_bool(obj.get("FirstValueInArray"))
-        conversion_type = ConversionType.from_dict(obj.get("ConversionType"))
-        rate_limit = RateLimit.from_dict(obj.get("RateLimit"))
-        has_warning = from_bool(obj.get("HasWarning"))
-        return HistoricalData(response, type, aggregated, data, time_to, time_from, first_value_in_array,
-                              conversion_type, rate_limit, has_warning)
+        response = from_union([from_str, from_none], obj.get("Response"))
+        message = from_union([from_str, from_none], obj.get("Message"))
+        param_with_error = from_union([from_str, from_none], obj.get("ParamWithError"))
+        type = from_union([from_int, from_none], obj.get("Type"))
+        aggregated = from_union([from_bool, from_none], obj.get("Aggregated"))
+        data = from_union([lambda x: from_list(HistoryRecord.from_dict, x), from_none, HistoryRecord.from_dict],
+                          obj.get("Data"))
+        time_to = from_union([from_int, from_none], obj.get("TimeTo"))
+        time_from = from_union([from_int, from_none], obj.get("TimeFrom"))
+        first_value_in_array = from_union([from_bool, from_none], obj.get("FirstValueInArray"))
+        conversion_type = from_union([ConversionType.from_dict, from_none], obj.get("ConversionType"))
+        rate_limit = from_union([RateLimit.from_dict, from_none], obj.get("RateLimit"))
+        has_warning = from_union([from_bool, from_none], obj.get("HasWarning"))
+        return HistoricalData(response, message, param_with_error, type, aggregated, data, time_to, time_from,
+                              first_value_in_array, conversion_type, rate_limit, has_warning)
 
     def to_dict(self) -> dict:
         result: dict = {}
-        result["Response"] = from_str(self.response)
-        result["Type"] = from_int(self.type)
-        result["Aggregated"] = from_bool(self.aggregated)
-        result["Data"] = from_list(lambda x: to_class(HistoryRecord, x), self.data)
-        result["TimeTo"] = from_int(self.time_to)
-        result["TimeFrom"] = from_int(self.time_from)
-        result["FirstValueInArray"] = from_bool(self.first_value_in_array)
-        result["ConversionType"] = to_class(ConversionType, self.conversion_type)
-        result["RateLimit"] = to_class(RateLimit, self.rate_limit)
-        result["HasWarning"] = from_bool(self.has_warning)
+        result["Response"] = from_union([from_str, from_none], self.response)
+        result["Message"] = from_union([from_str, from_none], self.message)
+        result["ParamWithError"] = from_union([from_str, from_none], self.param_with_error)
+        result["Type"] = from_union([from_int, from_none], self.type)
+        result["Aggregated"] = from_union([from_bool, from_none], self.aggregated)
+        result["Data"] = from_union([lambda x: from_list(lambda x: to_class(HistoryRecord, x), x), from_none],
+                                    self.data)
+        result["TimeTo"] = from_union([from_int, from_none], self.time_to)
+        result["TimeFrom"] = from_union([from_int, from_none], self.time_from)
+        result["FirstValueInArray"] = from_union([from_bool, from_none], self.first_value_in_array)
+        result["ConversionType"] = from_union([lambda x: to_class(ConversionType, x), from_none], self.conversion_type)
+        result["RateLimit"] = from_union([lambda x: to_class(RateLimit, x), from_none], self.rate_limit)
+        result["HasWarning"] = from_union([from_bool, from_none], self.has_warning)
         return result
 
     def to_df(self) -> pd.DataFrame:
