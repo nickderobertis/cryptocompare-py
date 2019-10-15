@@ -12,3 +12,8 @@ MINUTE_HISTORY_URL = DATA_V2_URL + 'minute'
 
 # All the Coins API
 COIN_LIST_URL = DATA_URL + 'all/coinlist'
+
+# Social API
+SOCIAL_BASE_URL = DATA_URL + 'social/coin/histo/'
+DAILY_SOCIAL_URL = SOCIAL_BASE_URL + 'day'
+HOURLY_SOCIAL_URL = SOCIAL_BASE_URL + 'hour'

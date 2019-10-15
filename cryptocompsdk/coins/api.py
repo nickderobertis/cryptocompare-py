@@ -7,9 +7,9 @@ class CoinsAPI(APIBase):
 
     def get(self):
         data = self.request(COIN_LIST_URL)
-        history = coins_from_dict(data.json)
-        if history.has_error:
+        coins = coins_from_dict(data.json)
+        if coins.has_error:
             raise CouldNotGetCoinsException(f'Requested {COIN_LIST_URL} with no payload, '
                                               f'got {data} as response')
-        history._request = data
-        return history
+        coins._request = data
+        return coins
