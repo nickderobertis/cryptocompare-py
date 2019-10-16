@@ -37,11 +37,20 @@ class APIBase:
         if payload is None:
             return payload
 
-        return {key: value for key, value in payload.items() if value is not None}
+        # Remove None values as they were just defaults
+        without_none = {key: value for key, value in payload.items() if value is not None}
+
+        # Convert booleans into boolean strings that API is expecting
+        with_str_bools = {key: _bool_to_str_if_bool(value) for key, value in without_none.items()}
+
+        return with_str_bools
 
     def get(self, url: str, payload: Optional[Dict[str, Any]] = None):
         data = self.request(url, payload)
         obj = self._class_factory(data.json)
+        # isinstance dict added for development of api where class has not been set yet
+        if isinstance(obj, dict):
+            return obj
         if obj.has_error:
             if payload is not None:
                 payload_str = f'payload {payload}'
@@ -56,7 +65,17 @@ class APIBase:
         raise NotImplementedError('must implement in subclass')
 
 
+def _bool_to_str(boolean: bool) -> str:
+    if not isinstance(boolean, bool):
+        raise ValueError(f'non-boolean {boolean} passed to _bool_to_str')
+
+    if boolean:
+        return 'true'
+
+    return 'false'
 
 
-
-
+def _bool_to_str_if_bool(obj: Any) -> Any:
+    if not isinstance(obj, bool):
+        return obj
+    return _bool_to_str(obj)
