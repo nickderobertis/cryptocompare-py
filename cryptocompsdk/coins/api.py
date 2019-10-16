@@ -4,12 +4,10 @@ from cryptocompsdk.urls import COIN_LIST_URL
 
 
 class CoinsAPI(APIBase):
+    _exception_class = CouldNotGetCoinsException
 
     def get(self):
-        data = self.request(COIN_LIST_URL)
-        coins = coins_from_dict(data.json)
-        if coins.has_error:
-            raise CouldNotGetCoinsException(f'Requested {COIN_LIST_URL} with no payload, '
-                                              f'got {data} as response')
-        coins._request = data
-        return coins
+        return super().get(COIN_LIST_URL)
+
+    def _class_factory(self, data: dict):
+        return coins_from_dict(data)

@@ -6,6 +6,7 @@ from cryptocompsdk.urls import DAILY_HISTORY_URL, HOURLY_HISTORY_URL, MINUTE_HIS
 
 
 class HistoryAPI(APIBase):
+    _exception_class = CouldNotGetHistoryException
 
     def get(self, from_symbol: str = 'BTC', to_symbol: Sequence[str] = 'USD', freq: str = 'd',
             exchange: Optional[str] = None, aggregate: Optional[int] = None, end_time: Optional[int] = None,
@@ -21,13 +22,7 @@ class HistoryAPI(APIBase):
             toTs=end_time,
         )
 
-        data = self.request(url, payload)
-        history = historical_data_from_dict(data.json)
-        if history.has_error:
-            raise CouldNotGetHistoryException(f'Requested {url} with payload {self.filter_payload(payload)}, '
-                                              f'got {data} as response')
-        history._request = data
-        return history
+        return super().get(url, payload)
 
     def _get_api_url_from_freq(self, freq: str) -> str:
         parsed_freq = freq.lower().strip()[0]
@@ -39,3 +34,6 @@ class HistoryAPI(APIBase):
             return MINUTE_HISTORY_URL
         else:
             raise ValueError(f'could not parse frequency {freq}, pass one of d, h, m')
+
+    def _class_factory(self, data: dict):
+        return historical_data_from_dict(data)

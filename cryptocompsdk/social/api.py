@@ -6,6 +6,7 @@ from cryptocompsdk.urls import DAILY_SOCIAL_URL, HOURLY_SOCIAL_URL
 
 
 class SocialAPI(APIBase):
+    _exception_class = CouldNotGetSocialException
 
     def get(self, coin_id: int = 1182, freq: str = 'd',aggregate: Optional[int] = None, end_time: Optional[int] = None,
             limit: int = 100) -> SocialData:
@@ -18,13 +19,7 @@ class SocialAPI(APIBase):
             toTs=end_time,
         )
 
-        data = self.request(url, payload)
-        social = social_data_from_dict(data.json)
-        if social.has_error:
-            raise CouldNotGetSocialException(f'Requested {url} with payload {payload}, '
-                                            f'got {data} as response')
-        social._request = data
-        return social
+        return super().get(url, payload)
 
     def _get_api_url_from_freq(self, freq: str) -> str:
         parsed_freq = freq.lower().strip()[0]
@@ -34,3 +29,6 @@ class SocialAPI(APIBase):
             return HOURLY_SOCIAL_URL
         else:
             raise ValueError(f'could not parse frequency {freq}, pass one of d, h')
+        
+    def _class_factory(self, data: dict):
+        return social_data_from_dict(data)
