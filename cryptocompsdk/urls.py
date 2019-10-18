@@ -2,6 +2,8 @@
 API_BASE_URL = 'https://min-api.cryptocompare.com/'
 DATA_URL = API_BASE_URL + 'data/'
 DATA_V2_URL = DATA_URL + 'v2/'
+DATA_V3_URL = DATA_URL + 'v3/'
+DATA_V3_ALL_URL = DATA_V3_URL + 'all/'
 
 # Specific APIs
 
@@ -17,3 +19,6 @@ COIN_LIST_URL = DATA_URL + 'all/coinlist'
 SOCIAL_BASE_URL = DATA_URL + 'social/coin/histo/'
 DAILY_SOCIAL_URL = SOCIAL_BASE_URL + 'day'
 HOURLY_SOCIAL_URL = SOCIAL_BASE_URL + 'hour'
+
+# Exchange API
+ALL_EXCHANGE_URL = DATA_V3_ALL_URL + 'exchanges'
