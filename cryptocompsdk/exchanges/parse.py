@@ -63,6 +63,17 @@ class Exchanges(ResponseAPIBase):
         df = pd.concat(df_list, axis=0)
         return df.reset_index(drop=True)
 
+    def to_history_query_dicts(self) -> List[Dict[str, str]]:
+        df = self.to_df()
+        query_dicts = []
+        for idx, row in df.iterrows():
+            query_dicts.append(dict(
+                from_symbol=row['From Symbol'],
+                to_symbol=row['To Symbol'],
+                exchange=row['Exchange']
+            ))
+        return query_dicts
+
 
 def exchanges_from_dict(s: Any) -> Exchanges:
     return Exchanges.from_dict(s)
