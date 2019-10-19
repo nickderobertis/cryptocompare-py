@@ -181,7 +181,9 @@ class HistoricalData(ResponseAPIBase):
         return result
 
     def to_df(self) -> pd.DataFrame:
-        return pd.DataFrame(self.to_dict()['Data']['Data'])
+        df = pd.DataFrame(self.to_dict()['Data']['Data'])
+        df['time'] = df['time'].apply(pd.Timestamp.fromtimestamp)
+        return df
 
     # Pagination methods
 
