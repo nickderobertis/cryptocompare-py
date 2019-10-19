@@ -1,5 +1,6 @@
 from typing import Dict
 
+from cryptocompsdk.exchanges.info.api import ExchangeInfoAPI
 from cryptocompsdk.exchanges.symbols.api import ExchangeSymbolsAPI
 from cryptocompsdk.request import APIBase
 from cryptocompsdk.history.api import HistoryAPI
@@ -15,6 +16,7 @@ class CryptoCompare(APIBase):
         self.coins = CoinsAPI(api_key)
         self.social = SocialAPI(api_key)
         self.exchange_symbols = ExchangeSymbolsAPI(api_key)
+        self.exchange_info = ExchangeInfoAPI(api_key)
 
         self._coin_response = None
 

@@ -83,7 +83,7 @@ def exchanges_symbols_to_dict(x: ExchangesSymbols) -> Any:
     return to_class(ExchangesSymbols, x)
 
 
-class CouldNotGetExchangesException(ResponseException):
+class CouldNotGetExchangeSymbolsException(ResponseException):
     pass
 
 

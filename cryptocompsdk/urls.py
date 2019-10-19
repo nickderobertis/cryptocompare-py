@@ -22,3 +22,6 @@ HOURLY_SOCIAL_URL = SOCIAL_BASE_URL + 'hour'
 
 # Exchange symbols API
 ALL_EXCHANGE_URL = DATA_V3_ALL_URL + 'exchanges'
+
+# Exchange General Info API
+EXCHANGE_INFO_URL = DATA_URL + 'exchanges/general'

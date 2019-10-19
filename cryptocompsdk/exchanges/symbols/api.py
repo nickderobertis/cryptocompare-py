@@ -1,12 +1,12 @@
 from typing import Optional
 
-from cryptocompsdk.exchanges.symbols.parse import ExchangesSymbols, CouldNotGetExchangesException, exchanges_symbols_from_dict
+from cryptocompsdk.exchanges.symbols.parse import ExchangesSymbols, CouldNotGetExchangeSymbolsException, exchanges_symbols_from_dict
 from cryptocompsdk.request import APIBase
 from cryptocompsdk.urls import ALL_EXCHANGE_URL
 
 
 class ExchangeSymbolsAPI(APIBase):
-    _exception_class = CouldNotGetExchangesException
+    _exception_class = CouldNotGetExchangeSymbolsException
 
     def get(self, from_symbol: Optional[str] = None, exchange: Optional[str] = None, top_tier_only: bool = False
             ) -> ExchangesSymbols:
