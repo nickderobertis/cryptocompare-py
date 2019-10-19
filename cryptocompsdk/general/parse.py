@@ -102,3 +102,8 @@ def is_type(t: Type[T], x: Any) -> T:
 def from_dict(f: Callable[[Any], T], x: Any) -> Dict[str, T]:
     assert isinstance(x, dict)
     return { k: f(v) for (k, v) in x.items() }
+
+
+def from_plain_dict(x: dict) -> dict:
+    assert isinstance(x, dict)
+    return x

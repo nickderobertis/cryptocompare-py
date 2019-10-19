@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from typing import List, Any, TypeVar, Callable, Type, cast, Optional, Dict
 
 from cryptocompsdk.general.parse import from_int, from_str, from_bool, from_list, to_class, from_union, from_none, \
-    from_dict
-from cryptocompsdk.response import ResponseException
+    from_dict, from_plain_dict
+from cryptocompsdk.response import ResponseException, ResponseAPIBase
 
 
 @dataclass
@@ -21,7 +21,7 @@ class RateLimit:
 
 
 @dataclass
-class Exchanges:
+class Exchanges(ResponseAPIBase):
     response: Optional[str] = None
     message: Optional[str] = None
     has_warning: Optional[bool] = None
@@ -39,7 +39,7 @@ class Exchanges:
         param_with_error = from_union([from_str, from_none], obj.get("ParamWithError"))
         type = from_union([from_int, from_none], obj.get("Type"))
         rate_limit = from_union([RateLimit.from_dict, from_none], obj.get("RateLimit"))
-        data = from_union([from_dict, from_none], obj.get("Data"))
+        data = from_union([from_plain_dict, from_none], obj.get("Data"))
         return Exchanges(response, message, has_warning, param_with_error, type, rate_limit, data)
 
     def to_dict(self) -> dict:
@@ -50,7 +50,7 @@ class Exchanges:
         result["ParamWithError"] = from_union([from_str, from_none], self.param_with_error)
         result["Type"] = from_union([from_int, from_none], self.type)
         result["RateLimit"] = from_union([lambda x: to_class(RateLimit, x), from_none], self.rate_limit)
-        result["Data"] = from_union([from_dict, from_none], self.data)
+        result["Data"] = from_union([from_plain_dict, from_none], self.data)
         return result
 
 
