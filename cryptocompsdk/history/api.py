@@ -10,7 +10,7 @@ class HistoryAPI(APIBase):
 
     def get(self, from_symbol: str = 'BTC', to_symbol: Sequence[str] = 'USD', freq: str = 'd',
             exchange: Optional[str] = None, aggregate: Optional[int] = None, end_time: Optional[int] = None,
-            limit: int = 100) -> HistoricalData:
+            limit: int = 100, max_api_calls: Optional[int] = None) -> HistoricalData:
         url = self._get_api_url_from_freq(freq)
 
         payload = dict(
@@ -22,7 +22,7 @@ class HistoryAPI(APIBase):
             toTs=end_time,
         )
 
-        return super().get(url, payload)
+        return super().get(url, payload, max_api_calls=max_api_calls)
 
     def _get_api_url_from_freq(self, freq: str) -> str:
         parsed_freq = freq.lower().strip()[0]

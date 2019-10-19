@@ -28,6 +28,8 @@ class ResponseAPIBase:
     def time_from(self) -> int:
         raise NotImplementedError('must implement in ResponseAPIBase subclass')
 
+    def delete_record_matching_time(self, time: int):
+        raise NotImplementedError('must implement in ResponseAPIBase subclass')
 
 class ResponseException(Exception):
     pass

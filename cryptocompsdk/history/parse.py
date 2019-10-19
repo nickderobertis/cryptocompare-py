@@ -1,3 +1,4 @@
+from copy import deepcopy
 from typing import Any, List, Optional
 
 import pandas as pd
@@ -90,6 +91,21 @@ class Data:
                                     self.data)
         return result
 
+    def __add__(self, other):
+        out_obj = deepcopy(self)
+        out_obj.data += other.data
+        out_obj.time_from = min(out_obj.time_from, other.time_from)
+        out_obj.time_to = max(out_obj.time_to, other.time_to)
+        return out_obj
+
+    def __radd__(self, other):
+        out_obj = deepcopy(other)
+        out_obj.data += self.data
+        out_obj.time_from = min(out_obj.time_from, self.time_from)
+        out_obj.time_to = max(out_obj.time_to, self.time_to)
+        return out_obj
+
+
 
 class RateLimit:
     pass
@@ -152,6 +168,48 @@ class HistoricalData(ResponseAPIBase):
 
     def to_df(self) -> pd.DataFrame:
         return pd.DataFrame(self.to_dict()['Data']['Data'])
+
+    # Pagination methods
+
+    @property
+    def is_empty(self) -> bool:
+        is_empty_cols = [
+            'high',
+            'low',
+            'open',
+            'volumefrom',
+            'volumeto',
+            'close',
+        ]
+
+        for record in self.data.data:
+            for col in is_empty_cols:
+                if getattr(record, col) != 0:
+                    return False
+
+        return True
+
+    def __add__(self, other):
+        out_obj = deepcopy(self)
+        out_obj.data += other.data
+        return out_obj
+
+    def __radd__(self, other):
+        out_obj = deepcopy(other)
+        out_obj.data += self.data
+        return out_obj
+
+    @property
+    def time_from(self) -> int:
+        return self.data.time_from
+
+    def delete_record_matching_time(self, time: int):
+        times = [record.time for record in self.data.data]
+        try:
+            idx = times.index(time)
+        except ValueError:
+            raise CouldNotGetHistoryException(f'tried removing overlapping time {time} but was not in data')
+        del self.data.data[idx]
 
 
 def historical_data_from_dict(s: Any) -> HistoricalData:
