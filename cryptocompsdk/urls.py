@@ -20,5 +20,5 @@ SOCIAL_BASE_URL = DATA_URL + 'social/coin/histo/'
 DAILY_SOCIAL_URL = SOCIAL_BASE_URL + 'day'
 HOURLY_SOCIAL_URL = SOCIAL_BASE_URL + 'hour'
 
-# Exchange API
+# Exchange symbols API
 ALL_EXCHANGE_URL = DATA_V3_ALL_URL + 'exchanges'

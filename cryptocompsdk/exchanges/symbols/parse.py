@@ -22,7 +22,7 @@ class RateLimit:
 
 
 @dataclass
-class Exchanges(ResponseAPIBase):
+class ExchangesSymbols(ResponseAPIBase):
     response: Optional[str] = None
     message: Optional[str] = None
     has_warning: Optional[bool] = None
@@ -32,7 +32,7 @@ class Exchanges(ResponseAPIBase):
     data: Optional[dict] = None
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Exchanges':
+    def from_dict(obj: Any) -> 'ExchangesSymbols':
         assert isinstance(obj, dict)
         response = from_union([from_str, from_none], obj.get("Response"))
         message = from_union([from_str, from_none], obj.get("Message"))
@@ -41,7 +41,7 @@ class Exchanges(ResponseAPIBase):
         type = from_union([from_int, from_none], obj.get("Type"))
         rate_limit = from_union([RateLimit.from_dict, from_none], obj.get("RateLimit"))
         data = from_union([from_plain_dict, from_none], obj.get("Data"))
-        return Exchanges(response, message, has_warning, param_with_error, type, rate_limit, data)
+        return ExchangesSymbols(response, message, has_warning, param_with_error, type, rate_limit, data)
 
     def to_dict(self) -> dict:
         result: dict = {}
@@ -75,12 +75,12 @@ class Exchanges(ResponseAPIBase):
         return query_dicts
 
 
-def exchanges_from_dict(s: Any) -> Exchanges:
-    return Exchanges.from_dict(s)
+def exchanges_symbols_from_dict(s: Any) -> ExchangesSymbols:
+    return ExchangesSymbols.from_dict(s)
 
 
-def exchanges_to_dict(x: Exchanges) -> Any:
-    return to_class(Exchanges, x)
+def exchanges_symbols_to_dict(x: ExchangesSymbols) -> Any:
+    return to_class(ExchangesSymbols, x)
 
 
 class CouldNotGetExchangesException(ResponseException):
