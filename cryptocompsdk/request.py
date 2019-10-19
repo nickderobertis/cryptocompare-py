@@ -1,6 +1,7 @@
 from typing import Optional, Dict, Any, Callable
 import requests
 
+from cryptocompsdk.config import MAX_LIMIT_PER_API_CALL
 from cryptocompsdk.response import ResponseException
 
 
@@ -45,7 +46,12 @@ class APIBase:
 
         return with_str_bools
 
-    def get(self, url: str, payload: Optional[Dict[str, Any]] = None):
+    def get(self, url: str, payload: Optional[Dict[str, Any]] = None, max_api_calls: Optional[int] = None):
+        if payload.get('limit') == 0:
+            return self._get_with_pagination(url, payload=payload, max_api_calls=max_api_calls)
+        return self._get(url, payload=payload)
+
+    def _get(self, url: str, payload: Optional[Dict[str, Any]] = None):
         data = self.request(url, payload)
         obj = self._class_factory(data.json)
         # isinstance dict added for development of api where class has not been set yet
@@ -60,6 +66,30 @@ class APIBase:
                                             f'got {data.json} as response')
         obj._request = data
         return obj
+
+    def _get_with_pagination(self, url: str, payload: Optional[Dict[str, Any]] = None,
+                             max_api_calls: Optional[int] = None):
+        if max_api_calls is None:
+            # TODO: less hackish
+            max_api_calls = 10000000
+
+        payload['limit'] = MAX_LIMIT_PER_API_CALL
+
+        end_time = None
+        i = -1
+        while i + 1 < max_api_calls:
+            i += 1
+            payload['toTs'] = end_time
+            data = self._get(url, payload)
+            if data.is_empty:
+                break
+            if i == 0:
+                all_data = data
+            else:
+                all_data += data
+            end_time = data.time_from
+
+        return all_data
 
     def _class_factory(self, data: dict):
         raise NotImplementedError('must implement in subclass')

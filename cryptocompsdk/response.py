@@ -12,5 +12,22 @@ class ResponseAPIBase:
         return self.response == 'Error'
 
 
+    # The following methods need to be set for pagination
+
+    @property
+    def is_empty(self) -> bool:
+        raise NotImplementedError('must implement in ResponseAPIBase subclass')
+
+    def __add__(self, other):
+        raise NotImplementedError('must implement in ResponseAPIBase subclass')
+
+    def __radd__(self, other):
+        raise NotImplementedError('must implement in ResponseAPIBase subclass')
+
+    @property
+    def time_from(self) -> int:
+        raise NotImplementedError('must implement in ResponseAPIBase subclass')
+
+
 class ResponseException(Exception):
     pass
