@@ -1,3 +1,5 @@
+from typing import Dict
+
 from cryptocompsdk.exchanges.api import ExchangeAPI
 from cryptocompsdk.request import APIBase
 from cryptocompsdk.history.api import HistoryAPI
@@ -13,3 +15,13 @@ class CryptoCompare(APIBase):
         self.coins = CoinsAPI(api_key)
         self.social = SocialAPI(api_key)
         self.exchanges = ExchangeAPI(api_key)
+
+        self._coin_response = None
+
+    @property
+    def coin_ids(self) -> Dict[str, int]:
+        try:
+            return self._coin_response.symbol_id_dict
+        except AttributeError:
+            self._coin_response = self.coins.get()
+            return self._coin_response.symbol_id_dict
