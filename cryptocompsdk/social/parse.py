@@ -1,4 +1,8 @@
+from copy import deepcopy
 from typing import Optional, Any, List
+
+import pandas as pd
+
 from cryptocompsdk.general.parse import from_int, from_none, from_union, from_float, from_str, to_float, from_bool, \
     from_list, to_class
 from cryptocompsdk.response import ResponseException, ResponseAPIBase
@@ -172,6 +176,49 @@ class SocialRecord:
         result["code_repo_contributors"] = from_union([from_int, from_none], self.code_repo_contributors)
         return result
 
+    @property
+    def is_empty(self) -> bool:
+        is_empty_cols = [
+            'comments',
+            'posts',
+            'followers',
+            'points',
+            'overview_page_views',
+            'analysis_page_views',
+            'markets_page_views',
+            'charts_page_views',
+            'trades_page_views',
+            'forum_page_views',
+            'influence_page_views',
+            'total_page_views',
+            'fb_likes',
+            'fb_talking_about',
+            'twitter_followers',
+            'twitter_following',
+            'twitter_lists',
+            'twitter_favourites',
+            'twitter_statuses',
+            'reddit_subscribers',
+            'reddit_active_users',
+            'reddit_posts_per_hour',
+            'reddit_posts_per_day',
+            'reddit_comments_per_hour',
+            'reddit_comments_per_day',
+            'code_repo_stars',
+            'code_repo_forks',
+            'code_repo_subscribers',
+            'code_repo_open_pull_issues',
+            'code_repo_closed_pull_issues',
+            'code_repo_open_issues',
+            'code_repo_closed_issues',
+            'code_repo_contributors'
+        ]
+
+        for col in is_empty_cols:
+            if getattr(self, col) != 0:
+                return False
+        return True
+
 
 class RateLimit:
     pass
@@ -231,6 +278,57 @@ class SocialData(ResponseAPIBase):
         result["RateLimit"] = from_union([lambda x: to_class(RateLimit, x), from_none], self.rate_limit)
         result["Data"] = from_union([lambda x: from_list(lambda x: to_class(SocialRecord, x), x), from_none], self.data)
         return result
+
+    def to_df(self) -> pd.DataFrame:
+        df = pd.DataFrame(self.to_dict()['Data'])
+        df['time'] = df['time'].apply(pd.Timestamp.fromtimestamp)
+        return df
+
+    # Pagination methods
+
+    @property
+    def is_empty(self) -> bool:
+        for record in self.data:
+            if not record.is_empty:
+                return False
+
+        return True
+
+    def __add__(self, other):
+        out_obj = deepcopy(self)
+        out_obj.data += other.data
+        return out_obj
+
+    def __radd__(self, other):
+        out_obj = deepcopy(other)
+        out_obj.data += self.data
+        return out_obj
+
+    @property
+    def time_from(self) -> int:
+        times = [record.time for record in self.data]
+        return min(times)
+
+    def delete_record_matching_time(self, time: int):
+        times = [record.time for record in self.data]
+        try:
+            idx = times.index(time)
+        except ValueError:
+            raise CouldNotGetSocialException(f'tried removing overlapping time {time} but was not in data')
+        del self.data[idx]
+
+    def trim_empty_records_at_beginning(self):
+        self.data.reverse()  # now earliest records are at end
+
+        # Delete, starting from end, oldest record
+        for i, record in reversed(list(enumerate(self.data))):
+            if record.is_empty:
+                del self.data[i]
+            else:
+                # First non-empty record from end, we have now hit the actual data section, stop deleting
+                break
+
+        self.data.reverse()  # restore original order, earliest records at beginning
 
 
 def social_data_from_dict(s: Any) -> SocialData:
