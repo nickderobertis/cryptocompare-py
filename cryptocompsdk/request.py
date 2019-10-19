@@ -88,14 +88,10 @@ class APIBase:
             else:
                 # chop off matching record. The end_time observation will be included in both responses
                 data.delete_record_matching_time(end_time)
-                all_data += data
+                all_data = data + all_data
             end_time = data.time_from
-            ##### TEMP
-            # just in case
-            if i > 3:
-                import pdb
-                pdb.set_trace()
-            #### END TEMP
+
+        all_data.trim_empty_records_at_beginning()
 
         return all_data
 

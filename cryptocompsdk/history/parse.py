@@ -59,6 +59,21 @@ class HistoryRecord:
         result["conversionSymbol"] = from_union([from_str, from_none], self.conversion_symbol)
         return result
 
+    @property
+    def is_empty(self) -> bool:
+        is_empty_cols = [
+            'high',
+            'low',
+            'open',
+            'volumefrom',
+            'volumeto',
+            'close',
+        ]
+        for col in is_empty_cols:
+            if getattr(self, col) != 0:
+                return False
+        return True
+
 
 class Data:
     aggregated: Optional[bool]
@@ -104,7 +119,6 @@ class Data:
         out_obj.time_from = min(out_obj.time_from, self.time_from)
         out_obj.time_to = max(out_obj.time_to, self.time_to)
         return out_obj
-
 
 
 class RateLimit:
@@ -173,19 +187,9 @@ class HistoricalData(ResponseAPIBase):
 
     @property
     def is_empty(self) -> bool:
-        is_empty_cols = [
-            'high',
-            'low',
-            'open',
-            'volumefrom',
-            'volumeto',
-            'close',
-        ]
-
         for record in self.data.data:
-            for col in is_empty_cols:
-                if getattr(record, col) != 0:
-                    return False
+            if not record.is_empty:
+                return False
 
         return True
 
@@ -210,6 +214,20 @@ class HistoricalData(ResponseAPIBase):
         except ValueError:
             raise CouldNotGetHistoryException(f'tried removing overlapping time {time} but was not in data')
         del self.data.data[idx]
+
+    def trim_empty_records_at_beginning(self):
+        self.data.data.reverse()  # now earliest records are at end
+
+        # Delete, starting from end, oldest record
+        for i, record in reversed(list(enumerate(self.data.data))):
+            if record.is_empty:
+                del self.data.data[i]
+            else:
+                # First non-empty record from end, we have now hit the actual data section, stop deleting
+                break
+
+        self.data.data.reverse()  # restore original order, earliest records at beginning
+
 
 
 def historical_data_from_dict(s: Any) -> HistoricalData:

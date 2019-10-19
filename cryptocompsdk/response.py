@@ -31,5 +31,9 @@ class ResponseAPIBase:
     def delete_record_matching_time(self, time: int):
         raise NotImplementedError('must implement in ResponseAPIBase subclass')
 
+    def trim_empty_records_at_beginning(self):
+        raise NotImplementedError('must implement in ResponseAPIBase subclass')
+
+
 class ResponseException(Exception):
     pass
