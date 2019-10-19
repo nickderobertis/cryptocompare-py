@@ -57,7 +57,7 @@ class APIBase:
             else:
                 payload_str = 'no payload'
             raise self._exception_class(f'Requested {url} with {payload_str}, '
-                                            f'got {data} as response')
+                                            f'got {data.json} as response')
         obj._request = data
         return obj
 
