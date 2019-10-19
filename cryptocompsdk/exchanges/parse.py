@@ -1,5 +1,6 @@
 from dataclasses import dataclass
-from typing import List, Any, TypeVar, Callable, Type, cast, Optional, Dict
+from typing import List, Any, TypeVar, Callable, Type, cast, Optional, Dict, Union
+import pandas as pd
 
 from cryptocompsdk.general.parse import from_int, from_str, from_bool, from_list, to_class, from_union, from_none, \
     from_dict, from_plain_dict
@@ -53,6 +54,15 @@ class Exchanges(ResponseAPIBase):
         result["Data"] = from_union([from_plain_dict, from_none], self.data)
         return result
 
+    def to_df(self) -> pd.DataFrame:
+        df_list = []
+        for exchange_name, exchange_dict in self.data.items():
+            df_list.append(
+                _exchange_dict_to_df(exchange_dict, exchange_name)
+            )
+        df = pd.concat(df_list, axis=0)
+        return df.reset_index(drop=True)
+
 
 def exchanges_from_dict(s: Any) -> Exchanges:
     return Exchanges.from_dict(s)
@@ -64,3 +74,23 @@ def exchanges_to_dict(x: Exchanges) -> Any:
 
 class CouldNotGetExchangesException(ResponseException):
     pass
+
+
+def _exchange_dict_to_df(exchange_dict: Dict[str, Union[List[str], str]], exchange_name: str) -> pd.DataFrame:
+    pairs_dict = exchange_dict['pairs']
+    df = _pairs_dict_to_df(pairs_dict)
+    df['Exchange'] = exchange_name
+    df['Exchange is Active'] = exchange_dict.get('isActive')
+    df['Exchange is Top Tier'] = exchange_dict.get('isTopTier')
+    return df
+
+
+def _pairs_dict_to_df(pairs_dict: Dict[str, List[str]]) -> pd.DataFrame:
+    data_list = []
+    for from_symbol, to_symbols in pairs_dict.items():
+        for to_symbol in to_symbols:
+            data_list.append(
+                (from_symbol, to_symbol)
+            )
+    df = pd.DataFrame(data_list, columns=['From Symbol', 'To Symbol'])
+    return df
