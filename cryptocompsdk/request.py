@@ -1,3 +1,4 @@
+import time
 from typing import Optional, Dict, Any, Callable
 import requests
 
@@ -20,8 +21,9 @@ class Request:
 class APIBase:
     _exception_class = ResponseException
 
-    def __init__(self, api_key: str):
+    def __init__(self, api_key: str, throttle: Optional[float] = None):
         self.api_key = api_key
+        self.throttle = throttle
 
     def request(self, url: str, payload: Optional[Dict[str, Any]] = None) -> Request:
         api_key_dict = {'api_key': self.api_key}
@@ -52,6 +54,8 @@ class APIBase:
         return self._get(url, payload=payload)
 
     def _get(self, url: str, payload: Optional[Dict[str, Any]] = None):
+        if self.throttle is not None:
+            time.sleep(self.throttle)
         data = self.request(url, payload)
         obj = self._class_factory(data.json)
         # isinstance dict added for development of api where class has not been set yet
