@@ -1,0 +1,18 @@
+cryptocompsdk.exchanges package
+===============================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   cryptocompsdk.exchanges.info
+   cryptocompsdk.exchanges.symbols
+
+Module contents
+---------------
+
+.. automodule:: cryptocompsdk.exchanges
+   :members:
+   :undoc-members:
+   :show-inheritance:

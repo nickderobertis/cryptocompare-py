@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>cryptocompsdk.exchanges.symbols.parse &#8212; cryptocompsdk 0.1.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx_paramlinks.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for cryptocompsdk.exchanges.symbols.parse</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="k">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Type</span><span class="p">,</span> <span class="n">cast</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">cryptocompsdk.general.parse</span> <span class="k">import</span> <span class="n">from_int</span><span class="p">,</span> <span class="n">from_str</span><span class="p">,</span> <span class="n">from_bool</span><span class="p">,</span> <span class="n">from_list</span><span class="p">,</span> <span class="n">to_class</span><span class="p">,</span> <span class="n">from_union</span><span class="p">,</span> <span class="n">from_none</span><span class="p">,</span> \
+    <span class="n">from_dict</span><span class="p">,</span> <span class="n">from_plain_dict</span>
+<span class="kn">from</span> <span class="nn">cryptocompsdk.response</span> <span class="k">import</span> <span class="n">ResponseException</span><span class="p">,</span> <span class="n">ResponseAPIBase</span>
+
+
+<div class="viewcode-block" id="RateLimit"><a class="viewcode-back" href="../../../../api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.parse.RateLimit">[docs]</a><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">RateLimit</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<div class="viewcode-block" id="RateLimit.from_dict"><a class="viewcode-back" href="../../../../api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.parse.RateLimit.from_dict">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;RateLimit&#39;</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">RateLimit</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="RateLimit.to_dict"><a class="viewcode-back" href="../../../../api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.parse.RateLimit.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="n">result</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">return</span> <span class="n">result</span></div></div>
+
+
+<div class="viewcode-block" id="ExchangesSymbols"><a class="viewcode-back" href="../../../../api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols">[docs]</a><span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">ExchangesSymbols</span><span class="p">(</span><span class="n">ResponseAPIBase</span><span class="p">):</span>
+    <span class="n">response</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">message</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">has_warning</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">param_with_error</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">rate_limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">RateLimit</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="ExchangesSymbols.from_dict"><a class="viewcode-back" href="../../../../api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.from_dict">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;ExchangesSymbols&#39;</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_str</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Response&quot;</span><span class="p">))</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_str</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Message&quot;</span><span class="p">))</span>
+        <span class="n">has_warning</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_bool</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;HasWarning&quot;</span><span class="p">))</span>
+        <span class="n">param_with_error</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_str</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ParamWithError&quot;</span><span class="p">))</span>
+        <span class="nb">type</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_int</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Type&quot;</span><span class="p">))</span>
+        <span class="n">rate_limit</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">RateLimit</span><span class="o">.</span><span class="n">from_dict</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;RateLimit&quot;</span><span class="p">))</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_plain_dict</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Data&quot;</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">ExchangesSymbols</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">has_warning</span><span class="p">,</span> <span class="n">param_with_error</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">rate_limit</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ExchangesSymbols.to_dict"><a class="viewcode-back" href="../../../../api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="n">result</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">result</span><span class="p">[</span><span class="s2">&quot;Response&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_str</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="p">)</span>
+        <span class="n">result</span><span class="p">[</span><span class="s2">&quot;Message&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_str</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+        <span class="n">result</span><span class="p">[</span><span class="s2">&quot;HasWarning&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_bool</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_warning</span><span class="p">)</span>
+        <span class="n">result</span><span class="p">[</span><span class="s2">&quot;ParamWithError&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_str</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_with_error</span><span class="p">)</span>
+        <span class="n">result</span><span class="p">[</span><span class="s2">&quot;Type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_int</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+        <span class="n">result</span><span class="p">[</span><span class="s2">&quot;RateLimit&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">to_class</span><span class="p">(</span><span class="n">RateLimit</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">from_none</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">rate_limit</span><span class="p">)</span>
+        <span class="n">result</span><span class="p">[</span><span class="s2">&quot;Data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_plain_dict</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+
+<div class="viewcode-block" id="ExchangesSymbols.to_df"><a class="viewcode-back" href="../../../../api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_df">[docs]</a>    <span class="k">def</span> <span class="nf">to_df</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+        <span class="n">df_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">exchange_name</span><span class="p">,</span> <span class="n">exchange_dict</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">df_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">_exchange_dict_to_df</span><span class="p">(</span><span class="n">exchange_dict</span><span class="p">,</span> <span class="n">exchange_name</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">df_list</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ExchangesSymbols.to_history_query_dicts"><a class="viewcode-back" href="../../../../api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_history_query_dicts">[docs]</a>    <span class="k">def</span> <span class="nf">to_history_query_dicts</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_df</span><span class="p">()</span>
+        <span class="n">query_dicts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="n">query_dicts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span>
+                <span class="n">from_symbol</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;From Symbol&#39;</span><span class="p">],</span>
+                <span class="n">to_symbol</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;To Symbol&#39;</span><span class="p">],</span>
+                <span class="n">exchange</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Exchange&#39;</span><span class="p">]</span>
+            <span class="p">))</span>
+        <span class="k">return</span> <span class="n">query_dicts</span></div></div>
+
+
+<div class="viewcode-block" id="exchanges_symbols_from_dict"><a class="viewcode-back" href="../../../../api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.parse.exchanges_symbols_from_dict">[docs]</a><span class="k">def</span> <span class="nf">exchanges_symbols_from_dict</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ExchangesSymbols</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">ExchangesSymbols</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="exchanges_symbols_to_dict"><a class="viewcode-back" href="../../../../api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.parse.exchanges_symbols_to_dict">[docs]</a><span class="k">def</span> <span class="nf">exchanges_symbols_to_dict</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">ExchangesSymbols</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">to_class</span><span class="p">(</span><span class="n">ExchangesSymbols</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="CouldNotGetExchangeSymbolsException"><a class="viewcode-back" href="../../../../api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.parse.CouldNotGetExchangeSymbolsException">[docs]</a><span class="k">class</span> <span class="nc">CouldNotGetExchangeSymbolsException</span><span class="p">(</span><span class="n">ResponseException</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<span class="k">def</span> <span class="nf">_exchange_dict_to_df</span><span class="p">(</span><span class="n">exchange_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]],</span> <span class="n">exchange_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">pairs_dict</span> <span class="o">=</span> <span class="n">exchange_dict</span><span class="p">[</span><span class="s1">&#39;pairs&#39;</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">_pairs_dict_to_df</span><span class="p">(</span><span class="n">pairs_dict</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Exchange&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">exchange_name</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Exchange is Active&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">exchange_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;isActive&#39;</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Exchange is Top Tier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">exchange_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;isTopTier&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="k">def</span> <span class="nf">_pairs_dict_to_df</span><span class="p">(</span><span class="n">pairs_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="n">data_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">from_symbol</span><span class="p">,</span> <span class="n">to_symbols</span> <span class="ow">in</span> <span class="n">pairs_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">to_symbol</span> <span class="ow">in</span> <span class="n">to_symbols</span><span class="p">:</span>
+            <span class="n">data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">from_symbol</span><span class="p">,</span> <span class="n">to_symbol</span><span class="p">)</span>
+            <span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;From Symbol&#39;</span><span class="p">,</span> <span class="s1">&#39;To Symbol&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">df</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../../index.html">Table of Contents</a></h3>
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial.html">Getting started with cryptocompsdk</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/modules.html">cryptocompsdk</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Nick DeRobertis.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

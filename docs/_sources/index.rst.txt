@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Quick Start Example documentation!
+Welcome to Cryptocompare-Py documentation!
 *********************************************
 
-Some intro text. To get started, look here.
+To get started, look here.
 
 .. toctree::
 
@@ -17,30 +17,21 @@ An overview
 ===========
 
 
-My Module
+cryptocompsdk
 ------------
-
-Some highlighted functionality from my module.
 
 This is a simple example::
 
-    import py_qs_example
+    from cryptocompsdk import CryptoCompare
+    API_KEY = 'my-api-key'
+    cc = CryptoCompare(API_KEY)
 
-    obj = py_qs_example.mymodule.ExampleClass(5, int)
-    print('done')
-
-.. autosummary::
-
-      py_qs_example.mymodule.ExampleClass
-      py_qs_example.mymodule.example_function
-
-My Package
-----------------
+    data = cc.history.get(from_symbol='BTC', to_symbol='USD', exchange='Kraken')
+    df = data.to_df()
 
 .. autosummary::
 
-      py_qs_example.mypackage.module.ExampleClass2
-      py_qs_example.mypackage.module.example_function2
+      cryptocompsdk.main.CryptoCompare
 
 API Documentation
 ------------------

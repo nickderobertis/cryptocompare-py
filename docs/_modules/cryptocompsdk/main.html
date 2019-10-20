@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>cryptocompsdk.main &#8212; cryptocompsdk 0.1.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_paramlinks.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for cryptocompsdk.main</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">from</span> <span class="nn">cryptocompsdk.exchanges.info.api</span> <span class="k">import</span> <span class="n">ExchangeInfoAPI</span>
+<span class="kn">from</span> <span class="nn">cryptocompsdk.exchanges.symbols.api</span> <span class="k">import</span> <span class="n">ExchangeSymbolsAPI</span>
+<span class="kn">from</span> <span class="nn">cryptocompsdk.request</span> <span class="k">import</span> <span class="n">APIBase</span>
+<span class="kn">from</span> <span class="nn">cryptocompsdk.history.api</span> <span class="k">import</span> <span class="n">HistoryAPI</span>
+<span class="kn">from</span> <span class="nn">cryptocompsdk.coins.api</span> <span class="k">import</span> <span class="n">CoinsAPI</span>
+<span class="kn">from</span> <span class="nn">cryptocompsdk.social.api</span> <span class="k">import</span> <span class="n">SocialAPI</span>
+
+
+<div class="viewcode-block" id="CryptoCompare"><a class="viewcode-back" href="../../api/cryptocompsdk.html#cryptocompsdk.main.CryptoCompare">[docs]</a><span class="k">class</span> <span class="nc">CryptoCompare</span><span class="p">(</span><span class="n">APIBase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The main interface to the API. Contains objects which represent individual API endpoints.</span>
+
+<span class="sd">    history :class:`.HistoryAPI`</span>
+
+<span class="sd">    coins :class:`.CoinsAPI`</span>
+
+<span class="sd">    social :class:`.SocialAPI`</span>
+
+<span class="sd">    exchange_symbols :class:`.ExchangeSymbolsAPI`</span>
+
+<span class="sd">    exchange_info :class:`.ExchangeInfoAPI`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="CryptoCompare.__init__"><a class="viewcode-back" href="../../api/cryptocompsdk.html#cryptocompsdk.main.CryptoCompare.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">throttle</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">history</span> <span class="o">=</span> <span class="n">HistoryAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">coins</span> <span class="o">=</span> <span class="n">CoinsAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">social</span> <span class="o">=</span> <span class="n">SocialAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exchange_symbols</span> <span class="o">=</span> <span class="n">ExchangeSymbolsAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exchange_info</span> <span class="o">=</span> <span class="n">ExchangeInfoAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_coin_response</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">coin_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coin_response</span><span class="o">.</span><span class="n">symbol_id_dict</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_coin_response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coins</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_coin_response</span><span class="o">.</span><span class="n">symbol_id_dict</span></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">Getting started with cryptocompsdk</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/modules.html">cryptocompsdk</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Nick DeRobertis.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

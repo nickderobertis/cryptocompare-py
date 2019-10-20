@@ -1,0 +1,65 @@
+cryptocompsdk package
+=====================
+
+Subpackages
+-----------
+
+.. toctree::
+
+   cryptocompsdk.coins
+   cryptocompsdk.exchanges
+   cryptocompsdk.general
+   cryptocompsdk.history
+   cryptocompsdk.social
+
+Submodules
+----------
+
+cryptocompsdk.config module
+---------------------------
+
+.. automodule:: cryptocompsdk.config
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cryptocompsdk.main module
+-------------------------
+
+.. automodule:: cryptocompsdk.main
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cryptocompsdk.request module
+----------------------------
+
+.. automodule:: cryptocompsdk.request
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cryptocompsdk.response module
+-----------------------------
+
+.. automodule:: cryptocompsdk.response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cryptocompsdk.urls module
+-------------------------
+
+.. automodule:: cryptocompsdk.urls
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: cryptocompsdk
+   :members:
+   :undoc-members:
+   :show-inheritance:

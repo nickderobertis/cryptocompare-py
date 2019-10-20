@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>cryptocompsdk.exchanges.symbols package &#8212; cryptocompsdk 0.1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx_paramlinks.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cryptocompsdk.general package" href="cryptocompsdk.general.html" />
+    <link rel="prev" title="cryptocompsdk.exchanges.info package" href="cryptocompsdk.exchanges.info.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="cryptocompsdk-exchanges-symbols-package">
+<h1>cryptocompsdk.exchanges.symbols package<a class="headerlink" href="#cryptocompsdk-exchanges-symbols-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cryptocompsdk.exchanges.symbols.api">
+<span id="cryptocompsdk-exchanges-symbols-api-module"></span><h2>cryptocompsdk.exchanges.symbols.api module<a class="headerlink" href="#module-cryptocompsdk.exchanges.symbols.api" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.api.</code><code class="sig-name descname">ExchangeSymbolsAPI</code><span class="sig-paren">(</span><em class="sig-param">api_key</em>, <em class="sig-param">throttle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/api.html#ExchangeSymbolsAPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.request.APIBase" title="cryptocompsdk.request.APIBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.request.APIBase</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">from_symbol=None</em>, <em class="sig-param">exchange=None</em>, <em class="sig-param">top_tier_only=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/api.html#ExchangeSymbolsAPI.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI.get" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols" title="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExchangesSymbols</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cryptocompsdk.exchanges.symbols.parse">
+<span id="cryptocompsdk-exchanges-symbols-parse-module"></span><h2>cryptocompsdk.exchanges.symbols.parse module<a class="headerlink" href="#module-cryptocompsdk.exchanges.symbols.parse" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="cryptocompsdk.exchanges.symbols.parse.CouldNotGetExchangeSymbolsException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.parse.</code><code class="sig-name descname">CouldNotGetExchangeSymbolsException</code><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#CouldNotGetExchangeSymbolsException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.CouldNotGetExchangeSymbolsException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.response.ResponseException" title="cryptocompsdk.response.ResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.response.ResponseException</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.parse.</code><code class="sig-name descname">ExchangesSymbols</code><span class="sig-paren">(</span><em class="sig-param">response=None</em>, <em class="sig-param">message=None</em>, <em class="sig-param">has_warning=None</em>, <em class="sig-param">param_with_error=None</em>, <em class="sig-param">type=None</em>, <em class="sig-param">rate_limit=None</em>, <em class="sig-param">data=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#ExchangesSymbols"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.response.ResponseAPIBase" title="cryptocompsdk.response.ResponseAPIBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.response.ResponseAPIBase</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">response=None</em>, <em class="sig-param">message=None</em>, <em class="sig-param">has_warning=None</em>, <em class="sig-param">param_with_error=None</em>, <em class="sig-param">type=None</em>, <em class="sig-param">rate_limit=None</em>, <em class="sig-param">data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.data">
+<code class="sig-name descname">data</code><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.from_dict">
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#ExchangesSymbols.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols" title="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExchangesSymbols</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.has_warning">
+<code class="sig-name descname">has_warning</code><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.has_warning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.message">
+<code class="sig-name descname">message</code><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.param_with_error">
+<code class="sig-name descname">param_with_error</code><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.param_with_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.rate_limit">
+<code class="sig-name descname">rate_limit</code><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.rate_limit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.response">
+<code class="sig-name descname">response</code><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_df">
+<code class="sig-name descname">to_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#ExchangesSymbols.to_df"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_df" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#ExchangesSymbols.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_history_query_dicts">
+<code class="sig-name descname">to_history_query_dicts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#ExchangesSymbols.to_history_query_dicts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_history_query_dicts" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.type">
+<code class="sig-name descname">type</code><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cryptocompsdk.exchanges.symbols.parse.RateLimit">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.parse.</code><code class="sig-name descname">RateLimit</code><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#RateLimit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.RateLimit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="cryptocompsdk.exchanges.symbols.parse.RateLimit.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.RateLimit.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.exchanges.symbols.parse.RateLimit.from_dict">
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#RateLimit.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.RateLimit.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.exchanges.symbols.parse.RateLimit" title="cryptocompsdk.exchanges.symbols.parse.RateLimit"><code class="xref py py-class docutils literal notranslate"><span class="pre">RateLimit</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.exchanges.symbols.parse.RateLimit.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#RateLimit.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.RateLimit.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.exchanges.symbols.parse.exchanges_symbols_from_dict">
+<code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.parse.</code><code class="sig-name descname">exchanges_symbols_from_dict</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#exchanges_symbols_from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.exchanges_symbols_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols" title="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExchangesSymbols</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.exchanges.symbols.parse.exchanges_symbols_to_dict">
+<code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.parse.</code><code class="sig-name descname">exchanges_symbols_to_dict</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#exchanges_symbols_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.exchanges_symbols_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cryptocompsdk.exchanges.symbols">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cryptocompsdk.exchanges.symbols" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Getting started with cryptocompsdk</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">cryptocompsdk</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="cryptocompsdk.html">cryptocompsdk package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="cryptocompsdk.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.coins.html">cryptocompsdk.coins package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="cryptocompsdk.exchanges.html">cryptocompsdk.exchanges package</a><ul class="current">
+<li class="toctree-l5 current"><a class="reference internal" href="cryptocompsdk.exchanges.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l6"><a class="reference internal" href="cryptocompsdk.exchanges.info.html">cryptocompsdk.exchanges.info package</a></li>
+<li class="toctree-l6 current"><a class="current reference internal" href="#">cryptocompsdk.exchanges.symbols package</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#module-cryptocompsdk.exchanges.symbols.api">cryptocompsdk.exchanges.symbols.api module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#module-cryptocompsdk.exchanges.symbols.parse">cryptocompsdk.exchanges.symbols.parse module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#module-cryptocompsdk.exchanges.symbols">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="cryptocompsdk.exchanges.html#module-cryptocompsdk.exchanges">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.general.html">cryptocompsdk.general package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.history.html">cryptocompsdk.history package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.social.html">cryptocompsdk.social package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.config">cryptocompsdk.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.main">cryptocompsdk.main module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.request">cryptocompsdk.request module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.response">cryptocompsdk.response module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.urls">cryptocompsdk.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">cryptocompsdk</a><ul>
+  <li><a href="cryptocompsdk.html">cryptocompsdk package</a><ul>
+  <li><a href="cryptocompsdk.exchanges.html">cryptocompsdk.exchanges package</a><ul>
+      <li>Previous: <a href="cryptocompsdk.exchanges.info.html" title="previous chapter">cryptocompsdk.exchanges.info package</a></li>
+      <li>Next: <a href="cryptocompsdk.general.html" title="next chapter">cryptocompsdk.general package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Nick DeRobertis.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/api/cryptocompsdk.exchanges.symbols.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
