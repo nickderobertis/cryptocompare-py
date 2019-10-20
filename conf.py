@@ -5,7 +5,7 @@
 PACKAGE_NAME = 'cryptocompsdk'
 
 # Package version in the format (major, minor, release)
-PACKAGE_VERSION_TUPLE = (0, 1, 0)
+PACKAGE_VERSION_TUPLE = (0, 1, 1)
 
 # Short description of the package
 PACKAGE_SHORT_DESCRIPTION = 'Python SDK for CryptoCompare Personal API'
@@ -48,6 +48,8 @@ PACKAGE_INSTALL_REQUIRES = [
     # e.g.
     # 'package',
     # 'otherpackage>=1,<2'
+    'requests',
+    'pandas'
 ]
 
 # Sphinx executes all the import statements as it generates the documentation. To avoid having to install all
