@@ -2,26 +2,26 @@
 # Sphinx configuration is in the docsrc folder
 
 # Main package name
-PACKAGE_NAME = 'py_qs_example'
+PACKAGE_NAME = 'cryptocompsdk'
 
 # Package version in the format (major, minor, release)
-PACKAGE_VERSION_TUPLE = (0, 1, 9)
+PACKAGE_VERSION_TUPLE = (0, 1, 0)
 
 # Short description of the package
-PACKAGE_SHORT_DESCRIPTION = 'Python package PyPi Sphinx quickstart example app'
+PACKAGE_SHORT_DESCRIPTION = 'Python SDK for CryptoCompare Personal API'
 
 # Long description of the package
 PACKAGE_DESCRIPTION = """
-This is the example application for a quick start repo which was created by using pypi-sphinx-quickstart.
-Fork the repo at https://github.com/whoopnip/pypi-sphinx-quickstart and edit the conf.py files to bootstrap
-a Python project with PyPi deployment and Sphinx auto documentation already set up.
+This is a Python SDK for the CryptoCompare API's which require an API key.
+
+https://min-api.cryptocompare.com/pricing
 """
 
 # Author
 PACKAGE_AUTHOR = "Nick DeRobertis"
 
 # Author email
-PACKAGE_AUTHOR_EMAIL = 'mail@example.com'
+PACKAGE_AUTHOR_EMAIL = 'whoopnip@gmail.com'
 
 # Name of license for package
 PACKAGE_LICENSE = 'MIT'
@@ -39,7 +39,6 @@ PACKAGE_CLASSIFIERS = [
 
     # Specify the Python versions you support here. In particular, ensure
     # that you indicate whether you support Python 2, Python 3 or both.
-    'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7'
 ]
 
@@ -61,6 +60,6 @@ DOCS_OTHER_MOCK_IMPORTS = [
 ]
 
 PACKAGE_URLS = {
-    'Code': 'https://github.com/whoopnip/pypi-sphinx-quickstart/',
-    'Documentation': 'https://whoopnip.github.io/pypi-sphinx-quickstart/'
+    'Code': 'https://github.com/whoopnip/cryptocompare-py',
+    'Documentation': 'https://whoopnip.github.io/cryptocompare-py/'
 }
