@@ -9,6 +9,19 @@ from cryptocompsdk.social.api import SocialAPI
 
 
 class CryptoCompare(APIBase):
+    """
+    The main interface to the API. Contains objects which represent individual API endpoints.
+
+    history :class:`.HistoryAPI`
+
+    coins :class:`.CoinsAPI`
+
+    social :class:`.SocialAPI`
+
+    exchange_symbols :class:`.ExchangeSymbolsAPI`
+
+    exchange_info :class:`.ExchangeInfoAPI`
+    """
 
     def __init__(self, api_key: str, throttle: Optional[float] = None):
         super().__init__(api_key, throttle)

@@ -1,4 +1,4 @@
-Getting started with py_qs_example
+Getting started with cryptocompsdk
 **********************************
 
 Install
@@ -6,22 +6,28 @@ Install
 
 Install via::
 
-    pip install py_qs_example
+    pip install cryptocompsdk
+
+
+API Key
+=========
+
+If you don't already have an API key, sign up at https://min-api.cryptocompare.com/pricing
+
 
 Usage
 =========
 
-Some highlighted functionality from my module.
-
 This is a simple example::
 
-    import py_qs_example
+    from cryptocompsdk import CryptoCompare
+    API_KEY = 'my-api-key'
+    cc = CryptoCompare(API_KEY)
 
-    obj = py_qs_example.mymodule.ExampleClass(5, int)
-    print('done')
+    data = cc.history.get(from_symbol='BTC', to_symbol='USD', exchange='Kraken')
+    df = data.to_df()
 
 
-Parameter Links Example
-========================
-
-Here is an example of a parameter link: :paramref:`.ExampleClass.num`.
+More details on usage coming later. There is also an SDK for the social, coins,
+exchange symbols, and exchange info APIs. Access them via attributes of the main
+:class:`.CryptoCompare` class.
