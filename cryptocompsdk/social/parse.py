@@ -4,7 +4,7 @@ from typing import Optional, Any, List
 import pandas as pd
 
 from cryptocompsdk.general.parse import from_int, from_none, from_union, from_float, from_str, to_float, from_bool, \
-    from_list, to_class
+    from_list, to_class, from_plain_dict
 from cryptocompsdk.response import ResponseException, ResponseAPIBase
 
 
@@ -265,7 +265,7 @@ class SocialData(ResponseAPIBase):
         param_with_error = from_union([from_str, from_none], obj.get("ParamWithError"))
         type = from_union([from_int, from_none], obj.get("Type"))
         rate_limit = from_union([RateLimit.from_dict, from_none], obj.get("RateLimit"))
-        data = from_union([lambda x: from_list(SocialRecord.from_dict, x), from_none], obj.get("Data"))
+        data = from_union([lambda x: from_list(SocialRecord.from_dict, x), from_none, from_plain_dict], obj.get("Data"))
         return SocialData(response, message, has_warning, param_with_error, type, rate_limit, data)
 
     def to_dict(self) -> dict:
@@ -276,7 +276,7 @@ class SocialData(ResponseAPIBase):
         result["ParamWithError"] = from_union([from_str, from_none], self.param_with_error)
         result["Type"] = from_union([from_int, from_none], self.type)
         result["RateLimit"] = from_union([lambda x: to_class(RateLimit, x), from_none], self.rate_limit)
-        result["Data"] = from_union([lambda x: from_list(lambda x: to_class(SocialRecord, x), x), from_none], self.data)
+        result["Data"] = from_union([lambda x: from_list(lambda x: to_class(SocialRecord, x), x), from_none, from_plain_dict], self.data)
         return result
 
     def to_df(self) -> pd.DataFrame:
