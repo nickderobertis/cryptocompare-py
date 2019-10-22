@@ -280,6 +280,8 @@ class SocialData(ResponseAPIBase):
         return result
 
     def to_df(self) -> pd.DataFrame:
+        if not self.data:
+            return pd.DataFrame()
         df = pd.DataFrame(self.to_dict()['Data'])
         df['time'] = df['time'].apply(pd.Timestamp.fromtimestamp)
         return df
