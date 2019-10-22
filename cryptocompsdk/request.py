@@ -85,11 +85,11 @@ class APIBase:
             i += 1
             payload['toTs'] = end_time
             data = self._get(url, payload)
-            if data.is_empty:
-                break
             if i == 0:
                 all_data = data
-            else:
+            if data.is_empty:
+                break
+            if i != 0:
                 # chop off matching record. The end_time observation will be included in both responses
                 data.delete_record_matching_time(end_time)
                 all_data = data + all_data

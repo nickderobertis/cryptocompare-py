@@ -5,7 +5,7 @@
 PACKAGE_NAME = 'cryptocompsdk'
 
 # Package version in the format (major, minor, release)
-PACKAGE_VERSION_TUPLE = (0, 1, 2)
+PACKAGE_VERSION_TUPLE = (0, 1, 3)
 
 # Short description of the package
 PACKAGE_SHORT_DESCRIPTION = 'Python SDK for CryptoCompare Personal API'
