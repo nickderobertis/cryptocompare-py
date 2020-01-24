@@ -62,6 +62,6 @@ DOCS_OTHER_MOCK_IMPORTS = [
 ]
 
 PACKAGE_URLS = {
-    'Code': 'https://github.com/whoopnip/cryptocompare-py',
-    'Documentation': 'https://whoopnip.github.io/cryptocompare-py/'
+    'Code': 'https://github.com/nickderobertis/cryptocompare-py',
+    'Documentation': 'https://nickderobertis.github.io/cryptocompare-py/'
 }

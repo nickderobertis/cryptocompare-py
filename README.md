@@ -9,6 +9,4 @@ https://min-api.cryptocompare.com/pricing
 ## Links
 
 See the
-[documentation here.](
-https://whoopnip.github.io/cryptocompare-py/
-)
+[documentation here.](https://nickderobertis.github.io/cryptocompare-py/)
