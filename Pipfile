@@ -15,6 +15,10 @@ twine = "*"
 requests = "*"
 jupyterlab = "*"
 pandas = "*"
+pytest-cov = "*"
+mypy = "*"
+pypandoc = "*"
+cruft = "*"
 
 [requires]
 python_version = "3.7"
