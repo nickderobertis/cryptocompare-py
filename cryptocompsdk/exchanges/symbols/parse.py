@@ -23,13 +23,13 @@ class RateLimit:
 
 @dataclass
 class ExchangesSymbols(ResponseAPIBase):
+    data: dict
     response: Optional[str] = None
     message: Optional[str] = None
     has_warning: Optional[bool] = None
     param_with_error: Optional[str] = None
     type: Optional[int] = None
     rate_limit: Optional[RateLimit] = None
-    data: Optional[dict] = None
 
     @staticmethod
     def from_dict(obj: Any) -> 'ExchangesSymbols':
@@ -41,7 +41,7 @@ class ExchangesSymbols(ResponseAPIBase):
         type = from_union([from_int, from_none], obj.get("Type"))
         rate_limit = from_union([RateLimit.from_dict, from_none], obj.get("RateLimit"))
         data = from_union([from_plain_dict, from_none], obj.get("Data"))
-        return ExchangesSymbols(response, message, has_warning, param_with_error, type, rate_limit, data)
+        return ExchangesSymbols(data, response, message, has_warning, param_with_error, type, rate_limit)
 
     def to_dict(self) -> dict:
         result: dict = {}
@@ -87,7 +87,7 @@ class CouldNotGetExchangeSymbolsException(ResponseException):
     pass
 
 
-def _exchange_dict_to_df(exchange_dict: Dict[str, Union[List[str], str]], exchange_name: str) -> pd.DataFrame:
+def _exchange_dict_to_df(exchange_dict: dict, exchange_name: str) -> pd.DataFrame:
     pairs_dict = exchange_dict['pairs']
     df = _pairs_dict_to_df(pairs_dict)
     df['Exchange'] = exchange_name

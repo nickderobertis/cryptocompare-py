@@ -208,7 +208,7 @@ class RateLimit:
 class Coins(ResponseAPIBase):
     response: Optional[str]
     message: Optional[str]
-    data: Optional[Dict[str, Coin]]
+    data: Dict[str, Coin]
     base_image_url: Optional[str]
     base_link_url: Optional[str]
     rate_limit: Optional[RateLimit]
@@ -218,6 +218,9 @@ class Coins(ResponseAPIBase):
     def __init__(self, response: Optional[str], message: Optional[str], data: Optional[Dict[str, Coin]],
                  base_image_url: Optional[str], base_link_url: Optional[str], rate_limit: Optional[RateLimit],
                  has_warning: Optional[bool], type: Optional[int]) -> None:
+        if data is None:
+            data = {}
+
         self.response = response
         self.message = message
         self.data = data
@@ -258,7 +261,7 @@ class Coins(ResponseAPIBase):
 
     @property
     def symbol_id_dict(self) -> Dict[str, int]:
-        return {symbol: coin.id for symbol, coin in self.data.items()}
+        return {symbol: coin.id for symbol, coin in self.data.items() if symbol is not None and coin.id is not None}
 
     def to_df(self) -> pd.DataFrame:
         coin_dicts = []

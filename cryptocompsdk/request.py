@@ -71,7 +71,7 @@ class APIBase:
         obj._request = data
         return obj
 
-    def _get_with_pagination(self, url: str, payload: Optional[Dict[str, Any]] = None,
+    def _get_with_pagination(self, url: str, payload: Dict[str, Any],
                              max_api_calls: Optional[int] = None):
         if max_api_calls is None:
             # TODO: less hackish
