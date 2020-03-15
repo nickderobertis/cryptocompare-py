@@ -17,7 +17,7 @@ REPO_MAINTAINERS = [
 ]
 
 # Package version in the format (major, minor, release)
-PACKAGE_VERSION_TUPLE = (0, 1, 4)
+PACKAGE_VERSION_TUPLE = (0, 1, 5)
 
 # Short description of the package
 PACKAGE_SHORT_DESCRIPTION = 'Python SDK for CryptoCompare Personal API'
