@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cryptocompsdk package &mdash; cryptocompsdk 0.1.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_paramlinks.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cryptocompsdk.coins package" href="cryptocompsdk.coins.html" />
+    <link rel="prev" title="cryptocompsdk" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> cryptocompsdk
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Getting started with cryptocompsdk</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">cryptocompsdk</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">cryptocompsdk package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.coins.html">cryptocompsdk.coins package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.exchanges.html">cryptocompsdk.exchanges package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.general.html">cryptocompsdk.general package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.history.html">cryptocompsdk.history package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.social.html">cryptocompsdk.social package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cryptocompsdk.config">cryptocompsdk.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cryptocompsdk.main">cryptocompsdk.main module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cryptocompsdk.request">cryptocompsdk.request module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cryptocompsdk.response">cryptocompsdk.response module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cryptocompsdk.urls">cryptocompsdk.urls module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cryptocompsdk</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">cryptocompsdk</a> &raquo;</li>
+        
+      <li>cryptocompsdk package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/cryptocompsdk.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-cryptocompsdk">
+<span id="cryptocompsdk-package"></span><h1>cryptocompsdk package<a class="headerlink" href="#module-cryptocompsdk" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cryptocompsdk.coins.html">cryptocompsdk.coins package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cryptocompsdk.coins.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptocompsdk.coins.html#module-cryptocompsdk.coins.api">cryptocompsdk.coins.api module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptocompsdk.coins.html#module-cryptocompsdk.coins.parse">cryptocompsdk.coins.parse module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cryptocompsdk.exchanges.html">cryptocompsdk.exchanges package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cryptocompsdk.exchanges.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.exchanges.info.html">cryptocompsdk.exchanges.info package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.exchanges.info.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.exchanges.info.html#module-cryptocompsdk.exchanges.info.api">cryptocompsdk.exchanges.info.api module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.exchanges.info.html#module-cryptocompsdk.exchanges.info.parse">cryptocompsdk.exchanges.info.parse module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.exchanges.symbols.html">cryptocompsdk.exchanges.symbols package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.exchanges.symbols.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.exchanges.symbols.html#module-cryptocompsdk.exchanges.symbols.api">cryptocompsdk.exchanges.symbols.api module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.exchanges.symbols.html#module-cryptocompsdk.exchanges.symbols.parse">cryptocompsdk.exchanges.symbols.parse module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cryptocompsdk.general.html">cryptocompsdk.general package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cryptocompsdk.general.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptocompsdk.general.html#module-cryptocompsdk.general.parse">cryptocompsdk.general.parse module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cryptocompsdk.history.html">cryptocompsdk.history package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cryptocompsdk.history.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptocompsdk.history.html#module-cryptocompsdk.history.api">cryptocompsdk.history.api module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptocompsdk.history.html#module-cryptocompsdk.history.parse">cryptocompsdk.history.parse module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cryptocompsdk.social.html">cryptocompsdk.social package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cryptocompsdk.social.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptocompsdk.social.html#module-cryptocompsdk.social.api">cryptocompsdk.social.api module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cryptocompsdk.social.html#module-cryptocompsdk.social.parse">cryptocompsdk.social.parse module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cryptocompsdk.config">
+<span id="cryptocompsdk-config-module"></span><h2>cryptocompsdk.config module<a class="headerlink" href="#module-cryptocompsdk.config" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cryptocompsdk.main">
+<span id="cryptocompsdk-main-module"></span><h2>cryptocompsdk.main module<a class="headerlink" href="#module-cryptocompsdk.main" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cryptocompsdk.main.CryptoCompare">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.main.</code><code class="sig-name descname">CryptoCompare</code><span class="sig-paren">(</span><em class="sig-param">api_key</em>, <em class="sig-param">throttle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/main.html#CryptoCompare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.main.CryptoCompare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cryptocompsdk.request.APIBase" title="cryptocompsdk.request.APIBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.request.APIBase</span></code></a></p>
+<p>The main interface to the API. Contains objects which represent individual API endpoints.</p>
+<p>history <a class="reference internal" href="cryptocompsdk.history.html#cryptocompsdk.history.api.HistoryAPI" title="cryptocompsdk.history.api.HistoryAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">HistoryAPI</span></code></a></p>
+<p>coins <a class="reference internal" href="cryptocompsdk.coins.html#cryptocompsdk.coins.api.CoinsAPI" title="cryptocompsdk.coins.api.CoinsAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">CoinsAPI</span></code></a></p>
+<p>social <a class="reference internal" href="cryptocompsdk.social.html#cryptocompsdk.social.api.SocialAPI" title="cryptocompsdk.social.api.SocialAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">SocialAPI</span></code></a></p>
+<p>exchange_symbols <a class="reference internal" href="cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI" title="cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExchangeSymbolsAPI</span></code></a></p>
+<p>exchange_info <a class="reference internal" href="cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.api.ExchangeInfoAPI" title="cryptocompsdk.exchanges.info.api.ExchangeInfoAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExchangeInfoAPI</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.main.CryptoCompare.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">api_key</em>, <em class="sig-param">throttle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/main.html#CryptoCompare.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.main.CryptoCompare.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.main.CryptoCompare.coin_ids">
+<em class="property">property </em><code class="sig-name descname">coin_ids</code><a class="headerlink" href="#cryptocompsdk.main.CryptoCompare.coin_ids" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cryptocompsdk.request">
+<span id="cryptocompsdk-request-module"></span><h2>cryptocompsdk.request module<a class="headerlink" href="#module-cryptocompsdk.request" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cryptocompsdk.request.APIBase">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.request.</code><code class="sig-name descname">APIBase</code><span class="sig-paren">(</span><em class="sig-param">api_key</em>, <em class="sig-param">throttle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/request.html#APIBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.request.APIBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.request.APIBase.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">api_key</em>, <em class="sig-param">throttle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/request.html#APIBase.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.request.APIBase.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.request.APIBase.filter_payload">
+<code class="sig-name descname">filter_payload</code><span class="sig-paren">(</span><em class="sig-param">payload</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/request.html#APIBase.filter_payload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.request.APIBase.filter_payload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.request.APIBase.request">
+<code class="sig-name descname">request</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">payload=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/request.html#APIBase.request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.request.APIBase.request" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.request.Request" title="cryptocompsdk.request.Request"><code class="xref py py-class docutils literal notranslate"><span class="pre">Request</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cryptocompsdk.request.Request">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.request.</code><code class="sig-name descname">Request</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">payload</em>, <em class="sig-param">response</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/request.html#Request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.request.Request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.request.Request.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">payload</em>, <em class="sig-param">response</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/request.html#Request.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.request.Request.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.request.Request.json">
+<em class="property">property </em><code class="sig-name descname">json</code><a class="headerlink" href="#cryptocompsdk.request.Request.json" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cryptocompsdk.response">
+<span id="cryptocompsdk-response-module"></span><h2>cryptocompsdk.response module<a class="headerlink" href="#module-cryptocompsdk.response" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cryptocompsdk.response.ResponseAPIBase">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.response.</code><code class="sig-name descname">ResponseAPIBase</code><a class="reference internal" href="../_modules/cryptocompsdk/response.html#ResponseAPIBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.response.ResponseAPIBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.response.ResponseAPIBase.delete_record_matching_time">
+<code class="sig-name descname">delete_record_matching_time</code><span class="sig-paren">(</span><em class="sig-param">time</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/response.html#ResponseAPIBase.delete_record_matching_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.response.ResponseAPIBase.delete_record_matching_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.response.ResponseAPIBase.has_error">
+<em class="property">property </em><code class="sig-name descname">has_error</code><a class="headerlink" href="#cryptocompsdk.response.ResponseAPIBase.has_error" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.response.ResponseAPIBase.is_empty">
+<em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#cryptocompsdk.response.ResponseAPIBase.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.response.ResponseAPIBase.response">
+<code class="sig-name descname">response</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.response.ResponseAPIBase.response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.response.ResponseAPIBase.time_from">
+<em class="property">property </em><code class="sig-name descname">time_from</code><a class="headerlink" href="#cryptocompsdk.response.ResponseAPIBase.time_from" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.response.ResponseAPIBase.trim_empty_records_at_beginning">
+<code class="sig-name descname">trim_empty_records_at_beginning</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/response.html#ResponseAPIBase.trim_empty_records_at_beginning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.response.ResponseAPIBase.trim_empty_records_at_beginning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="cryptocompsdk.response.ResponseException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.response.</code><code class="sig-name descname">ResponseException</code><a class="reference internal" href="../_modules/cryptocompsdk/response.html#ResponseException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.response.ResponseException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cryptocompsdk.urls">
+<span id="cryptocompsdk-urls-module"></span><h2>cryptocompsdk.urls module<a class="headerlink" href="#module-cryptocompsdk.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cryptocompsdk.coins.html" class="btn btn-neutral float-right" title="cryptocompsdk.coins package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules.html" class="btn btn-neutral float-left" title="cryptocompsdk" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Nick DeRobertis
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-160614930-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

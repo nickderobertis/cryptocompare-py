@@ -1,0 +1,27 @@
+cryptocompsdk.exchanges.symbols package
+=======================================
+
+.. automodule:: cryptocompsdk.exchanges.symbols
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+cryptocompsdk.exchanges.symbols.api module
+------------------------------------------
+
+.. automodule:: cryptocompsdk.exchanges.symbols.api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cryptocompsdk.exchanges.symbols.parse module
+--------------------------------------------
+
+.. automodule:: cryptocompsdk.exchanges.symbols.parse
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

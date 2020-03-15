@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cryptocompsdk.general package &mdash; cryptocompsdk 0.1.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_paramlinks.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cryptocompsdk.history package" href="cryptocompsdk.history.html" />
+    <link rel="prev" title="cryptocompsdk.exchanges.symbols package" href="cryptocompsdk.exchanges.symbols.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> cryptocompsdk
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Getting started with cryptocompsdk</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">cryptocompsdk</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="cryptocompsdk.html">cryptocompsdk package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="cryptocompsdk.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.coins.html">cryptocompsdk.coins package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.exchanges.html">cryptocompsdk.exchanges package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">cryptocompsdk.general package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.history.html">cryptocompsdk.history package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.social.html">cryptocompsdk.social package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.config">cryptocompsdk.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.main">cryptocompsdk.main module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.request">cryptocompsdk.request module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.response">cryptocompsdk.response module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.urls">cryptocompsdk.urls module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cryptocompsdk</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">cryptocompsdk</a> &raquo;</li>
+        
+          <li><a href="cryptocompsdk.html">cryptocompsdk package</a> &raquo;</li>
+        
+      <li>cryptocompsdk.general package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/cryptocompsdk.general.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-cryptocompsdk.general">
+<span id="cryptocompsdk-general-package"></span><h1>cryptocompsdk.general package<a class="headerlink" href="#module-cryptocompsdk.general" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cryptocompsdk.general.parse">
+<span id="cryptocompsdk-general-parse-module"></span><h2>cryptocompsdk.general.parse module<a class="headerlink" href="#module-cryptocompsdk.general.parse" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="cryptocompsdk.general.parse.CouldNotParseResponseException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">CouldNotParseResponseException</code><span class="sig-paren">(</span><em class="sig-param">exceptions</em>, <em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#CouldNotParseResponseException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.CouldNotParseResponseException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.general.parse.CouldNotParseResponseException.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">exceptions</em>, <em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#CouldNotParseResponseException.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.CouldNotParseResponseException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.general.parse.CouldNotParseResponseException.exceptions_str">
+<em class="property">property </em><code class="sig-name descname">exceptions_str</code><a class="headerlink" href="#cryptocompsdk.general.parse.CouldNotParseResponseException.exceptions_str" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="cryptocompsdk.general.parse.InvalidTypeException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">InvalidTypeException</code><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#InvalidTypeException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.InvalidTypeException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cryptocompsdk.general.parse.NotBoolException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">NotBoolException</code><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#NotBoolException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.NotBoolException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cryptocompsdk.general.parse.InvalidTypeException" title="cryptocompsdk.general.parse.InvalidTypeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.general.parse.InvalidTypeException</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cryptocompsdk.general.parse.NotDictException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">NotDictException</code><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#NotDictException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.NotDictException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cryptocompsdk.general.parse.InvalidTypeException" title="cryptocompsdk.general.parse.InvalidTypeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.general.parse.InvalidTypeException</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cryptocompsdk.general.parse.NotFloatException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">NotFloatException</code><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#NotFloatException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.NotFloatException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cryptocompsdk.general.parse.InvalidTypeException" title="cryptocompsdk.general.parse.InvalidTypeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.general.parse.InvalidTypeException</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cryptocompsdk.general.parse.NotIntException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">NotIntException</code><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#NotIntException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.NotIntException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cryptocompsdk.general.parse.InvalidTypeException" title="cryptocompsdk.general.parse.InvalidTypeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.general.parse.InvalidTypeException</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cryptocompsdk.general.parse.NotListException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">NotListException</code><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#NotListException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.NotListException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cryptocompsdk.general.parse.InvalidTypeException" title="cryptocompsdk.general.parse.InvalidTypeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.general.parse.InvalidTypeException</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cryptocompsdk.general.parse.NotNAException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">NotNAException</code><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#NotNAException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.NotNAException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cryptocompsdk.general.parse.InvalidTypeException" title="cryptocompsdk.general.parse.InvalidTypeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.general.parse.InvalidTypeException</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cryptocompsdk.general.parse.NotNoneException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">NotNoneException</code><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#NotNoneException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.NotNoneException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cryptocompsdk.general.parse.InvalidTypeException" title="cryptocompsdk.general.parse.InvalidTypeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.general.parse.InvalidTypeException</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cryptocompsdk.general.parse.NotStrException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">NotStrException</code><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#NotStrException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.NotStrException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cryptocompsdk.general.parse.InvalidTypeException" title="cryptocompsdk.general.parse.InvalidTypeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.general.parse.InvalidTypeException</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cryptocompsdk.general.parse.NotTypeException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">NotTypeException</code><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#NotTypeException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.NotTypeException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cryptocompsdk.general.parse.InvalidTypeException" title="cryptocompsdk.general.parse.InvalidTypeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.general.parse.InvalidTypeException</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.general.parse.from_bool">
+<code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">from_bool</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#from_bool"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.from_bool" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.general.parse.from_dict">
+<code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">f</em>, <em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, ~T]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.general.parse.from_float">
+<code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">from_float</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#from_float"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.from_float" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.general.parse.from_int">
+<code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">from_int</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#from_int"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.from_int" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.general.parse.from_int_or_str">
+<code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">from_int_or_str</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#from_int_or_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.from_int_or_str" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.8)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.general.parse.from_list">
+<code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">from_list</code><span class="sig-paren">(</span><em class="sig-param">f</em>, <em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#from_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.from_list" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[~T]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.general.parse.from_na">
+<code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">from_na</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#from_na"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.from_na" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.general.parse.from_none">
+<code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">from_none</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#from_none"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.from_none" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.8)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.general.parse.from_plain_dict">
+<code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">from_plain_dict</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#from_plain_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.from_plain_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.general.parse.from_str">
+<code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">from_str</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#from_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.from_str" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.general.parse.from_str_number">
+<code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">from_str_number</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#from_str_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.from_str_number" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.8)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.general.parse.from_union">
+<code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">from_union</code><span class="sig-paren">(</span><em class="sig-param">fs</em>, <em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#from_union"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.from_union" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.general.parse.is_type">
+<code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">is_type</code><span class="sig-paren">(</span><em class="sig-param">t</em>, <em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#is_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.is_type" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>~T</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.general.parse.to_class">
+<code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">to_class</code><span class="sig-paren">(</span><em class="sig-param">c</em>, <em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#to_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.to_class" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.general.parse.to_float">
+<code class="sig-prename descclassname">cryptocompsdk.general.parse.</code><code class="sig-name descname">to_float</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/general/parse.html#to_float"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.general.parse.to_float" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cryptocompsdk.history.html" class="btn btn-neutral float-right" title="cryptocompsdk.history package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cryptocompsdk.exchanges.symbols.html" class="btn btn-neutral float-left" title="cryptocompsdk.exchanges.symbols package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Nick DeRobertis
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-160614930-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

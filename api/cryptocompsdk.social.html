@@ -1,0 +1,669 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cryptocompsdk.social package &mdash; cryptocompsdk 0.1.5 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_paramlinks.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="cryptocompsdk.history package" href="cryptocompsdk.history.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> cryptocompsdk
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Getting started with cryptocompsdk</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">cryptocompsdk</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="cryptocompsdk.html">cryptocompsdk package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="cryptocompsdk.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.coins.html">cryptocompsdk.coins package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.exchanges.html">cryptocompsdk.exchanges package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.general.html">cryptocompsdk.general package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.history.html">cryptocompsdk.history package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">cryptocompsdk.social package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.config">cryptocompsdk.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.main">cryptocompsdk.main module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.request">cryptocompsdk.request module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.response">cryptocompsdk.response module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.urls">cryptocompsdk.urls module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cryptocompsdk</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">cryptocompsdk</a> &raquo;</li>
+        
+          <li><a href="cryptocompsdk.html">cryptocompsdk package</a> &raquo;</li>
+        
+      <li>cryptocompsdk.social package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/cryptocompsdk.social.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-cryptocompsdk.social">
+<span id="cryptocompsdk-social-package"></span><h1>cryptocompsdk.social package<a class="headerlink" href="#module-cryptocompsdk.social" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cryptocompsdk.social.api">
+<span id="cryptocompsdk-social-api-module"></span><h2>cryptocompsdk.social.api module<a class="headerlink" href="#module-cryptocompsdk.social.api" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cryptocompsdk.social.api.SocialAPI">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.social.api.</code><code class="sig-name descname">SocialAPI</code><span class="sig-paren">(</span><em class="sig-param">api_key</em>, <em class="sig-param">throttle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/api.html#SocialAPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.api.SocialAPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.request.APIBase" title="cryptocompsdk.request.APIBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.request.APIBase</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.social.api.SocialAPI.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">coin_id=1182</em>, <em class="sig-param">freq='d'</em>, <em class="sig-param">aggregate=None</em>, <em class="sig-param">end_time=None</em>, <em class="sig-param">limit=100</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/api.html#SocialAPI.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.api.SocialAPI.get" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.social.parse.SocialData" title="cryptocompsdk.social.parse.SocialData"><code class="xref py py-class docutils literal notranslate"><span class="pre">SocialData</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cryptocompsdk.social.parse">
+<span id="cryptocompsdk-social-parse-module"></span><h2>cryptocompsdk.social.parse module<a class="headerlink" href="#module-cryptocompsdk.social.parse" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="cryptocompsdk.social.parse.CouldNotGetSocialException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.social.parse.</code><code class="sig-name descname">CouldNotGetSocialException</code><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#CouldNotGetSocialException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.CouldNotGetSocialException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.response.ResponseException" title="cryptocompsdk.response.ResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.response.ResponseException</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cryptocompsdk.social.parse.RateLimit">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.social.parse.</code><code class="sig-name descname">RateLimit</code><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#RateLimit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.RateLimit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.social.parse.RateLimit.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#RateLimit.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.RateLimit.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.social.parse.RateLimit.from_dict">
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#RateLimit.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.RateLimit.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.social.parse.RateLimit" title="cryptocompsdk.social.parse.RateLimit"><code class="xref py py-class docutils literal notranslate"><span class="pre">RateLimit</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.social.parse.RateLimit.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#RateLimit.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.RateLimit.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cryptocompsdk.social.parse.SocialData">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.social.parse.</code><code class="sig-name descname">SocialData</code><span class="sig-paren">(</span><em class="sig-param">response</em>, <em class="sig-param">message</em>, <em class="sig-param">has_warning</em>, <em class="sig-param">param_with_error</em>, <em class="sig-param">type</em>, <em class="sig-param">rate_limit</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#SocialData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.response.ResponseAPIBase" title="cryptocompsdk.response.ResponseAPIBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.response.ResponseAPIBase</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.social.parse.SocialData.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">response</em>, <em class="sig-param">message</em>, <em class="sig-param">has_warning</em>, <em class="sig-param">param_with_error</em>, <em class="sig-param">type</em>, <em class="sig-param">rate_limit</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#SocialData.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialData.data">
+<code class="sig-name descname">data</code><em class="property">: List[SocialRecord]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.social.parse.SocialData.delete_record_matching_time">
+<code class="sig-name descname">delete_record_matching_time</code><span class="sig-paren">(</span><em class="sig-param">time</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#SocialData.delete_record_matching_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData.delete_record_matching_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.social.parse.SocialData.from_dict">
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#SocialData.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.social.parse.SocialData" title="cryptocompsdk.social.parse.SocialData"><code class="xref py py-class docutils literal notranslate"><span class="pre">SocialData</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialData.has_warning">
+<code class="sig-name descname">has_warning</code><em class="property">: Optional[bool]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData.has_warning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.social.parse.SocialData.is_empty">
+<em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialData.message">
+<code class="sig-name descname">message</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialData.param_with_error">
+<code class="sig-name descname">param_with_error</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData.param_with_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialData.rate_limit">
+<code class="sig-name descname">rate_limit</code><em class="property">: Optional[RateLimit]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData.rate_limit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialData.response">
+<code class="sig-name descname">response</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData.response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.social.parse.SocialData.time_from">
+<em class="property">property </em><code class="sig-name descname">time_from</code><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData.time_from" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.social.parse.SocialData.to_df">
+<code class="sig-name descname">to_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#SocialData.to_df"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData.to_df" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.social.parse.SocialData.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#SocialData.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.social.parse.SocialData.trim_empty_records_at_beginning">
+<code class="sig-name descname">trim_empty_records_at_beginning</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#SocialData.trim_empty_records_at_beginning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData.trim_empty_records_at_beginning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialData.type">
+<code class="sig-name descname">type</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialData.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cryptocompsdk.social.parse.SocialRecord">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.social.parse.</code><code class="sig-name descname">SocialRecord</code><span class="sig-paren">(</span><em class="sig-param">time</em>, <em class="sig-param">comments</em>, <em class="sig-param">posts</em>, <em class="sig-param">followers</em>, <em class="sig-param">points</em>, <em class="sig-param">overview_page_views</em>, <em class="sig-param">analysis_page_views</em>, <em class="sig-param">markets_page_views</em>, <em class="sig-param">charts_page_views</em>, <em class="sig-param">trades_page_views</em>, <em class="sig-param">forum_page_views</em>, <em class="sig-param">influence_page_views</em>, <em class="sig-param">total_page_views</em>, <em class="sig-param">fb_likes</em>, <em class="sig-param">fb_talking_about</em>, <em class="sig-param">twitter_followers</em>, <em class="sig-param">twitter_following</em>, <em class="sig-param">twitter_lists</em>, <em class="sig-param">twitter_favourites</em>, <em class="sig-param">twitter_statuses</em>, <em class="sig-param">reddit_subscribers</em>, <em class="sig-param">reddit_active_users</em>, <em class="sig-param">reddit_posts_per_hour</em>, <em class="sig-param">reddit_posts_per_day</em>, <em class="sig-param">reddit_comments_per_hour</em>, <em class="sig-param">reddit_comments_per_day</em>, <em class="sig-param">code_repo_stars</em>, <em class="sig-param">code_repo_forks</em>, <em class="sig-param">code_repo_subscribers</em>, <em class="sig-param">code_repo_open_pull_issues</em>, <em class="sig-param">code_repo_closed_pull_issues</em>, <em class="sig-param">code_repo_open_issues</em>, <em class="sig-param">code_repo_closed_issues</em>, <em class="sig-param">code_repo_contributors</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#SocialRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.social.parse.SocialRecord.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">time</em>, <em class="sig-param">comments</em>, <em class="sig-param">posts</em>, <em class="sig-param">followers</em>, <em class="sig-param">points</em>, <em class="sig-param">overview_page_views</em>, <em class="sig-param">analysis_page_views</em>, <em class="sig-param">markets_page_views</em>, <em class="sig-param">charts_page_views</em>, <em class="sig-param">trades_page_views</em>, <em class="sig-param">forum_page_views</em>, <em class="sig-param">influence_page_views</em>, <em class="sig-param">total_page_views</em>, <em class="sig-param">fb_likes</em>, <em class="sig-param">fb_talking_about</em>, <em class="sig-param">twitter_followers</em>, <em class="sig-param">twitter_following</em>, <em class="sig-param">twitter_lists</em>, <em class="sig-param">twitter_favourites</em>, <em class="sig-param">twitter_statuses</em>, <em class="sig-param">reddit_subscribers</em>, <em class="sig-param">reddit_active_users</em>, <em class="sig-param">reddit_posts_per_hour</em>, <em class="sig-param">reddit_posts_per_day</em>, <em class="sig-param">reddit_comments_per_hour</em>, <em class="sig-param">reddit_comments_per_day</em>, <em class="sig-param">code_repo_stars</em>, <em class="sig-param">code_repo_forks</em>, <em class="sig-param">code_repo_subscribers</em>, <em class="sig-param">code_repo_open_pull_issues</em>, <em class="sig-param">code_repo_closed_pull_issues</em>, <em class="sig-param">code_repo_open_issues</em>, <em class="sig-param">code_repo_closed_issues</em>, <em class="sig-param">code_repo_contributors</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#SocialRecord.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.analysis_page_views">
+<code class="sig-name descname">analysis_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.analysis_page_views" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.charts_page_views">
+<code class="sig-name descname">charts_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.charts_page_views" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.code_repo_closed_issues">
+<code class="sig-name descname">code_repo_closed_issues</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.code_repo_closed_issues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.code_repo_closed_pull_issues">
+<code class="sig-name descname">code_repo_closed_pull_issues</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.code_repo_closed_pull_issues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.code_repo_contributors">
+<code class="sig-name descname">code_repo_contributors</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.code_repo_contributors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.code_repo_forks">
+<code class="sig-name descname">code_repo_forks</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.code_repo_forks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.code_repo_open_issues">
+<code class="sig-name descname">code_repo_open_issues</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.code_repo_open_issues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.code_repo_open_pull_issues">
+<code class="sig-name descname">code_repo_open_pull_issues</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.code_repo_open_pull_issues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.code_repo_stars">
+<code class="sig-name descname">code_repo_stars</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.code_repo_stars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.code_repo_subscribers">
+<code class="sig-name descname">code_repo_subscribers</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.code_repo_subscribers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.comments">
+<code class="sig-name descname">comments</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.comments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.fb_likes">
+<code class="sig-name descname">fb_likes</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.fb_likes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.fb_talking_about">
+<code class="sig-name descname">fb_talking_about</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.fb_talking_about" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.followers">
+<code class="sig-name descname">followers</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.followers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.forum_page_views">
+<code class="sig-name descname">forum_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.forum_page_views" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.social.parse.SocialRecord.from_dict">
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#SocialRecord.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.social.parse.SocialRecord" title="cryptocompsdk.social.parse.SocialRecord"><code class="xref py py-class docutils literal notranslate"><span class="pre">SocialRecord</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.influence_page_views">
+<code class="sig-name descname">influence_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.influence_page_views" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.social.parse.SocialRecord.is_empty">
+<em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.markets_page_views">
+<code class="sig-name descname">markets_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.markets_page_views" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.overview_page_views">
+<code class="sig-name descname">overview_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.overview_page_views" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.points">
+<code class="sig-name descname">points</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.posts">
+<code class="sig-name descname">posts</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.posts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.reddit_active_users">
+<code class="sig-name descname">reddit_active_users</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.reddit_active_users" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.reddit_comments_per_day">
+<code class="sig-name descname">reddit_comments_per_day</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.reddit_comments_per_day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.reddit_comments_per_hour">
+<code class="sig-name descname">reddit_comments_per_hour</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.reddit_comments_per_hour" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.reddit_posts_per_day">
+<code class="sig-name descname">reddit_posts_per_day</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.reddit_posts_per_day" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.reddit_posts_per_hour">
+<code class="sig-name descname">reddit_posts_per_hour</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.reddit_posts_per_hour" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.reddit_subscribers">
+<code class="sig-name descname">reddit_subscribers</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.reddit_subscribers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.time">
+<code class="sig-name descname">time</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.social.parse.SocialRecord.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#SocialRecord.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.total_page_views">
+<code class="sig-name descname">total_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.total_page_views" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.trades_page_views">
+<code class="sig-name descname">trades_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.trades_page_views" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.twitter_favourites">
+<code class="sig-name descname">twitter_favourites</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.twitter_favourites" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.twitter_followers">
+<code class="sig-name descname">twitter_followers</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.twitter_followers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.twitter_following">
+<code class="sig-name descname">twitter_following</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.twitter_following" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.twitter_lists">
+<code class="sig-name descname">twitter_lists</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.twitter_lists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.social.parse.SocialRecord.twitter_statuses">
+<code class="sig-name descname">twitter_statuses</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.parse.SocialRecord.twitter_statuses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.social.parse.social_data_from_dict">
+<code class="sig-prename descclassname">cryptocompsdk.social.parse.</code><code class="sig-name descname">social_data_from_dict</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#social_data_from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.social_data_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.social.parse.SocialData" title="cryptocompsdk.social.parse.SocialData"><code class="xref py py-class docutils literal notranslate"><span class="pre">SocialData</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cryptocompsdk.social.parse.social_data_to_dict">
+<code class="sig-prename descclassname">cryptocompsdk.social.parse.</code><code class="sig-name descname">social_data_to_dict</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/parse.html#social_data_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.parse.social_data_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.8)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="cryptocompsdk.history.html" class="btn btn-neutral float-left" title="cryptocompsdk.history package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Nick DeRobertis
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-160614930-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

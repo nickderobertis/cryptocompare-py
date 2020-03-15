@@ -1,0 +1,27 @@
+cryptocompsdk.social package
+============================
+
+.. automodule:: cryptocompsdk.social
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+cryptocompsdk.social.api module
+-------------------------------
+
+.. automodule:: cryptocompsdk.social.api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cryptocompsdk.social.parse module
+---------------------------------
+
+.. automodule:: cryptocompsdk.social.parse
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

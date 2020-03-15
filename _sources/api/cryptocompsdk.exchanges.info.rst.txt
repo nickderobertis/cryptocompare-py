@@ -1,0 +1,27 @@
+cryptocompsdk.exchanges.info package
+====================================
+
+.. automodule:: cryptocompsdk.exchanges.info
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+cryptocompsdk.exchanges.info.api module
+---------------------------------------
+
+.. automodule:: cryptocompsdk.exchanges.info.api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cryptocompsdk.exchanges.info.parse module
+-----------------------------------------
+
+.. automodule:: cryptocompsdk.exchanges.info.parse
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

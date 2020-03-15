@@ -1,0 +1,19 @@
+cryptocompsdk.general package
+=============================
+
+.. automodule:: cryptocompsdk.general
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+cryptocompsdk.general.parse module
+----------------------------------
+
+.. automodule:: cryptocompsdk.general.parse
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

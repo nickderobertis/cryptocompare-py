@@ -1,0 +1,27 @@
+cryptocompsdk.coins package
+===========================
+
+.. automodule:: cryptocompsdk.coins
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+cryptocompsdk.coins.api module
+------------------------------
+
+.. automodule:: cryptocompsdk.coins.api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cryptocompsdk.coins.parse module
+--------------------------------
+
+.. automodule:: cryptocompsdk.coins.parse
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

@@ -1,0 +1,7 @@
+cryptocompsdk
+=============
+
+.. toctree::
+   :maxdepth: 4
+
+   cryptocompsdk
