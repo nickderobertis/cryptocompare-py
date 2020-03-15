@@ -1,5 +1,6 @@
 from typing import Dict, Optional
 
+from cryptocompsdk.blockchain.available.api import BlockchainAvailableCoinsAPI
 from cryptocompsdk.coins.parse import Coins
 from cryptocompsdk.exchanges.info.api import ExchangeInfoAPI
 from cryptocompsdk.exchanges.symbols.api import ExchangeSymbolsAPI
@@ -22,6 +23,8 @@ class CryptoCompare(APIBase):
     exchange_symbols :class:`.ExchangeSymbolsAPI`
 
     exchange_info :class:`.ExchangeInfoAPI`
+
+    blockchain_available_coins :class:`.BlockchainAvailableCoinsAPI`
     """
 
     def __init__(self, api_key: str, throttle: Optional[float] = None):
@@ -31,6 +34,7 @@ class CryptoCompare(APIBase):
         self.social = SocialAPI(api_key, throttle)
         self.exchange_symbols = ExchangeSymbolsAPI(api_key, throttle)
         self.exchange_info = ExchangeInfoAPI(api_key, throttle)
+        self.blockchain_available_coins = BlockchainAvailableCoinsAPI(api_key, throttle)
 
         self._coin_response: Optional[Coins] = None
 
