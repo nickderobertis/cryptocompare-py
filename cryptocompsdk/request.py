@@ -93,10 +93,18 @@ class APIBase:
         while i + 1 < max_api_calls:
             i += 1
             payload['toTs'] = end_time
-            data = self._get(url, payload)
+            try:
+                data = self._get(url, payload)
+            except self._exception_class as e:
+                # In blockchain history API, upon going too far back, it sends this message back
+                if 'does not have data available before requested timestamp' in str(e):
+                    break
+                else:
+                    raise e
             if i == 0:
                 all_data = data
             if data.is_empty:
+                # In price history API, upon going too far back, it sends 0 for all data
                 break
             if i != 0:
                 # chop off matching record. The end_time observation will be included in both responses
