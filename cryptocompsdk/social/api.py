@@ -19,7 +19,7 @@ class SocialAPI(APIBase):
             toTs=end_time,
         )
 
-        return super().get(url, payload)
+        return self._get_one_or_paginated(url, payload)
 
     def _get_api_url_from_freq(self, freq: str) -> str:
         parsed_freq = freq.lower().strip()[0]

@@ -48,7 +48,16 @@ class APIBase:
 
         return with_str_bools
 
-    def get(self, url: str, payload: Optional[Dict[str, Any]] = None, max_api_calls: Optional[int] = None):
+    def _get_one_or_paginated(self, url: str, payload: Optional[Dict[str, Any]] = None,
+                              max_api_calls: Optional[int] = None):
+        """
+        This method should be called in the subclass .get method
+
+        :param url: url to request
+        :param payload: data to send with request
+        :param max_api_calls: limit on number of API calls
+        :return:
+        """
         if payload is not None and payload.get('limit') == 0:
             return self._get_with_pagination(url, payload=payload, max_api_calls=max_api_calls)
         return self._get(url, payload=payload)
@@ -71,10 +80,10 @@ class APIBase:
         obj._request = data
         return obj
 
-    def _get_with_pagination(self, url: str, payload: Optional[Dict[str, Any]] = None,
+    def _get_with_pagination(self, url: str, payload: Dict[str, Any],
                              max_api_calls: Optional[int] = None):
         if max_api_calls is None:
-            # TODO: less hackish
+            # TODO [#4]: less hackish
             max_api_calls = 10000000
 
         payload['limit'] = MAX_LIMIT_PER_API_CALL

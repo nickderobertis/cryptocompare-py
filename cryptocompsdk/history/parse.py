@@ -79,10 +79,12 @@ class Data:
     aggregated: Optional[bool]
     time_from: Optional[int]
     time_to: Optional[int]
-    data: Optional[List[HistoryRecord]]
+    data: List[HistoryRecord]
 
     def __init__(self, aggregated: Optional[bool], time_from: Optional[int], time_to: Optional[int],
                  data: Optional[List[HistoryRecord]]) -> None:
+        if data is None:
+            data = []
         self.aggregated = aggregated
         self.time_from = time_from
         self.time_to = time_to
@@ -144,11 +146,11 @@ class HistoricalData(ResponseAPIBase):
     has_warning: Optional[bool]
     type: Optional[int]
     rate_limit: Optional[RateLimit]
-    data: Optional[Data]
+    data: Data
 
     def __init__(self, response: Optional[str], message: Optional[str], param_with_error: Optional[str],
                  has_warning: Optional[bool], type: Optional[int], rate_limit: Optional[RateLimit],
-                 data: Optional[Data]) -> None:
+                 data: Data) -> None:
         self.response = response
         self.message = message
         self.param_with_error = param_with_error
@@ -208,6 +210,8 @@ class HistoricalData(ResponseAPIBase):
 
     @property
     def time_from(self) -> int:
+        if self.data.time_from is None:
+            raise ValueError('could not determine time from as it is not in the data')
         return self.data.time_from
 
     def delete_record_matching_time(self, time: int):

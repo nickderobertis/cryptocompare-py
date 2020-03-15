@@ -14,7 +14,7 @@ class ExchangeInfoAPI(APIBase):
             tsym=to_symbol,
         )
 
-        return super().get(EXCHANGE_INFO_URL, payload)
+        return self._get_one_or_paginated(EXCHANGE_INFO_URL, payload)
 
     def _class_factory(self, data: dict) -> ExchangesInfo:
         return exchanges_info_from_dict(data)

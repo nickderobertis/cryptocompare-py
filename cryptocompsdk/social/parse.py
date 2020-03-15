@@ -1,5 +1,5 @@
 from copy import deepcopy
-from typing import Optional, Any, List
+from typing import Optional, Any, List, cast
 
 import pandas as pd
 
@@ -243,11 +243,14 @@ class SocialData(ResponseAPIBase):
     param_with_error: Optional[str]
     type: Optional[int]
     rate_limit: Optional[RateLimit]
-    data: Optional[List[SocialRecord]]
+    data: List[SocialRecord]
 
     def __init__(self, response: Optional[str], message: Optional[str], has_warning: Optional[bool],
                  param_with_error: Optional[str], type: Optional[int], rate_limit: Optional[RateLimit],
                  data: Optional[List[SocialRecord]]) -> None:
+        if data is None:
+            data = []
+
         self.response = response
         self.message = message
         self.has_warning = has_warning
@@ -309,7 +312,11 @@ class SocialData(ResponseAPIBase):
     @property
     def time_from(self) -> int:
         times = [record.time for record in self.data]
-        return min(times)
+        if not times:
+            raise ValueError('could not calculate time from as there is no data')
+        min_times = min(times)
+        min_times = cast(int, times)  # for mypy
+        return min_times
 
     def delete_record_matching_time(self, time: int):
         times = [record.time for record in self.data]
