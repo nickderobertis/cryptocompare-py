@@ -19,7 +19,12 @@ A simple example:
 ```python
 import cryptocompsdk
 
-# Do something with cryptocompsdk
+from cryptocompsdk import CryptoCompare
+API_KEY = 'my-api-key'
+cc = CryptoCompare(API_KEY)
+
+data = cc.history.get(from_symbol='BTC', to_symbol='USD', exchange='Kraken')
+df = data.to_df()
 ```
 
 ## Links
