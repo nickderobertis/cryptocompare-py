@@ -173,7 +173,7 @@ class Data:
         data = from_union(
             [lambda x: from_list(BlockchainHistoryRecord.from_dict, x), from_none], obj.get("Data")
         )
-        return Data(aggregated, time_from, time_to, data)
+        return Data(data, aggregated, time_from, time_to)
 
     def to_dict(self) -> dict:
         result: dict = {}
@@ -236,7 +236,7 @@ class BlockchainHistory(ResponseAPIBase):
         type = from_union([from_int, from_none], obj.get("Type"))
         rate_limit = from_union([RateLimit.from_dict, from_none], obj.get("RateLimit"))
         data = from_union([Data.from_dict, from_none], obj.get("Data"))
-        return BlockchainHistory(response, message, has_warning, type, rate_limit, data)
+        return BlockchainHistory(data, response, message, has_warning, type, rate_limit)
 
     def to_dict(self) -> dict:
         result: dict = {}
