@@ -83,7 +83,7 @@ class APIBase:
     def _get_with_pagination(self, url: str, payload: Dict[str, Any],
                              max_api_calls: Optional[int] = None):
         if max_api_calls is None:
-            # TODO: less hackish
+            # TODO [#4]: less hackish
             max_api_calls = 10000000
 
         payload['limit'] = MAX_LIMIT_PER_API_CALL
