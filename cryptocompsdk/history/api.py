@@ -22,7 +22,7 @@ class HistoryAPI(APIBase):
             toTs=end_time,
         )
 
-        return super().get(url, payload, max_api_calls=max_api_calls)
+        return self._get_one_or_paginated(url, payload, max_api_calls=max_api_calls)
 
     def _get_api_url_from_freq(self, freq: str) -> str:
         parsed_freq = freq.lower().strip()[0]

@@ -17,7 +17,7 @@ class ExchangeSymbolsAPI(APIBase):
             topTier=top_tier_only
         )
 
-        return super().get(ALL_EXCHANGE_URL, payload)
+        return self._get_one_or_paginated(ALL_EXCHANGE_URL, payload)
 
     def _class_factory(self, data: dict) -> ExchangesSymbols:
         return exchanges_symbols_from_dict(data)

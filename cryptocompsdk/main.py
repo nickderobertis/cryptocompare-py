@@ -1,5 +1,6 @@
 from typing import Dict, Optional
 
+from cryptocompsdk.coins.parse import Coins
 from cryptocompsdk.exchanges.info.api import ExchangeInfoAPI
 from cryptocompsdk.exchanges.symbols.api import ExchangeSymbolsAPI
 from cryptocompsdk.request import APIBase
@@ -31,12 +32,12 @@ class CryptoCompare(APIBase):
         self.exchange_symbols = ExchangeSymbolsAPI(api_key, throttle)
         self.exchange_info = ExchangeInfoAPI(api_key, throttle)
 
-        self._coin_response = None
+        self._coin_response: Optional[Coins] = None
 
     @property
     def coin_ids(self) -> Dict[str, int]:
         try:
-            return self._coin_response.symbol_id_dict
+            return self._coin_response.symbol_id_dict  # type: ignore
         except AttributeError:
             self._coin_response = self.coins.get()
             return self._coin_response.symbol_id_dict

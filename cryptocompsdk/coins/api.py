@@ -7,7 +7,7 @@ class CoinsAPI(APIBase):
     _exception_class = CouldNotGetCoinsException
 
     def get(self) -> Coins:
-        return super().get(COIN_LIST_URL)
+        return self._get_one_or_paginated(COIN_LIST_URL)
 
     def _class_factory(self, data: dict):
         return coins_from_dict(data)
