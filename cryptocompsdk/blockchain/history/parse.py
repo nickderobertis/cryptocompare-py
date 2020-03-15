@@ -258,7 +258,7 @@ class BlockchainHistory(ResponseAPIBase):
 
     # Pagination methods
 
-    # TODO [$5e6ea3695c4cf20007dca0b5]: think about restructuring pagination parse methods
+    # TODO [#9]: think about restructuring pagination parse methods
     #
     # There is a lot of repeated code for pagination between blockchain history and price history
     # in the parse classes. If any additional history APIs are added and they follow the same
