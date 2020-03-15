@@ -11,6 +11,7 @@ Subpackages
 
 .. toctree::
 
+   cryptocompsdk.blockchain
    cryptocompsdk.coins
    cryptocompsdk.exchanges
    cryptocompsdk.general

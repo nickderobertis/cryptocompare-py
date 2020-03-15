@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk package &mdash; cryptocompsdk 0.1.6 documentation</title>
+  <title>cryptocompsdk package &mdash; cryptocompsdk 0.2.0 documentation</title>
   
 
   
@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="../_static/sphinx_paramlinks.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="cryptocompsdk.coins package" href="cryptocompsdk.coins.html" />
+    <link rel="next" title="cryptocompsdk.blockchain package" href="cryptocompsdk.blockchain.html" />
     <link rel="prev" title="cryptocompsdk" href="modules.html" /> 
 </head>
 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.1.6
+                0.2.0
               </div>
             
           
@@ -99,6 +99,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">cryptocompsdk</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">cryptocompsdk package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.blockchain.html">cryptocompsdk.blockchain package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.coins.html">cryptocompsdk.coins package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.exchanges.html">cryptocompsdk.exchanges package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.general.html">cryptocompsdk.general package</a></li>
@@ -189,6 +190,24 @@
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="cryptocompsdk.blockchain.html">cryptocompsdk.blockchain package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cryptocompsdk.blockchain.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.blockchain.available.html">cryptocompsdk.blockchain.available package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.blockchain.available.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.blockchain.available.html#module-cryptocompsdk.blockchain.available.api">cryptocompsdk.blockchain.available.api module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.blockchain.available.html#module-cryptocompsdk.blockchain.available.parse">cryptocompsdk.blockchain.available.parse module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.blockchain.history.html">cryptocompsdk.blockchain.history package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.blockchain.history.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.blockchain.history.html#module-cryptocompsdk.blockchain.history.api">cryptocompsdk.blockchain.history.api module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.blockchain.history.html#module-cryptocompsdk.blockchain.history.parse">cryptocompsdk.blockchain.history.parse module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="cryptocompsdk.coins.html">cryptocompsdk.coins package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="cryptocompsdk.coins.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cryptocompsdk.coins.html#module-cryptocompsdk.coins.api">cryptocompsdk.coins.api module</a></li>
@@ -251,6 +270,8 @@
 <p>social <a class="reference internal" href="cryptocompsdk.social.html#cryptocompsdk.social.api.SocialAPI" title="cryptocompsdk.social.api.SocialAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">SocialAPI</span></code></a></p>
 <p>exchange_symbols <a class="reference internal" href="cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI" title="cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExchangeSymbolsAPI</span></code></a></p>
 <p>exchange_info <a class="reference internal" href="cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.api.ExchangeInfoAPI" title="cryptocompsdk.exchanges.info.api.ExchangeInfoAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExchangeInfoAPI</span></code></a></p>
+<p>blockchain_available_coins <a class="reference internal" href="cryptocompsdk.blockchain.available.html#cryptocompsdk.blockchain.available.api.BlockchainAvailableCoinsAPI" title="cryptocompsdk.blockchain.available.api.BlockchainAvailableCoinsAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">BlockchainAvailableCoinsAPI</span></code></a></p>
+<p>blockchain_history <a class="reference internal" href="cryptocompsdk.blockchain.history.html#cryptocompsdk.blockchain.history.api.BlockchainHistoryAPI" title="cryptocompsdk.blockchain.history.api.BlockchainHistoryAPI"><code class="xref py py-class docutils literal notranslate"><span class="pre">BlockchainHistoryAPI</span></code></a></p>
 <dl class="method">
 <dt id="cryptocompsdk.main.CryptoCompare.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">api_key</em>, <em class="sig-param">throttle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/main.html#CryptoCompare.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.main.CryptoCompare.__init__" title="Permalink to this definition">¶</a></dt>
@@ -395,7 +416,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cryptocompsdk.coins.html" class="btn btn-neutral float-right" title="cryptocompsdk.coins package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="cryptocompsdk.blockchain.html" class="btn btn-neutral float-right" title="cryptocompsdk.blockchain package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="modules.html" class="btn btn-neutral float-left" title="cryptocompsdk" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

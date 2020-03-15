@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk.main &mdash; cryptocompsdk 0.1.6 documentation</title>
+  <title>cryptocompsdk.main &mdash; cryptocompsdk 0.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.6
+                0.2.0
               </div>
             
           
@@ -161,6 +161,8 @@
   <h1>Source code for cryptocompsdk.main</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Optional</span>
 
+<span class="kn">from</span> <span class="nn">cryptocompsdk.blockchain.available.api</span> <span class="kn">import</span> <span class="n">BlockchainAvailableCoinsAPI</span>
+<span class="kn">from</span> <span class="nn">cryptocompsdk.blockchain.history.api</span> <span class="kn">import</span> <span class="n">BlockchainHistoryAPI</span>
 <span class="kn">from</span> <span class="nn">cryptocompsdk.coins.parse</span> <span class="kn">import</span> <span class="n">Coins</span>
 <span class="kn">from</span> <span class="nn">cryptocompsdk.exchanges.info.api</span> <span class="kn">import</span> <span class="n">ExchangeInfoAPI</span>
 <span class="kn">from</span> <span class="nn">cryptocompsdk.exchanges.symbols.api</span> <span class="kn">import</span> <span class="n">ExchangeSymbolsAPI</span>
@@ -183,6 +185,10 @@
 <span class="sd">    exchange_symbols :class:`.ExchangeSymbolsAPI`</span>
 
 <span class="sd">    exchange_info :class:`.ExchangeInfoAPI`</span>
+
+<span class="sd">    blockchain_available_coins :class:`.BlockchainAvailableCoinsAPI`</span>
+
+<span class="sd">    blockchain_history :class:`.BlockchainHistoryAPI`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="CryptoCompare.__init__"><a class="viewcode-back" href="../../api/cryptocompsdk.html#cryptocompsdk.main.CryptoCompare.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">throttle</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
@@ -192,6 +198,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">social</span> <span class="o">=</span> <span class="n">SocialAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">exchange_symbols</span> <span class="o">=</span> <span class="n">ExchangeSymbolsAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">exchange_info</span> <span class="o">=</span> <span class="n">ExchangeInfoAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">blockchain_available_coins</span> <span class="o">=</span> <span class="n">BlockchainAvailableCoinsAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">blockchain_history</span> <span class="o">=</span> <span class="n">BlockchainHistoryAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_coin_response</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Coins</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk.exchanges.symbols.api &mdash; cryptocompsdk 0.2.0 documentation</title>
+  <title>cryptocompsdk.blockchain.history.api &mdash; cryptocompsdk 0.2.0 documentation</title>
   
 
   
@@ -143,7 +143,7 @@
         
           <li><a href="../../../index.html">Module code</a> &raquo;</li>
         
-      <li>cryptocompsdk.exchanges.symbols.api</li>
+      <li>cryptocompsdk.blockchain.history.api</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -158,30 +158,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <h1>Source code for cryptocompsdk.exchanges.symbols.api</h1><div class="highlight"><pre>
+  <h1>Source code for cryptocompsdk.blockchain.history.api</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
 
-<span class="kn">from</span> <span class="nn">cryptocompsdk.exchanges.symbols.parse</span> <span class="kn">import</span> <span class="n">ExchangesSymbols</span><span class="p">,</span> <span class="n">CouldNotGetExchangeSymbolsException</span><span class="p">,</span> <span class="n">exchanges_symbols_from_dict</span>
+<span class="kn">from</span> <span class="nn">cryptocompsdk.blockchain.history.parse</span> <span class="kn">import</span> <span class="n">CouldNotGetBlockchainHistoryException</span><span class="p">,</span> <span class="n">BlockchainHistory</span>
 <span class="kn">from</span> <span class="nn">cryptocompsdk.request</span> <span class="kn">import</span> <span class="n">APIBase</span>
-<span class="kn">from</span> <span class="nn">cryptocompsdk.urls</span> <span class="kn">import</span> <span class="n">ALL_EXCHANGE_URL</span>
+<span class="kn">from</span> <span class="nn">cryptocompsdk.urls</span> <span class="kn">import</span> <span class="n">BLOCKCHAIN_HISTORICAL_DAILY_URL</span>
 
 
-<div class="viewcode-block" id="ExchangeSymbolsAPI"><a class="viewcode-back" href="../../../../api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI">[docs]</a><span class="k">class</span> <span class="nc">ExchangeSymbolsAPI</span><span class="p">(</span><span class="n">APIBase</span><span class="p">):</span>
-    <span class="n">_exception_class</span> <span class="o">=</span> <span class="n">CouldNotGetExchangeSymbolsException</span>
+<div class="viewcode-block" id="BlockchainHistoryAPI"><a class="viewcode-back" href="../../../../api/cryptocompsdk.blockchain.history.html#cryptocompsdk.blockchain.history.api.BlockchainHistoryAPI">[docs]</a><span class="k">class</span> <span class="nc">BlockchainHistoryAPI</span><span class="p">(</span><span class="n">APIBase</span><span class="p">):</span>
+    <span class="n">_exception_class</span> <span class="o">=</span> <span class="n">CouldNotGetBlockchainHistoryException</span>
 
-<div class="viewcode-block" id="ExchangeSymbolsAPI.get"><a class="viewcode-back" href="../../../../api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_symbol</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">exchange</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">top_tier_only</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-            <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ExchangesSymbols</span><span class="p">:</span>
-
+<div class="viewcode-block" id="BlockchainHistoryAPI.get"><a class="viewcode-back" href="../../../../api/cryptocompsdk.blockchain.history.html#cryptocompsdk.blockchain.history.api.BlockchainHistoryAPI.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_symbol</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;BTC&#39;</span><span class="p">,</span> <span class="n">end_time</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">max_api_calls</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BlockchainHistory</span><span class="p">:</span>
         <span class="n">payload</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">fsym</span><span class="o">=</span><span class="n">from_symbol</span><span class="p">,</span>
-            <span class="n">e</span><span class="o">=</span><span class="n">exchange</span><span class="p">,</span>
-            <span class="n">topTier</span><span class="o">=</span><span class="n">top_tier_only</span>
+            <span class="n">limit</span><span class="o">=</span><span class="n">limit</span><span class="p">,</span>
+            <span class="n">toTs</span><span class="o">=</span><span class="n">end_time</span><span class="p">,</span>
         <span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_one_or_paginated</span><span class="p">(</span><span class="n">ALL_EXCHANGE_URL</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_one_or_paginated</span><span class="p">(</span><span class="n">BLOCKCHAIN_HISTORICAL_DAILY_URL</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">max_api_calls</span><span class="o">=</span><span class="n">max_api_calls</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">_class_factory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ExchangesSymbols</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">exchanges_symbols_from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+    <span class="k">def</span> <span class="nf">_class_factory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BlockchainHistory</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">BlockchainHistory</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

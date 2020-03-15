@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk.request &mdash; cryptocompsdk 0.1.6 documentation</title>
+  <title>cryptocompsdk.request &mdash; cryptocompsdk 0.2.0 documentation</title>
   
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.1.6
+                0.2.0
               </div>
             
           
@@ -254,10 +254,18 @@
         <span class="k">while</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">max_api_calls</span><span class="p">:</span>
             <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="n">payload</span><span class="p">[</span><span class="s1">&#39;toTs&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">end_time</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
+            <span class="k">except</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exception_class</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="c1"># In blockchain history API, upon going too far back, it sends this message back</span>
+                <span class="k">if</span> <span class="s1">&#39;does not have data available before requested timestamp&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+                    <span class="k">break</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">e</span>
             <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">all_data</span> <span class="o">=</span> <span class="n">data</span>
             <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">is_empty</span><span class="p">:</span>
+                <span class="c1"># In price history API, upon going too far back, it sends 0 for all data</span>
                 <span class="k">break</span>
             <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="c1"># chop off matching record. The end_time observation will be included in both responses</span>

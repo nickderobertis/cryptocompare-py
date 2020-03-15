@@ -1,0 +1,618 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>cryptocompsdk.blockchain.history package &mdash; cryptocompsdk 0.2.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_paramlinks.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cryptocompsdk.coins package" href="cryptocompsdk.coins.html" />
+    <link rel="prev" title="cryptocompsdk.blockchain.available package" href="cryptocompsdk.blockchain.available.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> cryptocompsdk
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Getting started with cryptocompsdk</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">cryptocompsdk</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="cryptocompsdk.html">cryptocompsdk package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="cryptocompsdk.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="cryptocompsdk.blockchain.html">cryptocompsdk.blockchain package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.coins.html">cryptocompsdk.coins package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.exchanges.html">cryptocompsdk.exchanges package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.general.html">cryptocompsdk.general package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.history.html">cryptocompsdk.history package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cryptocompsdk.social.html">cryptocompsdk.social package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.config">cryptocompsdk.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.main">cryptocompsdk.main module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.request">cryptocompsdk.request module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.response">cryptocompsdk.response module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.urls">cryptocompsdk.urls module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">cryptocompsdk</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">cryptocompsdk</a> &raquo;</li>
+        
+          <li><a href="cryptocompsdk.html">cryptocompsdk package</a> &raquo;</li>
+        
+          <li><a href="cryptocompsdk.blockchain.html">cryptocompsdk.blockchain package</a> &raquo;</li>
+        
+      <li>cryptocompsdk.blockchain.history package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/cryptocompsdk.blockchain.history.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-cryptocompsdk.blockchain.history">
+<span id="cryptocompsdk-blockchain-history-package"></span><h1>cryptocompsdk.blockchain.history package<a class="headerlink" href="#module-cryptocompsdk.blockchain.history" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cryptocompsdk.blockchain.history.api">
+<span id="cryptocompsdk-blockchain-history-api-module"></span><h2>cryptocompsdk.blockchain.history.api module<a class="headerlink" href="#module-cryptocompsdk.blockchain.history.api" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cryptocompsdk.blockchain.history.api.BlockchainHistoryAPI">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.blockchain.history.api.</code><code class="sig-name descname">BlockchainHistoryAPI</code><span class="sig-paren">(</span><em class="sig-param">api_key</em>, <em class="sig-param">throttle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/api.html#BlockchainHistoryAPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.api.BlockchainHistoryAPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.request.APIBase" title="cryptocompsdk.request.APIBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.request.APIBase</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.api.BlockchainHistoryAPI.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">from_symbol='BTC'</em>, <em class="sig-param">end_time=None</em>, <em class="sig-param">limit=100</em>, <em class="sig-param">max_api_calls=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/api.html#BlockchainHistoryAPI.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.api.BlockchainHistoryAPI.get" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory" title="cryptocompsdk.blockchain.history.parse.BlockchainHistory"><code class="xref py py-class docutils literal notranslate"><span class="pre">BlockchainHistory</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cryptocompsdk.blockchain.history.parse">
+<span id="cryptocompsdk-blockchain-history-parse-module"></span><h2>cryptocompsdk.blockchain.history.parse module<a class="headerlink" href="#module-cryptocompsdk.blockchain.history.parse" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistory">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.blockchain.history.parse.</code><code class="sig-name descname">BlockchainHistory</code><span class="sig-paren">(</span><em class="sig-param">data: cryptocompsdk.blockchain.history.parse.Data</em>, <em class="sig-param">response: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">message: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">has_warning: Union[bool</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">type: Union[int</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">rate_limit: Union[cryptocompsdk.blockchain.history.parse.RateLimit</em>, <em class="sig-param">NoneType] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#BlockchainHistory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.response.ResponseAPIBase" title="cryptocompsdk.response.ResponseAPIBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.response.ResponseAPIBase</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistory.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">data: cryptocompsdk.blockchain.history.parse.Data</em>, <em class="sig-param">response: Optional[str] = None</em>, <em class="sig-param">message: Optional[str] = None</em>, <em class="sig-param">has_warning: Optional[bool] = None</em>, <em class="sig-param">type: Optional[int] = None</em>, <em class="sig-param">rate_limit: Optional[cryptocompsdk.blockchain.history.parse.RateLimit] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistory.data">
+<code class="sig-name descname">data</code><em class="property">: Data</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistory.delete_record_matching_time">
+<code class="sig-name descname">delete_record_matching_time</code><span class="sig-paren">(</span><em class="sig-param">time</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#BlockchainHistory.delete_record_matching_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory.delete_record_matching_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistory.from_dict">
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#BlockchainHistory.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory" title="cryptocompsdk.blockchain.history.parse.BlockchainHistory"><code class="xref py py-class docutils literal notranslate"><span class="pre">BlockchainHistory</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistory.has_warning">
+<code class="sig-name descname">has_warning</code><em class="property">: Optional[bool]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory.has_warning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistory.is_empty">
+<em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistory.message">
+<code class="sig-name descname">message</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistory.rate_limit">
+<code class="sig-name descname">rate_limit</code><em class="property">: Optional[cryptocompsdk.blockchain.history.parse.RateLimit]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory.rate_limit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistory.response">
+<code class="sig-name descname">response</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory.response" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistory.time_from">
+<em class="property">property </em><code class="sig-name descname">time_from</code><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory.time_from" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistory.to_df">
+<code class="sig-name descname">to_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#BlockchainHistory.to_df"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory.to_df" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistory.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#BlockchainHistory.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistory.trim_empty_records_at_beginning">
+<code class="sig-name descname">trim_empty_records_at_beginning</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#BlockchainHistory.trim_empty_records_at_beginning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory.trim_empty_records_at_beginning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistory.type">
+<code class="sig-name descname">type</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistory.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.blockchain.history.parse.</code><code class="sig-name descname">BlockchainHistoryRecord</code><span class="sig-paren">(</span><em class="sig-param">id: Union[int</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">symbol: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">time: Union[int</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">zero_balance_addresses_all_time: Union[int</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">unique_addresses_all_time: Union[int</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">new_addresses: Union[int</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">active_addresses: Union[int</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">transaction_count: Union[int</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">transaction_count_all_time: Union[int</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">large_transaction_count: Union[int</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">average_transaction_value: Union[float</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">block_height: Union[float</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">hashrate: Union[float</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">difficulty: Union[float</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">block_time: Union[float</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">block_size: Union[float</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">current_supply: Union[float</em>, <em class="sig-param">NoneType] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#BlockchainHistoryRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">id: Optional[int] = None</em>, <em class="sig-param">symbol: Optional[str] = None</em>, <em class="sig-param">time: Optional[int] = None</em>, <em class="sig-param">zero_balance_addresses_all_time: Optional[int] = None</em>, <em class="sig-param">unique_addresses_all_time: Optional[int] = None</em>, <em class="sig-param">new_addresses: Optional[int] = None</em>, <em class="sig-param">active_addresses: Optional[int] = None</em>, <em class="sig-param">transaction_count: Optional[int] = None</em>, <em class="sig-param">transaction_count_all_time: Optional[int] = None</em>, <em class="sig-param">large_transaction_count: Optional[int] = None</em>, <em class="sig-param">average_transaction_value: Optional[float] = None</em>, <em class="sig-param">block_height: Optional[float] = None</em>, <em class="sig-param">hashrate: Optional[float] = None</em>, <em class="sig-param">difficulty: Optional[float] = None</em>, <em class="sig-param">block_time: Optional[float] = None</em>, <em class="sig-param">block_size: Optional[float] = None</em>, <em class="sig-param">current_supply: Optional[float] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.active_addresses">
+<code class="sig-name descname">active_addresses</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.active_addresses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.average_transaction_value">
+<code class="sig-name descname">average_transaction_value</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.average_transaction_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.block_height">
+<code class="sig-name descname">block_height</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.block_height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.block_size">
+<code class="sig-name descname">block_size</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.block_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.block_time">
+<code class="sig-name descname">block_time</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.block_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.current_supply">
+<code class="sig-name descname">current_supply</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.current_supply" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.difficulty">
+<code class="sig-name descname">difficulty</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.difficulty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.from_dict">
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#BlockchainHistoryRecord.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord" title="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord"><code class="xref py py-class docutils literal notranslate"><span class="pre">BlockchainHistoryRecord</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.hashrate">
+<code class="sig-name descname">hashrate</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.hashrate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.id">
+<code class="sig-name descname">id</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.is_empty">
+<em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.is_empty" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.large_transaction_count">
+<code class="sig-name descname">large_transaction_count</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.large_transaction_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.new_addresses">
+<code class="sig-name descname">new_addresses</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.new_addresses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.symbol">
+<code class="sig-name descname">symbol</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.symbol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.time">
+<code class="sig-name descname">time</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#BlockchainHistoryRecord.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.transaction_count">
+<code class="sig-name descname">transaction_count</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.transaction_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.transaction_count_all_time">
+<code class="sig-name descname">transaction_count_all_time</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.transaction_count_all_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.unique_addresses_all_time">
+<code class="sig-name descname">unique_addresses_all_time</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.unique_addresses_all_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.zero_balance_addresses_all_time">
+<code class="sig-name descname">zero_balance_addresses_all_time</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.zero_balance_addresses_all_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="cryptocompsdk.blockchain.history.parse.CouldNotGetBlockchainHistoryException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.blockchain.history.parse.</code><code class="sig-name descname">CouldNotGetBlockchainHistoryException</code><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#CouldNotGetBlockchainHistoryException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.CouldNotGetBlockchainHistoryException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.response.ResponseException" title="cryptocompsdk.response.ResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.response.ResponseException</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cryptocompsdk.blockchain.history.parse.Data">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.blockchain.history.parse.</code><code class="sig-name descname">Data</code><span class="sig-paren">(</span><em class="sig-param">data: List[cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord], aggregated: Union[bool, NoneType] = None, time_from: Union[int, NoneType] = None, time_to: Union[int, NoneType] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#Data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.Data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.Data.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">data: List[cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord], aggregated: Optional[bool] = None, time_from: Optional[int] = None, time_to: Optional[int] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.Data.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.Data.aggregated">
+<code class="sig-name descname">aggregated</code><em class="property">: Optional[bool]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.Data.aggregated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.Data.data">
+<code class="sig-name descname">data</code><em class="property">: List[BlockchainHistoryRecord]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.Data.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.Data.from_dict">
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#Data.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.Data.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.blockchain.history.parse.Data" title="cryptocompsdk.blockchain.history.parse.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.Data.time_from">
+<code class="sig-name descname">time_from</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.Data.time_from" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cryptocompsdk.blockchain.history.parse.Data.time_to">
+<code class="sig-name descname">time_to</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.Data.time_to" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.Data.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#Data.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.Data.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cryptocompsdk.blockchain.history.parse.RateLimit">
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.blockchain.history.parse.</code><code class="sig-name descname">RateLimit</code><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#RateLimit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.RateLimit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.RateLimit.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.RateLimit.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.RateLimit.from_dict">
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#RateLimit.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.RateLimit.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.blockchain.history.parse.RateLimit" title="cryptocompsdk.blockchain.history.parse.RateLimit"><code class="xref py py-class docutils literal notranslate"><span class="pre">RateLimit</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cryptocompsdk.blockchain.history.parse.RateLimit.to_dict">
+<code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/history/parse.html#RateLimit.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.history.parse.RateLimit.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cryptocompsdk.coins.html" class="btn btn-neutral float-right" title="cryptocompsdk.coins package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cryptocompsdk.blockchain.available.html" class="btn btn-neutral float-left" title="cryptocompsdk.blockchain.available package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Nick DeRobertis
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-160614930-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>
