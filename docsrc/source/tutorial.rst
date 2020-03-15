@@ -29,5 +29,6 @@ This is a simple example::
 
 
 More details on usage coming later. There is also an SDK for the social, coins,
-exchange symbols, and exchange info APIs. Access them via attributes of the main
+exchange symbols, and exchange info, blockchain available symbols, and
+blockchain history APIs. Access them via attributes of the main
 :class:`.CryptoCompare` class.
