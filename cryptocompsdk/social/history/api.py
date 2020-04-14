@@ -1,7 +1,7 @@
-from typing import Sequence, Optional
+from typing import Optional
 
 from cryptocompsdk.request import APIBase
-from cryptocompsdk.social.parse import SocialData, social_data_from_dict, CouldNotGetSocialException
+from cryptocompsdk.social.history.parse import SocialData, social_data_from_dict, CouldNotGetSocialException
 from cryptocompsdk.urls import DAILY_SOCIAL_URL, HOURLY_SOCIAL_URL
 
 

@@ -8,7 +8,7 @@ from cryptocompsdk.exchanges.symbols.api import ExchangeSymbolsAPI
 from cryptocompsdk.request import APIBase
 from cryptocompsdk.history.api import HistoryAPI
 from cryptocompsdk.coins.api import CoinsAPI
-from cryptocompsdk.social.api import SocialAPI
+from cryptocompsdk.social.history.api import SocialAPI
 
 
 class CryptoCompare(APIBase):
