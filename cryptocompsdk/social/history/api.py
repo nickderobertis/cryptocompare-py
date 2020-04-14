@@ -1,12 +1,12 @@
 from typing import Optional
 
 from cryptocompsdk.request import APIBase
-from cryptocompsdk.social.history.parse import SocialData, social_data_from_dict, CouldNotGetSocialException
+from cryptocompsdk.social.history.parse import SocialData, social_data_from_dict, CouldNotGetSocialHistoryException
 from cryptocompsdk.urls import DAILY_SOCIAL_URL, HOURLY_SOCIAL_URL
 
 
-class SocialAPI(APIBase):
-    _exception_class = CouldNotGetSocialException
+class SocialHistoryAPI(APIBase):
+    _exception_class = CouldNotGetSocialHistoryException
 
     def get(self, coin_id: int = 1182, freq: str = 'd',aggregate: Optional[int] = None, end_time: Optional[int] = None,
             limit: int = 100) -> SocialData:
