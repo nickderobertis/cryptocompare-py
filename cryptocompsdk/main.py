@@ -8,6 +8,7 @@ from cryptocompsdk.exchanges.symbols.api import ExchangeSymbolsAPI
 from cryptocompsdk.request import APIBase
 from cryptocompsdk.history.api import HistoryAPI
 from cryptocompsdk.coins.api import CoinsAPI
+from cryptocompsdk.social.current.api import SocialLatestAPI
 from cryptocompsdk.social.history.api import SocialHistoryAPI
 
 
@@ -37,6 +38,7 @@ class CryptoCompare(APIBase):
         self.history = HistoryAPI(api_key, throttle)
         self.coins = CoinsAPI(api_key, throttle)
         self.social_history = SocialHistoryAPI(api_key, throttle)
+        self.social_latest = SocialLatestAPI(api_key, throttle)
         self.exchange_symbols = ExchangeSymbolsAPI(api_key, throttle)
         self.exchange_info = ExchangeInfoAPI(api_key, throttle)
         self.blockchain_available_coins = BlockchainAvailableCoinsAPI(api_key, throttle)
