@@ -123,6 +123,14 @@ def from_int_or_str(x: Any) -> Union[str, int]:
         return from_str(x)
 
 
+def from_stringified_bool(x: str) -> bool:
+    if x == "true":
+        return True
+    if x == "false":
+        return False
+    raise NotStrException(x)
+
+
 def from_str_number(x: Any) -> Union[int, float]:
     x = from_str(x)
     x = x.replace(',', '')  # strip thousands separators
