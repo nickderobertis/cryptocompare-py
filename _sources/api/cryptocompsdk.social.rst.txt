@@ -6,22 +6,10 @@ cryptocompsdk.social package
    :undoc-members:
    :show-inheritance:
 
-Submodules
-----------
+Subpackages
+-----------
 
-cryptocompsdk.social.api module
--------------------------------
+.. toctree::
 
-.. automodule:: cryptocompsdk.social.api
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-cryptocompsdk.social.parse module
----------------------------------
-
-.. automodule:: cryptocompsdk.social.parse
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
+   cryptocompsdk.social.current
+   cryptocompsdk.social.history

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk.exchanges.symbols package &mdash; cryptocompsdk 0.2.1 documentation</title>
+  <title>cryptocompsdk.exchanges.symbols package &mdash; cryptocompsdk 0.3.0 documentation</title>
   
 
   
@@ -36,10 +36,12 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/sphinx_paramlinks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-dataframe.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cryptocompsdk.general package" href="cryptocompsdk.general.html" />
@@ -67,7 +69,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.3.0
               </div>
             
           
@@ -195,13 +197,13 @@
 </div>
 <div class="section" id="module-cryptocompsdk.exchanges.symbols.api">
 <span id="cryptocompsdk-exchanges-symbols-api-module"></span><h2>cryptocompsdk.exchanges.symbols.api module<a class="headerlink" href="#module-cryptocompsdk.exchanges.symbols.api" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<dl class="py class">
 <dt id="cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI">
-<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.api.</code><code class="sig-name descname">ExchangeSymbolsAPI</code><span class="sig-paren">(</span><em class="sig-param">api_key</em>, <em class="sig-param">throttle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/api.html#ExchangeSymbolsAPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.api.</code><code class="sig-name descname">ExchangeSymbolsAPI</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">api_key</span></em>, <em class="sig-param"><span class="n">throttle</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/api.html#ExchangeSymbolsAPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.request.APIBase" title="cryptocompsdk.request.APIBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.request.APIBase</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">from_symbol=None</em>, <em class="sig-param">exchange=None</em>, <em class="sig-param">top_tier_only=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/api.html#ExchangeSymbolsAPI.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI.get" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">from_symbol</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">exchange</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">top_tier_only</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/api.html#ExchangeSymbolsAPI.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.api.ExchangeSymbolsAPI.get" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols" title="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExchangesSymbols</span></code></a></p>
@@ -214,19 +216,19 @@
 </div>
 <div class="section" id="module-cryptocompsdk.exchanges.symbols.parse">
 <span id="cryptocompsdk-exchanges-symbols-parse-module"></span><h2>cryptocompsdk.exchanges.symbols.parse module<a class="headerlink" href="#module-cryptocompsdk.exchanges.symbols.parse" title="Permalink to this headline">¶</a></h2>
-<dl class="exception">
+<dl class="py exception">
 <dt id="cryptocompsdk.exchanges.symbols.parse.CouldNotGetExchangeSymbolsException">
 <em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.parse.</code><code class="sig-name descname">CouldNotGetExchangeSymbolsException</code><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#CouldNotGetExchangeSymbolsException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.CouldNotGetExchangeSymbolsException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.response.ResponseException" title="cryptocompsdk.response.ResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.response.ResponseException</span></code></a></p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols">
-<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.parse.</code><code class="sig-name descname">ExchangesSymbols</code><span class="sig-paren">(</span><em class="sig-param">data: dict</em>, <em class="sig-param">response: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">message: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">has_warning: Union[bool</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">param_with_error: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">type: Union[int</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">rate_limit: Union[cryptocompsdk.exchanges.symbols.parse.RateLimit</em>, <em class="sig-param">NoneType] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#ExchangesSymbols"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.parse.</code><code class="sig-name descname">ExchangesSymbols</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></span></em>, <em class="sig-param"><span class="n">response</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">message</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_warning</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a><span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">param_with_error</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">type</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a><span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rate_limit</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference internal" href="#cryptocompsdk.exchanges.symbols.parse.RateLimit" title="cryptocompsdk.exchanges.symbols.parse.RateLimit">cryptocompsdk.exchanges.symbols.parse.RateLimit</a><span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#ExchangesSymbols"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.response.ResponseAPIBase" title="cryptocompsdk.response.ResponseAPIBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.response.ResponseAPIBase</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">data: dict</em>, <em class="sig-param">response: Optional[str] = None</em>, <em class="sig-param">message: Optional[str] = None</em>, <em class="sig-param">has_warning: Optional[bool] = None</em>, <em class="sig-param">param_with_error: Optional[str] = None</em>, <em class="sig-param">type: Optional[int] = None</em>, <em class="sig-param">rate_limit: Optional[cryptocompsdk.exchanges.symbols.parse.RateLimit] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)">dict</a></span></em>, <em class="sig-param"><span class="n">response</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">message</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_warning</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">param_with_error</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">type</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rate_limit</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference internal" href="#cryptocompsdk.exchanges.symbols.parse.RateLimit" title="cryptocompsdk.exchanges.symbols.parse.RateLimit">cryptocompsdk.exchanges.symbols.parse.RateLimit</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
@@ -234,14 +236,14 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.data">
 <code class="sig-name descname">data</code><em class="property">: dict</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.from_dict">
-<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#ExchangesSymbols.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.from_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#ExchangesSymbols.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols" title="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExchangesSymbols</span></code></a></p>
@@ -249,32 +251,32 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.has_warning">
 <code class="sig-name descname">has_warning</code><em class="property">: Optional[bool]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.has_warning" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.message">
 <code class="sig-name descname">message</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.message" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.param_with_error">
 <code class="sig-name descname">param_with_error</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.param_with_error" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.rate_limit">
 <code class="sig-name descname">rate_limit</code><em class="property">: Optional[cryptocompsdk.exchanges.symbols.parse.RateLimit]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.rate_limit" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.response">
 <code class="sig-name descname">response</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.response" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_df">
 <code class="sig-name descname">to_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#ExchangesSymbols.to_df"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_df" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -284,7 +286,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_dict">
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#ExchangesSymbols.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -294,7 +296,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_history_query_dicts">
 <code class="sig-name descname">to_history_query_dicts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#ExchangesSymbols.to_history_query_dicts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_history_query_dicts" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -304,20 +306,20 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.type">
 <code class="sig-name descname">type</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cryptocompsdk.exchanges.symbols.parse.RateLimit">
 <em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.parse.</code><code class="sig-name descname">RateLimit</code><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#RateLimit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.RateLimit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.exchanges.symbols.parse.RateLimit.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.RateLimit.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.RateLimit.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
@@ -325,9 +327,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.exchanges.symbols.parse.RateLimit.from_dict">
-<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#RateLimit.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.RateLimit.from_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#RateLimit.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.RateLimit.from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.exchanges.symbols.parse.RateLimit" title="cryptocompsdk.exchanges.symbols.parse.RateLimit"><code class="xref py py-class docutils literal notranslate"><span class="pre">RateLimit</span></code></a></p>
@@ -335,7 +337,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.exchanges.symbols.parse.RateLimit.to_dict">
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#RateLimit.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.RateLimit.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -347,9 +349,9 @@
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cryptocompsdk.exchanges.symbols.parse.exchanges_symbols_from_dict">
-<code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.parse.</code><code class="sig-name descname">exchanges_symbols_from_dict</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#exchanges_symbols_from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.exchanges_symbols_from_dict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.parse.</code><code class="sig-name descname">exchanges_symbols_from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#exchanges_symbols_from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.exchanges_symbols_from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols" title="cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExchangesSymbols</span></code></a></p>
@@ -357,9 +359,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cryptocompsdk.exchanges.symbols.parse.exchanges_symbols_to_dict">
-<code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.parse.</code><code class="sig-name descname">exchanges_symbols_to_dict</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#exchanges_symbols_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.exchanges_symbols_to_dict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cryptocompsdk.exchanges.symbols.parse.</code><code class="sig-name descname">exchanges_symbols_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/exchanges/symbols/parse.html#exchanges_symbols_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.exchanges.symbols.parse.exchanges_symbols_to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.8)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>

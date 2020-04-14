@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk.blockchain.available package &mdash; cryptocompsdk 0.2.1 documentation</title>
+  <title>cryptocompsdk.blockchain.available package &mdash; cryptocompsdk 0.3.0 documentation</title>
   
 
   
@@ -36,10 +36,12 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/sphinx_paramlinks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-dataframe.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cryptocompsdk.blockchain.history package" href="cryptocompsdk.blockchain.history.html" />
@@ -67,7 +69,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.3.0
               </div>
             
           
@@ -195,11 +197,11 @@
 </div>
 <div class="section" id="module-cryptocompsdk.blockchain.available.api">
 <span id="cryptocompsdk-blockchain-available-api-module"></span><h2>cryptocompsdk.blockchain.available.api module<a class="headerlink" href="#module-cryptocompsdk.blockchain.available.api" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<dl class="py class">
 <dt id="cryptocompsdk.blockchain.available.api.BlockchainAvailableCoinsAPI">
-<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.blockchain.available.api.</code><code class="sig-name descname">BlockchainAvailableCoinsAPI</code><span class="sig-paren">(</span><em class="sig-param">api_key</em>, <em class="sig-param">throttle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/api.html#BlockchainAvailableCoinsAPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.api.BlockchainAvailableCoinsAPI" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.blockchain.available.api.</code><code class="sig-name descname">BlockchainAvailableCoinsAPI</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">api_key</span></em>, <em class="sig-param"><span class="n">throttle</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/api.html#BlockchainAvailableCoinsAPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.api.BlockchainAvailableCoinsAPI" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.request.APIBase" title="cryptocompsdk.request.APIBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.request.APIBase</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.blockchain.available.api.BlockchainAvailableCoinsAPI.get">
 <code class="sig-name descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/api.html#BlockchainAvailableCoinsAPI.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.api.BlockchainAvailableCoinsAPI.get" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -214,13 +216,13 @@
 </div>
 <div class="section" id="module-cryptocompsdk.blockchain.available.parse">
 <span id="cryptocompsdk-blockchain-available-parse-module"></span><h2>cryptocompsdk.blockchain.available.parse module<a class="headerlink" href="#module-cryptocompsdk.blockchain.available.parse" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<dl class="py class">
 <dt id="cryptocompsdk.blockchain.available.parse.AvailableCoin">
-<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.blockchain.available.parse.</code><code class="sig-name descname">AvailableCoin</code><span class="sig-paren">(</span><em class="sig-param">id: Union[int</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">symbol: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">partner_symbol: Union[str</em>, <em class="sig-param">NoneType] = None</em>, <em class="sig-param">data_available_from: Union[int</em>, <em class="sig-param">NoneType] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#AvailableCoin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.AvailableCoin" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.blockchain.available.parse.</code><code class="sig-name descname">AvailableCoin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a><span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">symbol</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">partner_symbol</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data_available_from</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a><span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#AvailableCoin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.AvailableCoin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.blockchain.available.parse.AvailableCoin.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">id: Optional[int] = None</em>, <em class="sig-param">symbol: Optional[str] = None</em>, <em class="sig-param">partner_symbol: Optional[str] = None</em>, <em class="sig-param">data_available_from: Optional[int] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.AvailableCoin.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">symbol</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">partner_symbol</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">data_available_from</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.AvailableCoin.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
@@ -228,14 +230,14 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.blockchain.available.parse.AvailableCoin.data_available_from">
 <code class="sig-name descname">data_available_from</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.AvailableCoin.data_available_from" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.blockchain.available.parse.AvailableCoin.from_dict">
-<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#AvailableCoin.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.AvailableCoin.from_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#AvailableCoin.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.AvailableCoin.from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.blockchain.available.parse.AvailableCoin" title="cryptocompsdk.blockchain.available.parse.AvailableCoin"><code class="xref py py-class docutils literal notranslate"><span class="pre">AvailableCoin</span></code></a></p>
@@ -243,22 +245,22 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.blockchain.available.parse.AvailableCoin.id">
 <code class="sig-name descname">id</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.AvailableCoin.id" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.blockchain.available.parse.AvailableCoin.partner_symbol">
 <code class="sig-name descname">partner_symbol</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.AvailableCoin.partner_symbol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.blockchain.available.parse.AvailableCoin.symbol">
 <code class="sig-name descname">symbol</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.AvailableCoin.symbol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.blockchain.available.parse.AvailableCoin.to_dict">
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#AvailableCoin.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.AvailableCoin.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -270,13 +272,13 @@
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins">
-<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.blockchain.available.parse.</code><code class="sig-name descname">BlockchainAvailableCoins</code><span class="sig-paren">(</span><em class="sig-param">data: Dict[str, cryptocompsdk.blockchain.available.parse.AvailableCoin], response: Union[str, NoneType] = None, message: Union[str, NoneType] = None, has_warning: Union[bool, NoneType] = None, type: Union[int, NoneType] = None, rate_limit: Union[cryptocompsdk.blockchain.available.parse.RateLimit, NoneType] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#BlockchainAvailableCoins"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.blockchain.available.parse.</code><code class="sig-name descname">BlockchainAvailableCoins</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span><a class="reference internal" href="#cryptocompsdk.blockchain.available.parse.AvailableCoin" title="cryptocompsdk.blockchain.available.parse.AvailableCoin">cryptocompsdk.blockchain.available.parse.AvailableCoin</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">response</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">message</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_warning</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a><span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">type</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a><span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rate_limit</span><span class="p">:</span> <span class="n">Union<span class="p">[</span><a class="reference internal" href="#cryptocompsdk.blockchain.available.parse.RateLimit" title="cryptocompsdk.blockchain.available.parse.RateLimit">cryptocompsdk.blockchain.available.parse.RateLimit</a><span class="p">, </span>NoneType<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#BlockchainAvailableCoins"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.response.ResponseAPIBase" title="cryptocompsdk.response.ResponseAPIBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.response.ResponseAPIBase</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">data: Dict[str, cryptocompsdk.blockchain.available.parse.AvailableCoin], response: Optional[str] = None, message: Optional[str] = None, has_warning: Optional[bool] = None, type: Optional[int] = None, rate_limit: Optional[cryptocompsdk.blockchain.available.parse.RateLimit] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">, </span><a class="reference internal" href="#cryptocompsdk.blockchain.available.parse.AvailableCoin" title="cryptocompsdk.blockchain.available.parse.AvailableCoin">cryptocompsdk.blockchain.available.parse.AvailableCoin</a><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">response</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">message</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">has_warning</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">type</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rate_limit</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference internal" href="#cryptocompsdk.blockchain.available.parse.RateLimit" title="cryptocompsdk.blockchain.available.parse.RateLimit">cryptocompsdk.blockchain.available.parse.RateLimit</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
@@ -284,14 +286,14 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.data">
 <code class="sig-name descname">data</code><em class="property">: Dict[str, AvailableCoin]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.from_dict">
-<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#BlockchainAvailableCoins.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.from_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#BlockchainAvailableCoins.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins" title="cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins"><code class="xref py py-class docutils literal notranslate"><span class="pre">BlockchainAvailableCoins</span></code></a></p>
@@ -299,27 +301,27 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.has_warning">
 <code class="sig-name descname">has_warning</code><em class="property">: Optional[bool]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.has_warning" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.message">
 <code class="sig-name descname">message</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.message" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.rate_limit">
 <code class="sig-name descname">rate_limit</code><em class="property">: Optional[cryptocompsdk.blockchain.available.parse.RateLimit]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.rate_limit" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.response">
 <code class="sig-name descname">response</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.response" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.symbol_id_dict">
 <em class="property">property </em><code class="sig-name descname">symbol_id_dict</code><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.symbol_id_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -329,7 +331,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.symbol_list">
 <em class="property">property </em><code class="sig-name descname">symbol_list</code><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.symbol_list" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -339,7 +341,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.to_df">
 <code class="sig-name descname">to_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#BlockchainAvailableCoins.to_df"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.to_df" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -349,7 +351,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.to_dict">
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#BlockchainAvailableCoins.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -359,26 +361,26 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.type">
 <code class="sig-name descname">type</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="exception">
+<dl class="py exception">
 <dt id="cryptocompsdk.blockchain.available.parse.CouldNotGetBlockchainAvailableCoinsException">
 <em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.blockchain.available.parse.</code><code class="sig-name descname">CouldNotGetBlockchainAvailableCoinsException</code><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#CouldNotGetBlockchainAvailableCoinsException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.CouldNotGetBlockchainAvailableCoinsException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.response.ResponseException" title="cryptocompsdk.response.ResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.response.ResponseException</span></code></a></p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cryptocompsdk.blockchain.available.parse.RateLimit">
 <em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.blockchain.available.parse.</code><code class="sig-name descname">RateLimit</code><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#RateLimit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.RateLimit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.blockchain.available.parse.RateLimit.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.RateLimit.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.RateLimit.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
@@ -386,9 +388,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.blockchain.available.parse.RateLimit.from_dict">
-<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#RateLimit.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.RateLimit.from_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#RateLimit.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.RateLimit.from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.blockchain.available.parse.RateLimit" title="cryptocompsdk.blockchain.available.parse.RateLimit"><code class="xref py py-class docutils literal notranslate"><span class="pre">RateLimit</span></code></a></p>
@@ -396,7 +398,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.blockchain.available.parse.RateLimit.to_dict">
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/blockchain/available/parse.html#RateLimit.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.blockchain.available.parse.RateLimit.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">

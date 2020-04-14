@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk.main &mdash; cryptocompsdk 0.2.1 documentation</title>
+  <title>cryptocompsdk.main &mdash; cryptocompsdk 0.3.0 documentation</title>
   
 
   
@@ -36,10 +36,12 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/sphinx_paramlinks.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-dataframe.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
 </head>
@@ -65,7 +67,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.3.0
               </div>
             
           
@@ -169,7 +171,8 @@
 <span class="kn">from</span> <span class="nn">cryptocompsdk.request</span> <span class="kn">import</span> <span class="n">APIBase</span>
 <span class="kn">from</span> <span class="nn">cryptocompsdk.history.api</span> <span class="kn">import</span> <span class="n">HistoryAPI</span>
 <span class="kn">from</span> <span class="nn">cryptocompsdk.coins.api</span> <span class="kn">import</span> <span class="n">CoinsAPI</span>
-<span class="kn">from</span> <span class="nn">cryptocompsdk.social.api</span> <span class="kn">import</span> <span class="n">SocialAPI</span>
+<span class="kn">from</span> <span class="nn">cryptocompsdk.social.current.api</span> <span class="kn">import</span> <span class="n">SocialLatestAPI</span>
+<span class="kn">from</span> <span class="nn">cryptocompsdk.social.history.api</span> <span class="kn">import</span> <span class="n">SocialHistoryAPI</span>
 
 
 <div class="viewcode-block" id="CryptoCompare"><a class="viewcode-back" href="../../api/cryptocompsdk.html#cryptocompsdk.main.CryptoCompare">[docs]</a><span class="k">class</span> <span class="nc">CryptoCompare</span><span class="p">(</span><span class="n">APIBase</span><span class="p">):</span>
@@ -180,7 +183,9 @@
 
 <span class="sd">    coins :class:`.CoinsAPI`</span>
 
-<span class="sd">    social :class:`.SocialAPI`</span>
+<span class="sd">    social_history :class:`.SocialHistoryAPI`</span>
+
+<span class="sd">    social_latest :class:`.SocialLatestAPI`</span>
 
 <span class="sd">    exchange_symbols :class:`.ExchangeSymbolsAPI`</span>
 
@@ -195,7 +200,8 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">history</span> <span class="o">=</span> <span class="n">HistoryAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">coins</span> <span class="o">=</span> <span class="n">CoinsAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">social</span> <span class="o">=</span> <span class="n">SocialAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">social_history</span> <span class="o">=</span> <span class="n">SocialHistoryAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">social_latest</span> <span class="o">=</span> <span class="n">SocialLatestAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">exchange_symbols</span> <span class="o">=</span> <span class="n">ExchangeSymbolsAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">exchange_info</span> <span class="o">=</span> <span class="n">ExchangeInfoAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">blockchain_available_coins</span> <span class="o">=</span> <span class="n">BlockchainAvailableCoinsAPI</span><span class="p">(</span><span class="n">api_key</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>

@@ -1,0 +1,27 @@
+cryptocompsdk.social.history package
+====================================
+
+.. automodule:: cryptocompsdk.social.history
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+cryptocompsdk.social.history.api module
+---------------------------------------
+
+.. automodule:: cryptocompsdk.social.history.api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cryptocompsdk.social.history.parse module
+-----------------------------------------
+
+.. automodule:: cryptocompsdk.social.history.parse
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

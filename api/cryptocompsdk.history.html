@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk.history package &mdash; cryptocompsdk 0.2.1 documentation</title>
+  <title>cryptocompsdk.history package &mdash; cryptocompsdk 0.3.0 documentation</title>
   
 
   
@@ -36,10 +36,12 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   <link rel="stylesheet" href="../_static/sphinx_paramlinks.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-dataframe.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cryptocompsdk.social package" href="cryptocompsdk.social.html" />
@@ -67,7 +69,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.3.0
               </div>
             
           
@@ -193,13 +195,13 @@
 </div>
 <div class="section" id="module-cryptocompsdk.history.api">
 <span id="cryptocompsdk-history-api-module"></span><h2>cryptocompsdk.history.api module<a class="headerlink" href="#module-cryptocompsdk.history.api" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
+<dl class="py class">
 <dt id="cryptocompsdk.history.api.HistoryAPI">
-<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.history.api.</code><code class="sig-name descname">HistoryAPI</code><span class="sig-paren">(</span><em class="sig-param">api_key</em>, <em class="sig-param">throttle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/api.html#HistoryAPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.api.HistoryAPI" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.history.api.</code><code class="sig-name descname">HistoryAPI</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">api_key</span></em>, <em class="sig-param"><span class="n">throttle</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/api.html#HistoryAPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.api.HistoryAPI" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.request.APIBase" title="cryptocompsdk.request.APIBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.request.APIBase</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.api.HistoryAPI.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">from_symbol='BTC'</em>, <em class="sig-param">to_symbol='USD'</em>, <em class="sig-param">freq='d'</em>, <em class="sig-param">exchange=None</em>, <em class="sig-param">aggregate=None</em>, <em class="sig-param">end_time=None</em>, <em class="sig-param">limit=100</em>, <em class="sig-param">max_api_calls=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/api.html#HistoryAPI.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.api.HistoryAPI.get" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">from_symbol</span><span class="o">=</span><span class="default_value">'BTC'</span></em>, <em class="sig-param"><span class="n">to_symbol</span><span class="o">=</span><span class="default_value">'USD'</span></em>, <em class="sig-param"><span class="n">freq</span><span class="o">=</span><span class="default_value">'d'</span></em>, <em class="sig-param"><span class="n">exchange</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">aggregate</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end_time</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">max_api_calls</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/api.html#HistoryAPI.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.api.HistoryAPI.get" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.history.parse.HistoricalData" title="cryptocompsdk.history.parse.HistoricalData"><code class="xref py py-class docutils literal notranslate"><span class="pre">HistoricalData</span></code></a></p>
@@ -212,19 +214,19 @@
 </div>
 <div class="section" id="module-cryptocompsdk.history.parse">
 <span id="cryptocompsdk-history-parse-module"></span><h2>cryptocompsdk.history.parse module<a class="headerlink" href="#module-cryptocompsdk.history.parse" title="Permalink to this headline">¶</a></h2>
-<dl class="exception">
+<dl class="py exception">
 <dt id="cryptocompsdk.history.parse.CouldNotGetHistoryException">
 <em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.history.parse.</code><code class="sig-name descname">CouldNotGetHistoryException</code><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#CouldNotGetHistoryException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.CouldNotGetHistoryException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.response.ResponseException" title="cryptocompsdk.response.ResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.response.ResponseException</span></code></a></p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cryptocompsdk.history.parse.Data">
-<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.history.parse.</code><code class="sig-name descname">Data</code><span class="sig-paren">(</span><em class="sig-param">aggregated</em>, <em class="sig-param">time_from</em>, <em class="sig-param">time_to</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#Data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.Data" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.history.parse.</code><code class="sig-name descname">Data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">aggregated</span></em>, <em class="sig-param"><span class="n">time_from</span></em>, <em class="sig-param"><span class="n">time_to</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#Data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.Data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.Data.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">aggregated</em>, <em class="sig-param">time_from</em>, <em class="sig-param">time_to</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#Data.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.Data.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">aggregated</span></em>, <em class="sig-param"><span class="n">time_from</span></em>, <em class="sig-param"><span class="n">time_to</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#Data.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.Data.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -233,19 +235,19 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.Data.aggregated">
 <code class="sig-name descname">aggregated</code><em class="property">: Optional[bool]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.Data.aggregated" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.Data.data">
 <code class="sig-name descname">data</code><em class="property">: List[HistoryRecord]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.Data.data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.Data.from_dict">
-<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#Data.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.Data.from_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#Data.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.Data.from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.history.parse.Data" title="cryptocompsdk.history.parse.Data"><code class="xref py py-class docutils literal notranslate"><span class="pre">Data</span></code></a></p>
@@ -253,17 +255,17 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.Data.time_from">
 <code class="sig-name descname">time_from</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.Data.time_from" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.Data.time_to">
 <code class="sig-name descname">time_to</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.Data.time_to" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.Data.to_dict">
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#Data.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.Data.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -275,13 +277,13 @@
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cryptocompsdk.history.parse.HistoricalData">
-<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.history.parse.</code><code class="sig-name descname">HistoricalData</code><span class="sig-paren">(</span><em class="sig-param">response</em>, <em class="sig-param">message</em>, <em class="sig-param">param_with_error</em>, <em class="sig-param">has_warning</em>, <em class="sig-param">type</em>, <em class="sig-param">rate_limit</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoricalData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.history.parse.</code><code class="sig-name descname">HistoricalData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response</span></em>, <em class="sig-param"><span class="n">message</span></em>, <em class="sig-param"><span class="n">param_with_error</span></em>, <em class="sig-param"><span class="n">has_warning</span></em>, <em class="sig-param"><span class="n">type</span></em>, <em class="sig-param"><span class="n">rate_limit</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoricalData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.response.ResponseAPIBase" title="cryptocompsdk.response.ResponseAPIBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.response.ResponseAPIBase</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.HistoricalData.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">response</em>, <em class="sig-param">message</em>, <em class="sig-param">param_with_error</em>, <em class="sig-param">has_warning</em>, <em class="sig-param">type</em>, <em class="sig-param">rate_limit</em>, <em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoricalData.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response</span></em>, <em class="sig-param"><span class="n">message</span></em>, <em class="sig-param"><span class="n">param_with_error</span></em>, <em class="sig-param"><span class="n">has_warning</span></em>, <em class="sig-param"><span class="n">type</span></em>, <em class="sig-param"><span class="n">rate_limit</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoricalData.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -290,19 +292,19 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoricalData.data">
 <code class="sig-name descname">data</code><em class="property">: Data</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.HistoricalData.delete_record_matching_time">
-<code class="sig-name descname">delete_record_matching_time</code><span class="sig-paren">(</span><em class="sig-param">time</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoricalData.delete_record_matching_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.delete_record_matching_time" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">delete_record_matching_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoricalData.delete_record_matching_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.delete_record_matching_time" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.HistoricalData.from_dict">
-<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoricalData.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.from_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoricalData.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.history.parse.HistoricalData" title="cryptocompsdk.history.parse.HistoricalData"><code class="xref py py-class docutils literal notranslate"><span class="pre">HistoricalData</span></code></a></p>
@@ -310,12 +312,12 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoricalData.has_warning">
 <code class="sig-name descname">has_warning</code><em class="property">: Optional[bool]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.has_warning" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.HistoricalData.is_empty">
 <em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.is_empty" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -325,27 +327,27 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoricalData.message">
 <code class="sig-name descname">message</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.message" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoricalData.param_with_error">
 <code class="sig-name descname">param_with_error</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.param_with_error" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoricalData.rate_limit">
 <code class="sig-name descname">rate_limit</code><em class="property">: Optional[RateLimit]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.rate_limit" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoricalData.response">
 <code class="sig-name descname">response</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.response" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.HistoricalData.time_from">
 <em class="property">property </em><code class="sig-name descname">time_from</code><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.time_from" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -355,7 +357,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.HistoricalData.to_df">
 <code class="sig-name descname">to_df</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoricalData.to_df"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.to_df" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -365,7 +367,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.HistoricalData.to_dict">
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoricalData.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -375,25 +377,25 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.HistoricalData.trim_empty_records_at_beginning">
 <code class="sig-name descname">trim_empty_records_at_beginning</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoricalData.trim_empty_records_at_beginning"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.trim_empty_records_at_beginning" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoricalData.type">
 <code class="sig-name descname">type</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoricalData.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cryptocompsdk.history.parse.HistoryRecord">
-<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.history.parse.</code><code class="sig-name descname">HistoryRecord</code><span class="sig-paren">(</span><em class="sig-param">time</em>, <em class="sig-param">high</em>, <em class="sig-param">low</em>, <em class="sig-param">open</em>, <em class="sig-param">volumefrom</em>, <em class="sig-param">volumeto</em>, <em class="sig-param">close</em>, <em class="sig-param">conversion_type</em>, <em class="sig-param">conversion_symbol</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoryRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.history.parse.</code><code class="sig-name descname">HistoryRecord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time</span></em>, <em class="sig-param"><span class="n">high</span></em>, <em class="sig-param"><span class="n">low</span></em>, <em class="sig-param"><span class="n">open</span></em>, <em class="sig-param"><span class="n">volumefrom</span></em>, <em class="sig-param"><span class="n">volumeto</span></em>, <em class="sig-param"><span class="n">close</span></em>, <em class="sig-param"><span class="n">conversion_type</span></em>, <em class="sig-param"><span class="n">conversion_symbol</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoryRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.HistoryRecord.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">time</em>, <em class="sig-param">high</em>, <em class="sig-param">low</em>, <em class="sig-param">open</em>, <em class="sig-param">volumefrom</em>, <em class="sig-param">volumeto</em>, <em class="sig-param">close</em>, <em class="sig-param">conversion_type</em>, <em class="sig-param">conversion_symbol</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoryRecord.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time</span></em>, <em class="sig-param"><span class="n">high</span></em>, <em class="sig-param"><span class="n">low</span></em>, <em class="sig-param"><span class="n">open</span></em>, <em class="sig-param"><span class="n">volumefrom</span></em>, <em class="sig-param"><span class="n">volumeto</span></em>, <em class="sig-param"><span class="n">close</span></em>, <em class="sig-param"><span class="n">conversion_type</span></em>, <em class="sig-param"><span class="n">conversion_symbol</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoryRecord.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -402,24 +404,24 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoryRecord.close">
 <code class="sig-name descname">close</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord.close" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoryRecord.conversion_symbol">
 <code class="sig-name descname">conversion_symbol</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord.conversion_symbol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoryRecord.conversion_type">
 <code class="sig-name descname">conversion_type</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord.conversion_type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.HistoryRecord.from_dict">
-<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoryRecord.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord.from_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoryRecord.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord.from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.history.parse.HistoryRecord" title="cryptocompsdk.history.parse.HistoryRecord"><code class="xref py py-class docutils literal notranslate"><span class="pre">HistoryRecord</span></code></a></p>
@@ -427,12 +429,12 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoryRecord.high">
 <code class="sig-name descname">high</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord.high" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.HistoryRecord.is_empty">
 <em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord.is_empty" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -442,22 +444,22 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoryRecord.low">
 <code class="sig-name descname">low</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord.low" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoryRecord.open">
 <code class="sig-name descname">open</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord.open" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoryRecord.time">
 <code class="sig-name descname">time</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord.time" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.HistoryRecord.to_dict">
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#HistoryRecord.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -467,23 +469,23 @@
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoryRecord.volumefrom">
 <code class="sig-name descname">volumefrom</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord.volumefrom" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cryptocompsdk.history.parse.HistoryRecord.volumeto">
 <code class="sig-name descname">volumeto</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.history.parse.HistoryRecord.volumeto" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cryptocompsdk.history.parse.RateLimit">
 <em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.history.parse.</code><code class="sig-name descname">RateLimit</code><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#RateLimit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.RateLimit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.RateLimit.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#RateLimit.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.RateLimit.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
@@ -494,9 +496,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.RateLimit.from_dict">
-<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#RateLimit.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.RateLimit.from_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#RateLimit.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.RateLimit.from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.history.parse.RateLimit" title="cryptocompsdk.history.parse.RateLimit"><code class="xref py py-class docutils literal notranslate"><span class="pre">RateLimit</span></code></a></p>
@@ -504,7 +506,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cryptocompsdk.history.parse.RateLimit.to_dict">
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#RateLimit.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.RateLimit.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
@@ -516,9 +518,9 @@
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cryptocompsdk.history.parse.historical_data_from_dict">
-<code class="sig-prename descclassname">cryptocompsdk.history.parse.</code><code class="sig-name descname">historical_data_from_dict</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#historical_data_from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.historical_data_from_dict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cryptocompsdk.history.parse.</code><code class="sig-name descname">historical_data_from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#historical_data_from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.historical_data_from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#cryptocompsdk.history.parse.HistoricalData" title="cryptocompsdk.history.parse.HistoricalData"><code class="xref py py-class docutils literal notranslate"><span class="pre">HistoricalData</span></code></a></p>
@@ -526,9 +528,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cryptocompsdk.history.parse.historical_data_to_dict">
-<code class="sig-prename descclassname">cryptocompsdk.history.parse.</code><code class="sig-name descname">historical_data_to_dict</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#historical_data_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.historical_data_to_dict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">cryptocompsdk.history.parse.</code><code class="sig-name descname">historical_data_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/history/parse.html#historical_data_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.history.parse.historical_data_to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.8)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
