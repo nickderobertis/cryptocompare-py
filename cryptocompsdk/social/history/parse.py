@@ -323,7 +323,7 @@ class SocialData(ResponseAPIBase):
         try:
             idx = times.index(time)
         except ValueError:
-            raise CouldNotGetSocialException(f'tried removing overlapping time {time} but was not in data')
+            raise CouldNotGetSocialHistoryException(f'tried removing overlapping time {time} but was not in data')
         del self.data[idx]
 
     def trim_empty_records_at_beginning(self):
@@ -348,5 +348,5 @@ def social_data_to_dict(x: SocialData) -> Any:
     return to_class(SocialData, x)
 
 
-class CouldNotGetSocialException(ResponseException):
+class CouldNotGetSocialHistoryException(ResponseException):
     pass
