@@ -98,7 +98,7 @@ class CodeRepository:
     def from_dict(obj: Any) -> 'CodeRepository':
         assert isinstance(obj, dict)
         forks = from_union([from_int, from_none], obj.get("forks"))
-        last_update = from_union([from_none, lambda x: int(from_str(x))], obj.get("last_update"))
+        last_update = from_union([from_none, from_na, lambda x: int(from_str(x))], obj.get("last_update"))
         open_total_issues = from_union([from_int, from_none], obj.get("open_total_issues"))
         subscribers = from_union([from_int, from_none], obj.get("subscribers"))
         fork = from_union([from_none, lambda x: from_stringified_bool(from_str(x))], obj.get("fork"))
@@ -109,12 +109,12 @@ class CodeRepository:
         closed_issues = from_union([from_int, from_none], obj.get("closed_issues"))
         url = from_union([from_str, from_none], obj.get("url"))
         contributors = from_union([from_int, from_none], obj.get("contributors"))
-        created_at = from_union([from_none, lambda x: int(from_str(x))], obj.get("created_at"))
+        created_at = from_union([from_none, from_na, lambda x: int(from_str(x))], obj.get("created_at"))
         open_issues = from_union([from_int, from_none], obj.get("open_issues"))
         source = from_union([Parent.from_dict, from_none], obj.get("source"))
         closed_total_issues = from_union([from_int, from_none], obj.get("closed_total_issues"))
         size = from_union([from_int, from_none], obj.get("size"))
-        last_push = from_union([from_none, lambda x: int(from_str(x))], obj.get("last_push"))
+        last_push = from_union([from_none, from_na, lambda x: int(from_str(x))], obj.get("last_push"))
         return CodeRepository(forks, last_update, open_total_issues, subscribers, fork, closed_pull_issues, parent, open_pull_issues, stars, closed_issues, url, contributors, created_at, open_issues, source, closed_total_issues, size, last_push)
 
     def to_dict(self) -> dict:
@@ -235,7 +235,7 @@ class SimilarItem:
     @staticmethod
     def from_dict(obj: Any) -> 'SimilarItem':
         assert isinstance(obj, dict)
-        id = from_union([from_none, lambda x: int(from_str(x))], obj.get("Id"))
+        id = from_union([from_none, lambda x: int(from_str(x)), from_int], obj.get("Id"))
         name = from_union([from_str, from_none], obj.get("Name"))
         full_name = from_union([from_str, from_none], obj.get("FullName"))
         image_url = from_union([from_str, from_none], obj.get("ImageUrl"))
@@ -401,7 +401,7 @@ class Reddit:
         comments_per_day = from_union([from_float, from_none], obj.get("comments_per_day"))
         active_users = from_union([from_int, from_none], obj.get("active_users"))
         link = from_union([from_str, from_none], obj.get("link"))
-        community_creation = from_union([from_none, lambda x: int(from_str(x))], obj.get("community_creation"))
+        community_creation = from_union([from_none, lambda x: int(from_str(x)), from_int], obj.get("community_creation"))
         posts_per_day = from_union([from_float, from_none], obj.get("posts_per_day"))
         name = from_union([from_str, from_none], obj.get("name"))
         subscribers = from_union([from_int, from_none], obj.get("subscribers"))
