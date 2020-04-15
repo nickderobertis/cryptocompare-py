@@ -59,7 +59,7 @@ class CouldNotParseResponseException(Exception):
 
 
 def from_na(x: Any) -> None:
-    if not isinstance(x, str) or x != 'N/A':
+    if not isinstance(x, str) or x not in ('N/A', 'NaN'):
         raise NotNAException(x)
     return None
 
