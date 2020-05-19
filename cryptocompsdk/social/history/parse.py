@@ -315,7 +315,7 @@ class SocialData(ResponseAPIBase):
         if not times:
             raise ValueError('could not calculate time from as there is no data')
         min_times = min(times)
-        min_times = cast(int, times)  # for mypy
+        min_times = cast(int, min_times)  # for mypy
         return min_times
 
     def delete_record_matching_time(self, time: int):
