@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk.social.history.parse &mdash; cryptocompsdk 0.3.1 documentation</title>
+  <title>cryptocompsdk.social.history.parse &mdash; cryptocompsdk 0.3.2 documentation</title>
   
 
   
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.3.1
+                0.3.2
               </div>
             
           
@@ -478,7 +478,7 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">times</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;could not calculate time from as there is no data&#39;</span><span class="p">)</span>
         <span class="n">min_times</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
-        <span class="n">min_times</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">times</span><span class="p">)</span>  <span class="c1"># for mypy</span>
+        <span class="n">min_times</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">min_times</span><span class="p">)</span>  <span class="c1"># for mypy</span>
         <span class="k">return</span> <span class="n">min_times</span>
 
 <div class="viewcode-block" id="SocialData.delete_record_matching_time"><a class="viewcode-back" href="../../../../api/cryptocompsdk.social.history.html#cryptocompsdk.social.history.parse.SocialData.delete_record_matching_time">[docs]</a>    <span class="k">def</span> <span class="nf">delete_record_matching_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
