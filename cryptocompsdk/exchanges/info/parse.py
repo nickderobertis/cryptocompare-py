@@ -94,7 +94,7 @@ class ExchangeInfo:
     item_type: Optional[List[str]] = None
     centralization_type: Optional[str] = None
     internal_name: Optional[str] = None
-    grade_points: Optional[str] = None
+    grade_points: Optional[float] = None
     grade: Optional[str] = None
     grade_points_split: Optional[GradePointsSplit] = None
     affiliate_url: Optional[str] = None
@@ -123,7 +123,7 @@ class ExchangeInfo:
         item_type = from_union([lambda x: from_list(from_str, x), from_none], obj.get("ItemType"))
         centralization_type = from_union([from_str, from_none], obj.get("CentralizationType"))
         internal_name = from_union([from_str, from_none], obj.get("InternalName"))
-        grade_points = from_union([from_str, from_none], obj.get("GradePoints"))
+        grade_points = from_union([from_float, from_str_number, from_none], obj.get("GradePoints"))
         grade = from_union([from_str, from_none], obj.get("Grade"))
         grade_points_split = from_union([GradePointsSplit.from_dict, from_none], obj.get("GradePointsSplit"))
         affiliate_url = from_union([from_str, from_none], obj.get("AffiliateURL"))
