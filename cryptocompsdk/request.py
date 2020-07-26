@@ -3,7 +3,7 @@ from typing import Optional, Dict, Any, Callable
 import requests
 
 from cryptocompsdk.config import MAX_LIMIT_PER_API_CALL
-from cryptocompsdk.response import ResponseException
+from cryptocompsdk.response import ResponseException, ResponseAPIBase
 
 
 class Request:
@@ -34,6 +34,7 @@ class APIBase:
             payload = api_key_dict
 
         result = requests.get(url, params=payload)
+        print(result.request.url)
         return Request(url, payload, result)
 
     def filter_payload(self, payload: Optional[Dict[str, Any]]):
@@ -49,17 +50,26 @@ class APIBase:
         return with_str_bools
 
     def _get_one_or_paginated(self, url: str, payload: Optional[Dict[str, Any]] = None,
-                              max_api_calls: Optional[int] = None):
+                              max_api_calls: Optional[int] = None,
+                              limit_in_payload: bool = True, date_name: str = 'toTs'):
         """
         This method should be called in the subclass .get method
 
         :param url: url to request
         :param payload: data to send with request
         :param max_api_calls: limit on number of API calls
+        :param limit_in_payload: whether to include the limit parameter in request payload
+        :param date_name: name of date in payload
         :return:
         """
         if payload is not None and payload.get('limit') == 0:
-            return self._get_with_pagination(url, payload=payload, max_api_calls=max_api_calls)
+            return self._get_with_pagination(
+                url,
+                payload=payload,
+                max_api_calls=max_api_calls,
+                limit_in_payload=limit_in_payload,
+                date_name=date_name,
+            )
         return self._get(url, payload=payload)
 
     def _get(self, url: str, payload: Optional[Dict[str, Any]] = None):
@@ -81,18 +91,20 @@ class APIBase:
         return obj
 
     def _get_with_pagination(self, url: str, payload: Dict[str, Any],
-                             max_api_calls: Optional[int] = None):
+                             max_api_calls: Optional[int] = None,
+                             limit_in_payload: bool = True, date_name: str = 'toTs'):
         if max_api_calls is None:
             # TODO [#4]: less hackish
             max_api_calls = 10000000
 
-        payload['limit'] = MAX_LIMIT_PER_API_CALL
+        if limit_in_payload:
+            payload['limit'] = MAX_LIMIT_PER_API_CALL
 
-        end_time = None
+        end_time = payload[date_name]
         i = -1
         while i + 1 < max_api_calls:
             i += 1
-            payload['toTs'] = end_time
+            payload[date_name] = end_time
             try:
                 data = self._get(url, payload)
             except self._exception_class as e:

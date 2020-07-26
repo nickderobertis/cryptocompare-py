@@ -5,6 +5,7 @@ from cryptocompsdk.blockchain.history.api import BlockchainHistoryAPI
 from cryptocompsdk.coins.parse import Coins
 from cryptocompsdk.exchanges.info.api import ExchangeInfoAPI
 from cryptocompsdk.exchanges.symbols.api import ExchangeSymbolsAPI
+from cryptocompsdk.news.api import NewsAPI
 from cryptocompsdk.request import APIBase
 from cryptocompsdk.history.api import HistoryAPI
 from cryptocompsdk.coins.api import CoinsAPI
@@ -31,6 +32,8 @@ class CryptoCompare(APIBase):
     blockchain_available_coins :class:`.BlockchainAvailableCoinsAPI`
 
     blockchain_history :class:`.BlockchainHistoryAPI`
+
+    news :class:`.NewsAPI`
     """
 
     def __init__(self, api_key: str, throttle: Optional[float] = None):
@@ -43,6 +46,7 @@ class CryptoCompare(APIBase):
         self.exchange_info = ExchangeInfoAPI(api_key, throttle)
         self.blockchain_available_coins = BlockchainAvailableCoinsAPI(api_key, throttle)
         self.blockchain_history = BlockchainHistoryAPI(api_key, throttle)
+        self.news = NewsAPI(api_key, throttle)
 
         self._coin_response: Optional[Coins] = None
 
