@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; cryptocompsdk 0.3.2 documentation</title>
+  <title>Index &mdash; cryptocompsdk 0.4.0 documentation</title>
   
 
   
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.3.2
+                0.4.0
               </div>
             
           
@@ -242,6 +242,14 @@
 </li>
         <li><a href="api/cryptocompsdk.html#cryptocompsdk.main.CryptoCompare.__init__">(cryptocompsdk.main.CryptoCompare method)</a>
 </li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.__init__">(cryptocompsdk.news.parse.NewsData method)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.__init__">(cryptocompsdk.news.parse.NewsRecord method)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.RateLimit.__init__">(cryptocompsdk.news.parse.RateLimit method)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.SourceInfo.__init__">(cryptocompsdk.news.parse.SourceInfo method)</a>
+</li>
         <li><a href="api/cryptocompsdk.html#cryptocompsdk.request.APIBase.__init__">(cryptocompsdk.request.APIBase method)</a>
 </li>
         <li><a href="api/cryptocompsdk.html#cryptocompsdk.request.Request.__init__">(cryptocompsdk.request.Request method)</a>
@@ -353,6 +361,8 @@
 </li>
       <li><a href="api/cryptocompsdk.blockchain.history.html#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord">BlockchainHistoryRecord (class in cryptocompsdk.blockchain.history.parse)</a>
 </li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.body">body (cryptocompsdk.news.parse.NewsRecord attribute)</a>
+</li>
       <li><a href="api/cryptocompsdk.coins.html#cryptocompsdk.coins.parse.Coin.built_on">built_on (cryptocompsdk.coins.parse.Coin attribute)</a>
 </li>
   </ul></td>
@@ -361,6 +371,8 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.categories">categories (cryptocompsdk.news.parse.NewsRecord attribute)</a>
+</li>
       <li><a href="api/cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.parse.ExchangeInfo.centralization_type">centralization_type (cryptocompsdk.exchanges.info.parse.ExchangeInfo attribute)</a>
 </li>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.PageViewsSplit.charts">charts (cryptocompsdk.social.current.parse.PageViewsSplit attribute)</a>
@@ -455,6 +467,8 @@
 </li>
       <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.CouldNotGetHistoryException">CouldNotGetHistoryException</a>
 </li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.CouldNotGetNewsException">CouldNotGetNewsException</a>
+</li>
       <li><a href="api/cryptocompsdk.social.history.html#cryptocompsdk.social.history.parse.CouldNotGetSocialHistoryException">CouldNotGetSocialHistoryException</a>
 </li>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.CouldNotGetSocialLatestException">CouldNotGetSocialLatestException</a>
@@ -508,8 +522,6 @@
         <li><a href="api/cryptocompsdk.blockchain.available.html#module-cryptocompsdk.blockchain.available.parse">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     cryptocompsdk.blockchain.history
 
@@ -517,6 +529,8 @@
         <li><a href="api/cryptocompsdk.blockchain.history.html#module-cryptocompsdk.blockchain.history">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     cryptocompsdk.blockchain.history.api
 
@@ -651,6 +665,27 @@
 </li>
       </ul></li>
       <li>
+    cryptocompsdk.news
+
+      <ul>
+        <li><a href="api/cryptocompsdk.news.html#module-cryptocompsdk.news">module</a>
+</li>
+      </ul></li>
+      <li>
+    cryptocompsdk.news.api
+
+      <ul>
+        <li><a href="api/cryptocompsdk.news.html#module-cryptocompsdk.news.api">module</a>
+</li>
+      </ul></li>
+      <li>
+    cryptocompsdk.news.parse
+
+      <ul>
+        <li><a href="api/cryptocompsdk.news.html#module-cryptocompsdk.news.parse">module</a>
+</li>
+      </ul></li>
+      <li>
     cryptocompsdk.request
 
       <ul>
@@ -755,6 +790,8 @@
 </li>
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.HistoricalData.data">(cryptocompsdk.history.parse.HistoricalData attribute)</a>
 </li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.data">(cryptocompsdk.news.parse.NewsData attribute)</a>
+</li>
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.SocialLatest.data">(cryptocompsdk.social.current.parse.SocialLatest attribute)</a>
 </li>
         <li><a href="api/cryptocompsdk.social.history.html#cryptocompsdk.social.history.parse.SocialData.data">(cryptocompsdk.social.history.parse.SocialData attribute)</a>
@@ -769,6 +806,8 @@
       <ul>
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.HistoricalData.delete_record_matching_time">(cryptocompsdk.history.parse.HistoricalData method)</a>
 </li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.delete_record_matching_time">(cryptocompsdk.news.parse.NewsData method)</a>
+</li>
         <li><a href="api/cryptocompsdk.html#cryptocompsdk.response.ResponseAPIBase.delete_record_matching_time">(cryptocompsdk.response.ResponseAPIBase method)</a>
 </li>
         <li><a href="api/cryptocompsdk.social.history.html#cryptocompsdk.social.history.parse.SocialData.delete_record_matching_time">(cryptocompsdk.social.history.parse.SocialData method)</a>
@@ -781,6 +820,8 @@
       <li><a href="api/cryptocompsdk.blockchain.history.html#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.difficulty">difficulty (cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord attribute)</a>
 </li>
       <li><a href="api/cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.parse.ExchangeInfo.displaytotalvolume24_h">displaytotalvolume24_h (cryptocompsdk.exchanges.info.parse.ExchangeInfo attribute)</a>
+</li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.downvotes">downvotes (cryptocompsdk.news.parse.NewsRecord attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -905,6 +946,14 @@
 </li>
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.RateLimit.from_dict">(cryptocompsdk.history.parse.RateLimit static method)</a>
 </li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.from_dict">(cryptocompsdk.news.parse.NewsData static method)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.from_dict">(cryptocompsdk.news.parse.NewsRecord static method)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.RateLimit.from_dict">(cryptocompsdk.news.parse.RateLimit static method)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.SourceInfo.from_dict">(cryptocompsdk.news.parse.SourceInfo static method)</a>
+</li>
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.CodeRepositories.from_dict">(cryptocompsdk.social.current.parse.CodeRepositories static method)</a>
 </li>
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.CodeRepository.from_dict">(cryptocompsdk.social.current.parse.CodeRepository static method)</a>
@@ -999,6 +1048,8 @@
 </li>
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.api.HistoryAPI.get">(cryptocompsdk.history.api.HistoryAPI method)</a>
 </li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.api.NewsAPI.get">(cryptocompsdk.news.api.NewsAPI method)</a>
+</li>
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.api.SocialLatestAPI.get">(cryptocompsdk.social.current.api.SocialLatestAPI method)</a>
 </li>
         <li><a href="api/cryptocompsdk.social.history.html#cryptocompsdk.social.history.api.SocialHistoryAPI.get">(cryptocompsdk.social.history.api.SocialHistoryAPI method)</a>
@@ -1014,14 +1065,20 @@
 </li>
       <li><a href="api/cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.parse.GradePointsSplit">GradePointsSplit (class in cryptocompsdk.exchanges.info.parse)</a>
 </li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.guid">guid (cryptocompsdk.news.parse.NewsRecord attribute)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="H">H</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/cryptocompsdk.html#cryptocompsdk.response.ResponseAPIBase.has_error">has_error() (cryptocompsdk.response.ResponseAPIBase property)</a>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.has_error">has_error() (cryptocompsdk.news.parse.NewsData property)</a>
+
+      <ul>
+        <li><a href="api/cryptocompsdk.html#cryptocompsdk.response.ResponseAPIBase.has_error">(cryptocompsdk.response.ResponseAPIBase property)</a>
 </li>
+      </ul></li>
       <li><a href="api/cryptocompsdk.blockchain.available.html#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.has_warning">has_warning (cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins attribute)</a>
 
       <ul>
@@ -1034,6 +1091,8 @@
         <li><a href="api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.has_warning">(cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols attribute)</a>
 </li>
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.HistoricalData.has_warning">(cryptocompsdk.history.parse.HistoricalData attribute)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.has_warning">(cryptocompsdk.news.parse.NewsData attribute)</a>
 </li>
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.SocialLatest.has_warning">(cryptocompsdk.social.current.parse.SocialLatest attribute)</a>
 </li>
@@ -1071,6 +1130,8 @@
 </li>
         <li><a href="api/cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.parse.ExchangeInfo.id">(cryptocompsdk.exchanges.info.parse.ExchangeInfo attribute)</a>
 </li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.id">(cryptocompsdk.news.parse.NewsRecord attribute)</a>
+</li>
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.SimilarItem.id">(cryptocompsdk.social.current.parse.SimilarItem attribute)</a>
 </li>
       </ul></li>
@@ -1080,6 +1141,10 @@
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.SimilarItem.image_url">(cryptocompsdk.social.current.parse.SimilarItem attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.imageurl">imageurl (cryptocompsdk.news.parse.NewsRecord attribute)</a>
+</li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.SourceInfo.img">img (cryptocompsdk.news.parse.SourceInfo attribute)</a>
+</li>
       <li><a href="api/cryptocompsdk.coins.html#cryptocompsdk.coins.parse.Taxonomy.industry">industry (cryptocompsdk.coins.parse.Taxonomy attribute)</a>
 </li>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.PageViewsSplit.influence">influence (cryptocompsdk.social.current.parse.PageViewsSplit attribute)</a>
@@ -1090,10 +1155,10 @@
 </li>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.Parent.internal_id">internal_id (cryptocompsdk.social.current.parse.Parent attribute)</a>
 </li>
-      <li><a href="api/cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.parse.ExchangeInfo.internal_name">internal_name (cryptocompsdk.exchanges.info.parse.ExchangeInfo attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.parse.ExchangeInfo.internal_name">internal_name (cryptocompsdk.exchanges.info.parse.ExchangeInfo attribute)</a>
+</li>
       <li><a href="api/cryptocompsdk.general.html#cryptocompsdk.general.parse.InvalidTypeException">InvalidTypeException</a>
 </li>
       <li><a href="api/cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.parse.GradePointsSplit.investment">investment (cryptocompsdk.exchanges.info.parse.GradePointsSplit attribute)</a>
@@ -1108,6 +1173,10 @@
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.HistoricalData.is_empty">(cryptocompsdk.history.parse.HistoricalData property)</a>
 </li>
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.HistoryRecord.is_empty">(cryptocompsdk.history.parse.HistoryRecord property)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.is_empty">(cryptocompsdk.news.parse.NewsData property)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.is_empty">(cryptocompsdk.news.parse.NewsRecord property)</a>
 </li>
         <li><a href="api/cryptocompsdk.html#cryptocompsdk.response.ResponseAPIBase.is_empty">(cryptocompsdk.response.ResponseAPIBase property)</a>
 </li>
@@ -1136,6 +1205,12 @@
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.lang">lang (cryptocompsdk.news.parse.NewsRecord attribute)</a>
+
+      <ul>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.SourceInfo.lang">(cryptocompsdk.news.parse.SourceInfo attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/cryptocompsdk.blockchain.history.html#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.large_transaction_count">large_transaction_count (cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord attribute)</a>
 </li>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.CodeRepository.last_push">last_push (cryptocompsdk.social.current.parse.CodeRepository attribute)</a>
@@ -1146,6 +1221,8 @@
 </li>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.Facebook.likes">likes (cryptocompsdk.social.current.parse.Facebook attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.Facebook.link">link (cryptocompsdk.social.current.parse.Facebook attribute)</a>
 
       <ul>
@@ -1154,8 +1231,6 @@
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.Twitter.link">(cryptocompsdk.social.current.parse.Twitter attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.CodeRepositories.list">list (cryptocompsdk.social.current.parse.CodeRepositories attribute)</a>
 </li>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.Twitter.lists">lists (cryptocompsdk.social.current.parse.Twitter attribute)</a>
@@ -1188,6 +1263,8 @@
         <li><a href="api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.message">(cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols attribute)</a>
 </li>
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.HistoricalData.message">(cryptocompsdk.history.parse.HistoricalData attribute)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.message">(cryptocompsdk.news.parse.NewsData attribute)</a>
 </li>
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.SocialLatest.message">(cryptocompsdk.social.current.parse.SocialLatest attribute)</a>
 </li>
@@ -1248,6 +1325,12 @@
 </li>
         <li><a href="api/cryptocompsdk.html#module-cryptocompsdk.main">cryptocompsdk.main</a>
 </li>
+        <li><a href="api/cryptocompsdk.news.html#module-cryptocompsdk.news">cryptocompsdk.news</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#module-cryptocompsdk.news.api">cryptocompsdk.news.api</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#module-cryptocompsdk.news.parse">cryptocompsdk.news.parse</a>
+</li>
         <li><a href="api/cryptocompsdk.html#module-cryptocompsdk.request">cryptocompsdk.request</a>
 </li>
         <li><a href="api/cryptocompsdk.html#module-cryptocompsdk.response">cryptocompsdk.response</a>
@@ -1280,6 +1363,8 @@
       <ul>
         <li><a href="api/cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.parse.ExchangeInfo.name">(cryptocompsdk.exchanges.info.parse.ExchangeInfo attribute)</a>
 </li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.SourceInfo.name">(cryptocompsdk.news.parse.SourceInfo attribute)</a>
+</li>
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.Facebook.name">(cryptocompsdk.social.current.parse.Facebook attribute)</a>
 </li>
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.General.name">(cryptocompsdk.social.current.parse.General attribute)</a>
@@ -1297,9 +1382,19 @@
 </li>
       <li><a href="api/cryptocompsdk.blockchain.history.html#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.new_addresses">new_addresses (cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord attribute)</a>
 </li>
+      <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.PageViewsSplit.news">news (cryptocompsdk.social.current.parse.PageViewsSplit attribute)</a>
+</li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.news_from_dict">news_from_dict() (in module cryptocompsdk.news.parse)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.PageViewsSplit.news">news (cryptocompsdk.social.current.parse.PageViewsSplit attribute)</a>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.news_to_dict">news_to_dict() (in module cryptocompsdk.news.parse)</a>
+</li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.api.NewsAPI">NewsAPI (class in cryptocompsdk.news.api)</a>
+</li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData">NewsData (class in cryptocompsdk.news.parse)</a>
+</li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord">NewsRecord (class in cryptocompsdk.news.parse)</a>
 </li>
       <li><a href="api/cryptocompsdk.general.html#cryptocompsdk.general.parse.NotBoolException">NotBoolException</a>
 </li>
@@ -1403,7 +1498,11 @@
 </li>
       <li><a href="api/cryptocompsdk.coins.html#cryptocompsdk.coins.parse.Coin.pre_mined_value">pre_mined_value (cryptocompsdk.coins.parse.Coin attribute)</a>
 </li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.promoted">promoted (cryptocompsdk.news.parse.NewsData attribute)</a>
+</li>
       <li><a href="api/cryptocompsdk.coins.html#cryptocompsdk.coins.parse.Coin.proof_type">proof_type (cryptocompsdk.coins.parse.Coin attribute)</a>
+</li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.published_on">published_on (cryptocompsdk.news.parse.NewsRecord attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1424,6 +1523,8 @@
 </li>
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.HistoricalData.rate_limit">(cryptocompsdk.history.parse.HistoricalData attribute)</a>
 </li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.rate_limit">(cryptocompsdk.news.parse.NewsData attribute)</a>
+</li>
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.SocialLatest.rate_limit">(cryptocompsdk.social.current.parse.SocialLatest attribute)</a>
 </li>
         <li><a href="api/cryptocompsdk.social.history.html#cryptocompsdk.social.history.parse.SocialData.rate_limit">(cryptocompsdk.social.history.parse.SocialData attribute)</a>
@@ -1442,6 +1543,8 @@
 </li>
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.RateLimit">(class in cryptocompsdk.history.parse)</a>
 </li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.RateLimit">(class in cryptocompsdk.news.parse)</a>
+</li>
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.RateLimit">(class in cryptocompsdk.social.current.parse)</a>
 </li>
         <li><a href="api/cryptocompsdk.social.history.html#cryptocompsdk.social.history.parse.RateLimit">(class in cryptocompsdk.social.history.parse)</a>
@@ -1453,10 +1556,10 @@
 </li>
       <li><a href="api/cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.parse.ExchangeInfo.recommended">recommended (cryptocompsdk.exchanges.info.parse.ExchangeInfo attribute)</a>
 </li>
-      <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.Reddit">Reddit (class in cryptocompsdk.social.current.parse)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.Reddit">Reddit (class in cryptocompsdk.social.current.parse)</a>
+</li>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.SocialData.reddit">reddit (cryptocompsdk.social.current.parse.SocialData attribute)</a>
 </li>
       <li><a href="api/cryptocompsdk.social.history.html#cryptocompsdk.social.history.parse.SocialRecord.reddit_active_users">reddit_active_users (cryptocompsdk.social.history.parse.SocialRecord attribute)</a>
@@ -1543,7 +1646,15 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.CodeRepository.source">source (cryptocompsdk.social.current.parse.CodeRepository attribute)</a>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.source">source (cryptocompsdk.news.parse.NewsRecord attribute)</a>
+
+      <ul>
+        <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.CodeRepository.source">(cryptocompsdk.social.current.parse.CodeRepository attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.source_info">source_info (cryptocompsdk.news.parse.NewsRecord attribute)</a>
+</li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.SourceInfo">SourceInfo (class in cryptocompsdk.news.parse)</a>
 </li>
       <li><a href="api/cryptocompsdk.coins.html#cryptocompsdk.coins.parse.Coin.sponsored">sponsored (cryptocompsdk.coins.parse.Coin attribute)</a>
 
@@ -1587,6 +1698,8 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.tags">tags (cryptocompsdk.news.parse.NewsRecord attribute)</a>
+</li>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.Facebook.talking_about">talking_about (cryptocompsdk.social.current.parse.Facebook attribute)</a>
 </li>
       <li><a href="api/cryptocompsdk.coins.html#cryptocompsdk.coins.parse.Taxonomy">Taxonomy (class in cryptocompsdk.coins.parse)</a>
@@ -1616,6 +1729,8 @@
       <ul>
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.HistoricalData.time_from">(cryptocompsdk.history.parse.HistoricalData property)</a>
 </li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.time_from">(cryptocompsdk.news.parse.NewsData property)</a>
+</li>
         <li><a href="api/cryptocompsdk.html#cryptocompsdk.response.ResponseAPIBase.time_from">(cryptocompsdk.response.ResponseAPIBase property)</a>
 </li>
         <li><a href="api/cryptocompsdk.social.history.html#cryptocompsdk.social.history.parse.SocialData.time_from">(cryptocompsdk.social.history.parse.SocialData property)</a>
@@ -1629,6 +1744,8 @@
       </ul></li>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.PageViewsSplit.timeline">timeline (cryptocompsdk.social.current.parse.PageViewsSplit attribute)</a>
 </li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.title">title (cryptocompsdk.news.parse.NewsRecord attribute)</a>
+</li>
       <li><a href="api/cryptocompsdk.general.html#cryptocompsdk.general.parse.to_class">to_class() (in module cryptocompsdk.general.parse)</a>
 </li>
       <li><a href="api/cryptocompsdk.blockchain.available.html#cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins.to_df">to_df() (cryptocompsdk.blockchain.available.parse.BlockchainAvailableCoins method)</a>
@@ -1641,6 +1758,8 @@
         <li><a href="api/cryptocompsdk.exchanges.symbols.html#cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols.to_df">(cryptocompsdk.exchanges.symbols.parse.ExchangesSymbols method)</a>
 </li>
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.HistoricalData.to_df">(cryptocompsdk.history.parse.HistoricalData method)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.to_df">(cryptocompsdk.news.parse.NewsData method)</a>
 </li>
         <li><a href="api/cryptocompsdk.social.history.html#cryptocompsdk.social.history.parse.SocialData.to_df">(cryptocompsdk.social.history.parse.SocialData method)</a>
 </li>
@@ -1689,6 +1808,14 @@
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.HistoryRecord.to_dict">(cryptocompsdk.history.parse.HistoryRecord method)</a>
 </li>
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.RateLimit.to_dict">(cryptocompsdk.history.parse.RateLimit method)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.to_dict">(cryptocompsdk.news.parse.NewsData method)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.to_dict">(cryptocompsdk.news.parse.NewsRecord method)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.RateLimit.to_dict">(cryptocompsdk.news.parse.RateLimit method)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.SourceInfo.to_dict">(cryptocompsdk.news.parse.SourceInfo method)</a>
 </li>
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.CodeRepositories.to_dict">(cryptocompsdk.social.current.parse.CodeRepositories method)</a>
 </li>
@@ -1760,6 +1887,8 @@
       <ul>
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.HistoricalData.trim_empty_records_at_beginning">(cryptocompsdk.history.parse.HistoricalData method)</a>
 </li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.trim_empty_records_at_beginning">(cryptocompsdk.news.parse.NewsData method)</a>
+</li>
         <li><a href="api/cryptocompsdk.html#cryptocompsdk.response.ResponseAPIBase.trim_empty_records_at_beginning">(cryptocompsdk.response.ResponseAPIBase method)</a>
 </li>
         <li><a href="api/cryptocompsdk.social.history.html#cryptocompsdk.social.history.parse.SocialData.trim_empty_records_at_beginning">(cryptocompsdk.social.history.parse.SocialData method)</a>
@@ -1794,6 +1923,8 @@
 </li>
         <li><a href="api/cryptocompsdk.history.html#cryptocompsdk.history.parse.HistoricalData.type">(cryptocompsdk.history.parse.HistoricalData attribute)</a>
 </li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.type">(cryptocompsdk.news.parse.NewsData attribute)</a>
+</li>
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.General.type">(cryptocompsdk.social.current.parse.General attribute)</a>
 </li>
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.SocialLatest.type">(cryptocompsdk.social.current.parse.SocialLatest attribute)</a>
@@ -1809,10 +1940,14 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/cryptocompsdk.blockchain.history.html#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.unique_addresses_all_time">unique_addresses_all_time (cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord attribute)</a>
 </li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.upvotes">upvotes (cryptocompsdk.news.parse.NewsRecord attribute)</a>
+</li>
       <li><a href="api/cryptocompsdk.coins.html#cryptocompsdk.coins.parse.Coin.url">url (cryptocompsdk.coins.parse.Coin attribute)</a>
 
       <ul>
         <li><a href="api/cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.parse.ExchangeInfo.url">(cryptocompsdk.exchanges.info.parse.ExchangeInfo attribute)</a>
+</li>
+        <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.url">(cryptocompsdk.news.parse.NewsRecord attribute)</a>
 </li>
         <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.CodeRepository.url">(cryptocompsdk.social.current.parse.CodeRepository attribute)</a>
 </li>

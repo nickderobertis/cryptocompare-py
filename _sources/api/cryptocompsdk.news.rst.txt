@@ -1,0 +1,27 @@
+cryptocompsdk.news package
+==========================
+
+.. automodule:: cryptocompsdk.news
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+cryptocompsdk.news.api module
+-----------------------------
+
+.. automodule:: cryptocompsdk.news.api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+cryptocompsdk.news.parse module
+-------------------------------
+
+.. automodule:: cryptocompsdk.news.parse
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

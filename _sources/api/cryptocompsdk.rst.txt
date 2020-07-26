@@ -16,6 +16,7 @@ Subpackages
    cryptocompsdk.exchanges
    cryptocompsdk.general
    cryptocompsdk.history
+   cryptocompsdk.news
    cryptocompsdk.social
 
 Submodules
