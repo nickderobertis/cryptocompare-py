@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk.exchanges.info.parse &mdash; cryptocompsdk 0.4.0 documentation</title>
+  <title>cryptocompsdk.exchanges.info.parse &mdash; cryptocompsdk 0.4.1 documentation</title>
   
 
   
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.4.0
+                0.4.1
               </div>
             
           
@@ -257,7 +257,7 @@
     <span class="n">item_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">centralization_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">internal_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">grade_points</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">grade_points</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">grade</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">grade_points_split</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">GradePointsSplit</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">affiliate_url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -286,7 +286,7 @@
         <span class="n">item_type</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">from_list</span><span class="p">(</span><span class="n">from_str</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">from_none</span><span class="p">],</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ItemType&quot;</span><span class="p">))</span>
         <span class="n">centralization_type</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_str</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;CentralizationType&quot;</span><span class="p">))</span>
         <span class="n">internal_name</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_str</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;InternalName&quot;</span><span class="p">))</span>
-        <span class="n">grade_points</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_str</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;GradePoints&quot;</span><span class="p">))</span>
+        <span class="n">grade_points</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_float</span><span class="p">,</span> <span class="n">from_str_number</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;GradePoints&quot;</span><span class="p">))</span>
         <span class="n">grade</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_str</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;Grade&quot;</span><span class="p">))</span>
         <span class="n">grade_points_split</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">GradePointsSplit</span><span class="o">.</span><span class="n">from_dict</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;GradePointsSplit&quot;</span><span class="p">))</span>
         <span class="n">affiliate_url</span> <span class="o">=</span> <span class="n">from_union</span><span class="p">([</span><span class="n">from_str</span><span class="p">,</span> <span class="n">from_none</span><span class="p">],</span> <span class="n">obj</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AffiliateURL&quot;</span><span class="p">))</span>
