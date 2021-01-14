@@ -287,7 +287,7 @@ class NewsData(ResponseAPIBase):
         if self.data is None:
             raise ValueError('cannot determine time from as there is no data')
 
-        times = [record.published_on for record in self.data]
+        times = [record.published_on for record in self.data if record.published_on is not None]
         if not times:
             raise ValueError('could not calculate time from as there is no data')
         min_times = min(times)
