@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk.news package &mdash; cryptocompsdk 0.4.1 documentation</title>
+  <title>cryptocompsdk.news package &mdash; cryptocompsdk 0.4.2 documentation</title>
   
 
   
@@ -25,7 +25,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     
@@ -42,6 +41,7 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery-binder.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-rendered-html.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cryptocompsdk.social package" href="cryptocompsdk.social.html" />
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                0.4.1
+                0.4.2
               </div>
             
           
@@ -112,6 +112,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#submodules">Submodules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.config">cryptocompsdk.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.logger">cryptocompsdk.logger module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.main">cryptocompsdk.main module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.request">cryptocompsdk.request module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.response">cryptocompsdk.response module</a></li>
@@ -221,6 +222,12 @@
 <dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.response.ResponseException" title="cryptocompsdk.response.ResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.response.ResponseException</span></code></a></p>
 </dd></dl>
 
+<dl class="py exception">
+<dt id="cryptocompsdk.news.parse.InvalidNewsResponseException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.news.parse.</code><code class="sig-name descname">InvalidNewsResponseException</code><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#InvalidNewsResponseException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.InvalidNewsResponseException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cryptocompsdk.html#cryptocompsdk.response.ResponseException" title="cryptocompsdk.response.ResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">cryptocompsdk.response.ResponseException</span></code></a></p>
+</dd></dl>
+
 <dl class="py class">
 <dt id="cryptocompsdk.news.parse.NewsData">
 <em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.news.parse.</code><code class="sig-name descname">NewsData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type</span></em>, <em class="sig-param"><span class="n">message</span></em>, <em class="sig-param"><span class="n">promoted</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">rate_limit</span></em>, <em class="sig-param"><span class="n">has_warning</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#NewsData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData" title="Permalink to this definition">¶</a></dt>
@@ -229,22 +236,35 @@
 <dt id="cryptocompsdk.news.parse.NewsData.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type</span></em>, <em class="sig-param"><span class="n">message</span></em>, <em class="sig-param"><span class="n">promoted</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">rate_limit</span></em>, <em class="sig-param"><span class="n">has_warning</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#NewsData.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsData.data">
-<code class="sig-name descname">data</code><em class="property">: Optional[List[NewsRecord]]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">data</code><em class="property">: Optional<span class="p">[</span>List<span class="p">[</span><a class="reference internal" href="#cryptocompsdk.news.parse.NewsRecord" title="cryptocompsdk.news.parse.NewsRecord">cryptocompsdk.news.parse.NewsRecord</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="cryptocompsdk.news.parse.NewsData.delete_record_matching_time">
 <code class="sig-name descname">delete_record_matching_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#NewsData.delete_record_matching_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.delete_record_matching_time" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt id="cryptocompsdk.news.parse.NewsData.download_articles">
+<code class="sig-name descname">download_articles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">out_folder</span><span class="o">=</span><span class="default_value">'articles'</span></em>, <em class="sig-param"><span class="n">num_threads</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">restart</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#NewsData.download_articles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.download_articles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download the HTML of all news articles in this collection and save to files in a folder</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="cryptocompsdk.news.parse.NewsData.download_articles.params.out_folder"></span><strong>out_folder</strong><a class="paramlink headerlink reference internal" href="#cryptocompsdk.news.parse.NewsData.download_articles.params.out_folder">¶</a> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Union" title="(in Python v3.9)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code></a>]) – Where to save the articles</p></li>
+<li><p><span class="target" id="cryptocompsdk.news.parse.NewsData.download_articles.params.num_threads"></span><strong>num_threads</strong><a class="paramlink headerlink reference internal" href="#cryptocompsdk.news.parse.NewsData.download_articles.params.num_threads">¶</a> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – How many concurrent requests to execute</p></li>
+<li><p><span class="target" id="cryptocompsdk.news.parse.NewsData.download_articles.params.restart"></span><strong>restart</strong><a class="paramlink headerlink reference internal" href="#cryptocompsdk.news.parse.NewsData.download_articles.params.restart">¶</a> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – False to not download where an article already exists, True to re-download in that case</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="cryptocompsdk.news.parse.NewsData.from_dict">
@@ -261,14 +281,14 @@
 <em class="property">property </em><code class="sig-name descname">has_error</code><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.has_error" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsData.has_warning">
-<code class="sig-name descname">has_warning</code><em class="property">: Optional[bool]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.has_warning" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">has_warning</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.has_warning" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -276,24 +296,24 @@
 <em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.is_empty" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsData.message">
-<code class="sig-name descname">message</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.message" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">message</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.message" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsData.promoted">
-<code class="sig-name descname">promoted</code><em class="property">: Optional[List[Any]]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.promoted" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">promoted</code><em class="property">: Optional<span class="p">[</span>List<span class="p">[</span>Any<span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.promoted" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsData.rate_limit">
-<code class="sig-name descname">rate_limit</code><em class="property">: Optional[RateLimit]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.rate_limit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rate_limit</code><em class="property">: Optional<span class="p">[</span><a class="reference internal" href="#cryptocompsdk.news.parse.RateLimit" title="cryptocompsdk.news.parse.RateLimit">cryptocompsdk.news.parse.RateLimit</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.rate_limit" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -301,7 +321,7 @@
 <em class="property">property </em><code class="sig-name descname">time_from</code><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.time_from" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -321,7 +341,7 @@
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#NewsData.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -333,7 +353,7 @@
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsData.type">
-<code class="sig-name descname">type</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">type</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsData.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -341,31 +361,44 @@
 <dl class="py class">
 <dt id="cryptocompsdk.news.parse.NewsRecord">
 <em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.news.parse.</code><code class="sig-name descname">NewsRecord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">guid</span></em>, <em class="sig-param"><span class="n">published_on</span></em>, <em class="sig-param"><span class="n">imageurl</span></em>, <em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">source</span></em>, <em class="sig-param"><span class="n">body</span></em>, <em class="sig-param"><span class="n">tags</span></em>, <em class="sig-param"><span class="n">categories</span></em>, <em class="sig-param"><span class="n">upvotes</span></em>, <em class="sig-param"><span class="n">downvotes</span></em>, <em class="sig-param"><span class="n">lang</span></em>, <em class="sig-param"><span class="n">source_info</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#NewsRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="cryptocompsdk.news.parse.NewsRecord.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">guid</span></em>, <em class="sig-param"><span class="n">published_on</span></em>, <em class="sig-param"><span class="n">imageurl</span></em>, <em class="sig-param"><span class="n">title</span></em>, <em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">source</span></em>, <em class="sig-param"><span class="n">body</span></em>, <em class="sig-param"><span class="n">tags</span></em>, <em class="sig-param"><span class="n">categories</span></em>, <em class="sig-param"><span class="n">upvotes</span></em>, <em class="sig-param"><span class="n">downvotes</span></em>, <em class="sig-param"><span class="n">lang</span></em>, <em class="sig-param"><span class="n">source_info</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#NewsRecord.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="cryptocompsdk.news.parse.NewsRecord.body">
+<code class="sig-name descname">body</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.body" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="cryptocompsdk.news.parse.NewsRecord.categories">
+<code class="sig-name descname">categories</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.categories" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="cryptocompsdk.news.parse.NewsRecord.download_article">
+<code class="sig-name descname">download_article</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">use_alt_url</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#NewsRecord.download_article"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.download_article" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download and return the HTML of this news article</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><span class="target" id="cryptocompsdk.news.parse.NewsRecord.download_article.params.use_alt_url"></span><strong>use_alt_url</strong><a class="paramlink headerlink reference internal" href="#cryptocompsdk.news.parse.NewsRecord.download_article.params.use_alt_url">¶</a> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a>) – The default is to use the url given in the guid attribute,
+if True then use url attribute instead of guid</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="cryptocompsdk.news.parse.NewsRecord.body">
-<code class="sig-name descname">body</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.body" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt id="cryptocompsdk.news.parse.NewsRecord.categories">
-<code class="sig-name descname">categories</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.categories" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsRecord.downvotes">
-<code class="sig-name descname">downvotes</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.downvotes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">downvotes</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.downvotes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -380,17 +413,17 @@
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsRecord.guid">
-<code class="sig-name descname">guid</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.guid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">guid</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.guid" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsRecord.id">
-<code class="sig-name descname">id</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.id" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">id</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.id" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsRecord.imageurl">
-<code class="sig-name descname">imageurl</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.imageurl" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">imageurl</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.imageurl" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -398,39 +431,39 @@
 <em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.is_empty" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsRecord.lang">
-<code class="sig-name descname">lang</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.lang" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">lang</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.lang" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsRecord.published_on">
-<code class="sig-name descname">published_on</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.published_on" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">published_on</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.published_on" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsRecord.source">
-<code class="sig-name descname">source</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.source" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">source</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.source" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsRecord.source_info">
-<code class="sig-name descname">source_info</code><em class="property">: Optional[SourceInfo]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.source_info" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">source_info</code><em class="property">: Optional<span class="p">[</span><a class="reference internal" href="#cryptocompsdk.news.parse.SourceInfo" title="cryptocompsdk.news.parse.SourceInfo">cryptocompsdk.news.parse.SourceInfo</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.source_info" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsRecord.tags">
-<code class="sig-name descname">tags</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.tags" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">tags</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.tags" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsRecord.title">
-<code class="sig-name descname">title</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.title" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">title</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.title" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -438,36 +471,37 @@
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#NewsRecord.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsRecord.upvotes">
-<code class="sig-name descname">upvotes</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.upvotes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">upvotes</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.upvotes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.NewsRecord.url">
-<code class="sig-name descname">url</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.url" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">url</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.NewsRecord.url" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+</dd></dl>
+
+<dl class="py exception">
+<dt id="cryptocompsdk.news.parse.NoValidNewsURLException">
+<em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.news.parse.</code><code class="sig-name descname">NoValidNewsURLException</code><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#NoValidNewsURLException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.NoValidNewsURLException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="cryptocompsdk.news.parse.RateLimit">
 <em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.news.parse.</code><code class="sig-name descname">RateLimit</code><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#RateLimit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.RateLimit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="cryptocompsdk.news.parse.RateLimit.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#RateLimit.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.RateLimit.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -485,7 +519,7 @@
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#RateLimit.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.RateLimit.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -495,16 +529,11 @@
 <dl class="py class">
 <dt id="cryptocompsdk.news.parse.SourceInfo">
 <em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.news.parse.</code><code class="sig-name descname">SourceInfo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">lang</span></em>, <em class="sig-param"><span class="n">img</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#SourceInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.SourceInfo" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="cryptocompsdk.news.parse.SourceInfo.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">lang</span></em>, <em class="sig-param"><span class="n">img</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#SourceInfo.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.SourceInfo.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -519,17 +548,17 @@
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.SourceInfo.img">
-<code class="sig-name descname">img</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.SourceInfo.img" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">img</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.SourceInfo.img" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.SourceInfo.lang">
-<code class="sig-name descname">lang</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.SourceInfo.lang" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">lang</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.SourceInfo.lang" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.news.parse.SourceInfo.name">
-<code class="sig-name descname">name</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.news.parse.SourceInfo.name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">name</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.news.parse.SourceInfo.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -537,7 +566,7 @@
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#SourceInfo.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.SourceInfo.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -559,7 +588,7 @@
 <code class="sig-prename descclassname">cryptocompsdk.news.parse.</code><code class="sig-name descname">news_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/news/parse.html#news_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.news.parse.news_to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.8)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.9)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -588,7 +617,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, Nick DeRobertis
+        &copy; Copyright 2021, Nick DeRobertis
 
     </p>
   </div>

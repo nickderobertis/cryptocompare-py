@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk.coins package &mdash; cryptocompsdk 0.4.1 documentation</title>
+  <title>cryptocompsdk.coins package &mdash; cryptocompsdk 0.4.2 documentation</title>
   
 
   
@@ -25,7 +25,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     
@@ -42,6 +41,7 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery-binder.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-rendered-html.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cryptocompsdk.exchanges package" href="cryptocompsdk.exchanges.html" />
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                0.4.1
+                0.4.2
               </div>
             
           
@@ -112,6 +112,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#submodules">Submodules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.config">cryptocompsdk.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.logger">cryptocompsdk.logger module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.main">cryptocompsdk.main module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.request">cryptocompsdk.request module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.response">cryptocompsdk.response module</a></li>
@@ -218,51 +219,46 @@
 <dl class="py class">
 <dt id="cryptocompsdk.coins.parse.Coin">
 <em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.coins.parse.</code><code class="sig-name descname">Coin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">image_url</span></em>, <em class="sig-param"><span class="n">content_created_on</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">symbol</span></em>, <em class="sig-param"><span class="n">coin_name</span></em>, <em class="sig-param"><span class="n">full_name</span></em>, <em class="sig-param"><span class="n">algorithm</span></em>, <em class="sig-param"><span class="n">proof_type</span></em>, <em class="sig-param"><span class="n">fully_premined</span></em>, <em class="sig-param"><span class="n">total_coin_supply</span></em>, <em class="sig-param"><span class="n">built_on</span></em>, <em class="sig-param"><span class="n">smart_contract_address</span></em>, <em class="sig-param"><span class="n">pre_mined_value</span></em>, <em class="sig-param"><span class="n">total_coins_free_float</span></em>, <em class="sig-param"><span class="n">sort_order</span></em>, <em class="sig-param"><span class="n">sponsored</span></em>, <em class="sig-param"><span class="n">taxonomy</span></em>, <em class="sig-param"><span class="n">is_trading</span></em>, <em class="sig-param"><span class="n">total_coins_mined</span></em>, <em class="sig-param"><span class="n">block_number</span></em>, <em class="sig-param"><span class="n">net_hashes_per_second</span></em>, <em class="sig-param"><span class="n">block_reward</span></em>, <em class="sig-param"><span class="n">block_time</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/coins/parse.html#Coin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="cryptocompsdk.coins.parse.Coin.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">image_url</span></em>, <em class="sig-param"><span class="n">content_created_on</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">symbol</span></em>, <em class="sig-param"><span class="n">coin_name</span></em>, <em class="sig-param"><span class="n">full_name</span></em>, <em class="sig-param"><span class="n">algorithm</span></em>, <em class="sig-param"><span class="n">proof_type</span></em>, <em class="sig-param"><span class="n">fully_premined</span></em>, <em class="sig-param"><span class="n">total_coin_supply</span></em>, <em class="sig-param"><span class="n">built_on</span></em>, <em class="sig-param"><span class="n">smart_contract_address</span></em>, <em class="sig-param"><span class="n">pre_mined_value</span></em>, <em class="sig-param"><span class="n">total_coins_free_float</span></em>, <em class="sig-param"><span class="n">sort_order</span></em>, <em class="sig-param"><span class="n">sponsored</span></em>, <em class="sig-param"><span class="n">taxonomy</span></em>, <em class="sig-param"><span class="n">is_trading</span></em>, <em class="sig-param"><span class="n">total_coins_mined</span></em>, <em class="sig-param"><span class="n">block_number</span></em>, <em class="sig-param"><span class="n">net_hashes_per_second</span></em>, <em class="sig-param"><span class="n">block_reward</span></em>, <em class="sig-param"><span class="n">block_time</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/coins/parse.html#Coin.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.algorithm">
-<code class="sig-name descname">algorithm</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.algorithm" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">algorithm</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.algorithm" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.block_number">
-<code class="sig-name descname">block_number</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.block_number" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">block_number</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.block_number" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.block_reward">
-<code class="sig-name descname">block_reward</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.block_reward" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">block_reward</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.block_reward" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.block_time">
-<code class="sig-name descname">block_time</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.block_time" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">block_time</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.block_time" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.built_on">
-<code class="sig-name descname">built_on</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.built_on" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">built_on</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.built_on" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.coin_name">
-<code class="sig-name descname">coin_name</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.coin_name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">coin_name</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.coin_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.content_created_on">
-<code class="sig-name descname">content_created_on</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.content_created_on" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">content_created_on</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.content_created_on" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -277,72 +273,72 @@
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.full_name">
-<code class="sig-name descname">full_name</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.full_name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">full_name</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.full_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.fully_premined">
-<code class="sig-name descname">fully_premined</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.fully_premined" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fully_premined</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.fully_premined" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.id">
-<code class="sig-name descname">id</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.id" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">id</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.id" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.image_url">
-<code class="sig-name descname">image_url</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.image_url" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">image_url</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.image_url" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.is_trading">
-<code class="sig-name descname">is_trading</code><em class="property">: Optional[bool]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.is_trading" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_trading</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.is_trading" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.name">
-<code class="sig-name descname">name</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">name</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.net_hashes_per_second">
-<code class="sig-name descname">net_hashes_per_second</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.net_hashes_per_second" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">net_hashes_per_second</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.net_hashes_per_second" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.pre_mined_value">
-<code class="sig-name descname">pre_mined_value</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.pre_mined_value" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pre_mined_value</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.pre_mined_value" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.proof_type">
-<code class="sig-name descname">proof_type</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.proof_type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">proof_type</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.proof_type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.smart_contract_address">
-<code class="sig-name descname">smart_contract_address</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.smart_contract_address" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">smart_contract_address</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.smart_contract_address" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.sort_order">
-<code class="sig-name descname">sort_order</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.sort_order" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">sort_order</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.sort_order" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.sponsored">
-<code class="sig-name descname">sponsored</code><em class="property">: Optional[bool]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.sponsored" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">sponsored</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.sponsored" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.symbol">
-<code class="sig-name descname">symbol</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.symbol" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">symbol</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.symbol" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.taxonomy">
-<code class="sig-name descname">taxonomy</code><em class="property">: Optional[Taxonomy]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.taxonomy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">taxonomy</code><em class="property">: Optional<span class="p">[</span><a class="reference internal" href="#cryptocompsdk.coins.parse.Taxonomy" title="cryptocompsdk.coins.parse.Taxonomy">cryptocompsdk.coins.parse.Taxonomy</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.taxonomy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -350,29 +346,29 @@
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/coins/parse.html#Coin.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.total_coin_supply">
-<code class="sig-name descname">total_coin_supply</code><em class="property">: Optional[Union[int, str]]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.total_coin_supply" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">total_coin_supply</code><em class="property">: Optional<span class="p">[</span>Union<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">, </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.total_coin_supply" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.total_coins_free_float">
-<code class="sig-name descname">total_coins_free_float</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.total_coins_free_float" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">total_coins_free_float</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.total_coins_free_float" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.total_coins_mined">
-<code class="sig-name descname">total_coins_mined</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.total_coins_mined" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">total_coins_mined</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.total_coins_mined" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coin.url">
-<code class="sig-name descname">url</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.url" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">url</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coin.url" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -385,26 +381,21 @@
 <dt id="cryptocompsdk.coins.parse.Coins.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response</span></em>, <em class="sig-param"><span class="n">message</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">base_image_url</span></em>, <em class="sig-param"><span class="n">base_link_url</span></em>, <em class="sig-param"><span class="n">rate_limit</span></em>, <em class="sig-param"><span class="n">has_warning</span></em>, <em class="sig-param"><span class="n">type</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/coins/parse.html#Coins.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coins.base_image_url">
-<code class="sig-name descname">base_image_url</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.base_image_url" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">base_image_url</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.base_image_url" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coins.base_link_url">
-<code class="sig-name descname">base_link_url</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.base_link_url" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">base_link_url</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.base_link_url" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coins.data">
-<code class="sig-name descname">data</code><em class="property">: Dict[str, Coin]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">data</code><em class="property">: Dict<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">, </span><a class="reference internal" href="#cryptocompsdk.coins.parse.Coin" title="cryptocompsdk.coins.parse.Coin">cryptocompsdk.coins.parse.Coin</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -419,22 +410,22 @@
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coins.has_warning">
-<code class="sig-name descname">has_warning</code><em class="property">: Optional[bool]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.has_warning" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">has_warning</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.has_warning" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coins.message">
-<code class="sig-name descname">message</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.message" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">message</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.message" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coins.rate_limit">
-<code class="sig-name descname">rate_limit</code><em class="property">: Optional[RateLimit]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.rate_limit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rate_limit</code><em class="property">: Optional<span class="p">[</span><a class="reference internal" href="#cryptocompsdk.coins.parse.RateLimit" title="cryptocompsdk.coins.parse.RateLimit">cryptocompsdk.coins.parse.RateLimit</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.rate_limit" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coins.response">
-<code class="sig-name descname">response</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.response" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">response</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.response" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -442,7 +433,7 @@
 <em class="property">property </em><code class="sig-name descname">symbol_id_dict</code><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.symbol_id_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -452,7 +443,7 @@
 <em class="property">property </em><code class="sig-name descname">symbol_list</code><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.symbol_list" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -472,14 +463,14 @@
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/coins/parse.html#Coins.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Coins.type">
-<code class="sig-name descname">type</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">type</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Coins.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -493,16 +484,11 @@
 <dl class="py class">
 <dt id="cryptocompsdk.coins.parse.RateLimit">
 <em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.coins.parse.</code><code class="sig-name descname">RateLimit</code><a class="reference internal" href="../_modules/cryptocompsdk/coins/parse.html#RateLimit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.coins.parse.RateLimit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="cryptocompsdk.coins.parse.RateLimit.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/coins/parse.html#RateLimit.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.coins.parse.RateLimit.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -520,7 +506,7 @@
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/coins/parse.html#RateLimit.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.coins.parse.RateLimit.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -530,51 +516,46 @@
 <dl class="py class">
 <dt id="cryptocompsdk.coins.parse.Taxonomy">
 <em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.coins.parse.</code><code class="sig-name descname">Taxonomy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">access</span></em>, <em class="sig-param"><span class="n">fca</span></em>, <em class="sig-param"><span class="n">finma</span></em>, <em class="sig-param"><span class="n">industry</span></em>, <em class="sig-param"><span class="n">collateralized_asset</span></em>, <em class="sig-param"><span class="n">collateralized_asset_type</span></em>, <em class="sig-param"><span class="n">collateral_type</span></em>, <em class="sig-param"><span class="n">collateral_info</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/coins/parse.html#Taxonomy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="cryptocompsdk.coins.parse.Taxonomy.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">access</span></em>, <em class="sig-param"><span class="n">fca</span></em>, <em class="sig-param"><span class="n">finma</span></em>, <em class="sig-param"><span class="n">industry</span></em>, <em class="sig-param"><span class="n">collateralized_asset</span></em>, <em class="sig-param"><span class="n">collateralized_asset_type</span></em>, <em class="sig-param"><span class="n">collateral_type</span></em>, <em class="sig-param"><span class="n">collateral_info</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/coins/parse.html#Taxonomy.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Taxonomy.access">
-<code class="sig-name descname">access</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.access" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">access</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.access" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Taxonomy.collateral_info">
-<code class="sig-name descname">collateral_info</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.collateral_info" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">collateral_info</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.collateral_info" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Taxonomy.collateral_type">
-<code class="sig-name descname">collateral_type</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.collateral_type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">collateral_type</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.collateral_type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Taxonomy.collateralized_asset">
-<code class="sig-name descname">collateralized_asset</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.collateralized_asset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">collateralized_asset</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.collateralized_asset" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Taxonomy.collateralized_asset_type">
-<code class="sig-name descname">collateralized_asset_type</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.collateralized_asset_type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">collateralized_asset_type</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.collateralized_asset_type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Taxonomy.fca">
-<code class="sig-name descname">fca</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.fca" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fca</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.fca" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Taxonomy.finma">
-<code class="sig-name descname">finma</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.finma" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">finma</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.finma" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -589,7 +570,7 @@
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.coins.parse.Taxonomy.industry">
-<code class="sig-name descname">industry</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.industry" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">industry</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.industry" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -597,7 +578,7 @@
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/coins/parse.html#Taxonomy.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.coins.parse.Taxonomy.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -619,7 +600,7 @@
 <code class="sig-prename descclassname">cryptocompsdk.coins.parse.</code><code class="sig-name descname">coins_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/coins/parse.html#coins_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.coins.parse.coins_to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.8)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.9)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -648,7 +629,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, Nick DeRobertis
+        &copy; Copyright 2021, Nick DeRobertis
 
     </p>
   </div>

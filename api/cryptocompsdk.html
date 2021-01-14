@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk package &mdash; cryptocompsdk 0.4.1 documentation</title>
+  <title>cryptocompsdk package &mdash; cryptocompsdk 0.4.2 documentation</title>
   
 
   
@@ -25,7 +25,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     
@@ -42,6 +41,7 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery-binder.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-rendered-html.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cryptocompsdk.blockchain package" href="cryptocompsdk.blockchain.html" />
@@ -69,7 +69,7 @@
             
             
               <div class="version">
-                0.4.1
+                0.4.2
               </div>
             
           
@@ -112,6 +112,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-cryptocompsdk.config">cryptocompsdk.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-cryptocompsdk.logger">cryptocompsdk.logger module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-cryptocompsdk.main">cryptocompsdk.main module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-cryptocompsdk.request">cryptocompsdk.request module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-cryptocompsdk.response">cryptocompsdk.response module</a></li>
@@ -282,6 +283,9 @@ for cryptoassets.</p>
 <div class="section" id="module-cryptocompsdk.config">
 <span id="cryptocompsdk-config-module"></span><h2>cryptocompsdk.config module<a class="headerlink" href="#module-cryptocompsdk.config" title="Permalink to this headline">¶</a></h2>
 </div>
+<div class="section" id="module-cryptocompsdk.logger">
+<span id="cryptocompsdk-logger-module"></span><h2>cryptocompsdk.logger module<a class="headerlink" href="#module-cryptocompsdk.logger" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="module-cryptocompsdk.main">
 <span id="cryptocompsdk-main-module"></span><h2>cryptocompsdk.main module<a class="headerlink" href="#module-cryptocompsdk.main" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
@@ -309,7 +313,7 @@ for cryptoassets.</p>
 <em class="property">property </em><code class="sig-name descname">coin_ids</code><a class="headerlink" href="#cryptocompsdk.main.CryptoCompare.coin_ids" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -322,7 +326,7 @@ for cryptoassets.</p>
 <dl class="py class">
 <dt id="cryptocompsdk.request.APIBase">
 <em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.request.</code><code class="sig-name descname">APIBase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">api_key</span></em>, <em class="sig-param"><span class="n">throttle</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/request.html#APIBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.request.APIBase" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="cryptocompsdk.request.APIBase.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">api_key</span></em>, <em class="sig-param"><span class="n">throttle</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/request.html#APIBase.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.request.APIBase.__init__" title="Permalink to this definition">¶</a></dt>
@@ -349,7 +353,7 @@ for cryptoassets.</p>
 <dl class="py class">
 <dt id="cryptocompsdk.request.Request">
 <em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.request.</code><code class="sig-name descname">Request</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">payload</span></em>, <em class="sig-param"><span class="n">response</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/request.html#Request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.request.Request" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="cryptocompsdk.request.Request.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">payload</span></em>, <em class="sig-param"><span class="n">response</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/request.html#Request.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.request.Request.__init__" title="Permalink to this definition">¶</a></dt>
@@ -361,7 +365,7 @@ for cryptoassets.</p>
 <em class="property">property </em><code class="sig-name descname">json</code><a class="headerlink" href="#cryptocompsdk.request.Request.json" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -374,7 +378,7 @@ for cryptoassets.</p>
 <dl class="py class">
 <dt id="cryptocompsdk.response.ResponseAPIBase">
 <em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.response.</code><code class="sig-name descname">ResponseAPIBase</code><a class="reference internal" href="../_modules/cryptocompsdk/response.html#ResponseAPIBase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.response.ResponseAPIBase" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="cryptocompsdk.response.ResponseAPIBase.delete_record_matching_time">
 <code class="sig-name descname">delete_record_matching_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/response.html#ResponseAPIBase.delete_record_matching_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.response.ResponseAPIBase.delete_record_matching_time" title="Permalink to this definition">¶</a></dt>
@@ -385,7 +389,7 @@ for cryptoassets.</p>
 <em class="property">property </em><code class="sig-name descname">has_error</code><a class="headerlink" href="#cryptocompsdk.response.ResponseAPIBase.has_error" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -395,14 +399,14 @@ for cryptoassets.</p>
 <em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#cryptocompsdk.response.ResponseAPIBase.is_empty" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.response.ResponseAPIBase.response">
-<code class="sig-name descname">response</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.response.ResponseAPIBase.response" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">response</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.response.ResponseAPIBase.response" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -410,7 +414,7 @@ for cryptoassets.</p>
 <em class="property">property </em><code class="sig-name descname">time_from</code><a class="headerlink" href="#cryptocompsdk.response.ResponseAPIBase.time_from" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -425,7 +429,7 @@ for cryptoassets.</p>
 <dl class="py exception">
 <dt id="cryptocompsdk.response.ResponseException">
 <em class="property">exception </em><code class="sig-prename descclassname">cryptocompsdk.response.</code><code class="sig-name descname">ResponseException</code><a class="reference internal" href="../_modules/cryptocompsdk/response.html#ResponseException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.response.ResponseException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
 </dd></dl>
 
 </div>
@@ -455,7 +459,7 @@ for cryptoassets.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, Nick DeRobertis
+        &copy; Copyright 2021, Nick DeRobertis
 
     </p>
   </div>

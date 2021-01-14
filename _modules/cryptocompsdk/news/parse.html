@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk.news.parse &mdash; cryptocompsdk 0.4.1 documentation</title>
+  <title>cryptocompsdk.news.parse &mdash; cryptocompsdk 0.4.2 documentation</title>
   
 
   
@@ -25,7 +25,6 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/language_data.js"></script>
         <script src="../../../_static/clipboard.min.js"></script>
         <script src="../../../_static/copybutton.js"></script>
     
@@ -42,6 +41,7 @@
   <link rel="stylesheet" href="../../../_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/gallery-binder.css" type="text/css" />
   <link rel="stylesheet" href="../../../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/gallery-rendered-html.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.4.1
+                0.4.2
               </div>
             
           
@@ -161,11 +161,18 @@
            <div itemprop="articleBody">
             
   <h1>Source code for cryptocompsdk.news.parse</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">cast</span>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">multiprocessing.pool</span> <span class="kn">import</span> <span class="n">ThreadPool</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">cast</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
 
+<span class="kn">from</span> <span class="nn">cryptocompsdk.logger</span> <span class="kn">import</span> <span class="n">logger</span>
 <span class="kn">from</span> <span class="nn">cryptocompsdk.response</span> <span class="kn">import</span> <span class="n">ResponseException</span><span class="p">,</span> <span class="n">ResponseAPIBase</span>
 <span class="kn">from</span> <span class="nn">cryptocompsdk.general.parse</span> <span class="kn">import</span> <span class="n">from_int</span><span class="p">,</span> <span class="n">from_none</span><span class="p">,</span> <span class="n">from_union</span><span class="p">,</span> <span class="n">from_float</span><span class="p">,</span> <span class="n">from_str</span><span class="p">,</span> <span class="n">to_float</span><span class="p">,</span> <span class="n">from_bool</span><span class="p">,</span> \
     <span class="n">from_dict</span><span class="p">,</span> <span class="n">to_class</span><span class="p">,</span> <span class="n">is_type</span><span class="p">,</span> <span class="n">from_int_or_str</span><span class="p">,</span> <span class="n">from_na</span><span class="p">,</span> <span class="n">from_str_number</span><span class="p">,</span> <span class="n">from_list</span><span class="p">,</span> <span class="n">from_stringified_bool</span><span class="p">,</span> \
@@ -289,7 +296,52 @@
         <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">is_empty_cols</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">return</span> <span class="kc">False</span>
-        <span class="k">return</span> <span class="kc">True</span></div>
+        <span class="k">return</span> <span class="kc">True</span>
+
+<div class="viewcode-block" id="NewsRecord.download_article"><a class="viewcode-back" href="../../../api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.download_article">[docs]</a>    <span class="k">def</span> <span class="nf">download_article</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">use_alt_url</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Download and return the HTML of this news article</span>
+
+<span class="sd">        :param use_alt_url: The default is to use the url given in the guid attribute,</span>
+<span class="sd">            if True then use url attribute instead of guid</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">use_alt_url</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">guid</span>
+            <span class="n">alt_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span>
+            <span class="n">alt_url</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+            <span class="n">valid_url</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">parsed</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+            <span class="n">valid_url</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">parsed</span><span class="o">.</span><span class="n">scheme</span> <span class="ow">and</span> <span class="n">parsed</span><span class="o">.</span><span class="n">netloc</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">valid_url</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">alt_url</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">download_article</span><span class="p">(</span><span class="n">use_alt_url</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">NoValidNewsURLException</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Url </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1"> is invalid&#39;</span><span class="p">)</span>
+
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;user-agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36&#39;</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">url</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Should not happen, for typing purposes</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;must provide a url&#39;</span><span class="p">)</span>
+
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+        <span class="n">status_code</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">status_code</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">text</span>
+
+        <span class="k">if</span> <span class="n">alt_url</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">download_article</span><span class="p">(</span><span class="n">use_alt_url</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidNewsResponseException</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Got status code </span><span class="si">{</span><span class="n">status_code</span><span class="si">}</span><span class="s1"> for request to </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1">. Response: </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">text</span></div></div>
 
 
 <div class="viewcode-block" id="RateLimit"><a class="viewcode-back" href="../../../api/cryptocompsdk.news.html#cryptocompsdk.news.parse.RateLimit">[docs]</a><span class="k">class</span> <span class="nc">RateLimit</span><span class="p">:</span>
@@ -398,7 +450,7 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;cannot determine time from as there is no data&#39;</span><span class="p">)</span>
 
-        <span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="n">record</span><span class="o">.</span><span class="n">published_on</span> <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">]</span>
+        <span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="n">record</span><span class="o">.</span><span class="n">published_on</span> <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">published_on</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">times</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;could not calculate time from as there is no data&#39;</span><span class="p">)</span>
         <span class="n">min_times</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
@@ -418,7 +470,64 @@
                 <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="c1"># First non-empty record from end, we have now hit the actual data section, stop deleting</span>
-                <span class="k">break</span></div></div>
+                <span class="k">break</span></div>
+
+<div class="viewcode-block" id="NewsData.download_articles"><a class="viewcode-back" href="../../../api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.download_articles">[docs]</a>    <span class="k">def</span> <span class="nf">download_articles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">out_folder</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;articles&#39;</span><span class="p">,</span> <span class="n">num_threads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+                          <span class="n">restart</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Download the HTML of all news articles in this collection and save to files in a folder</span>
+
+<span class="sd">        :param out_folder: Where to save the articles</span>
+<span class="sd">        :param num_threads: How many concurrent requests to execute</span>
+<span class="sd">        :param restart: False to not download where an article already exists, True to re-download in that case</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Cannot download articles as the data attribute is None&#39;</span><span class="p">)</span>
+
+        <span class="n">out_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">out_folder</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">out_folder</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">out_folder</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">ThreadPool</span><span class="p">(</span><span class="n">num_threads</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+                <span class="n">res</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">_download_and_save_article</span><span class="p">,</span> <span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">out_folder</span><span class="p">,</span> <span class="n">restart</span><span class="p">))</span>
+                <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">()</span></div></div>
+
+
+<span class="k">def</span> <span class="nf">_download_and_save_article</span><span class="p">(</span><span class="n">article</span><span class="p">:</span> <span class="n">NewsRecord</span><span class="p">,</span> <span class="n">out_folder</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">restart</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="n">out_path</span> <span class="o">=</span> <span class="n">out_folder</span> <span class="o">/</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s1">.html&#39;</span>
+    <span class="n">error_dir</span> <span class="o">=</span> <span class="n">out_folder</span> <span class="o">/</span> <span class="s1">&#39;Error Responses&#39;</span>
+    <span class="n">error_path</span> <span class="o">=</span> <span class="n">error_dir</span> <span class="o">/</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s1">.txt&#39;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">restart</span> <span class="ow">and</span> <span class="n">out_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Found existing text for article </span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s1"> and restart=False, skipping download&#39;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">download_article</span><span class="p">()</span>
+    <span class="k">except</span> <span class="p">(</span>
+        <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">,</span>
+        <span class="n">requests</span><span class="o">.</span><span class="n">TooManyRedirects</span><span class="p">,</span>
+        <span class="n">NoValidNewsURLException</span><span class="p">,</span>
+        <span class="n">InvalidNewsResponseException</span>
+    <span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Got error </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1"> while downloading </span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s1"> from urls: </span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">guid</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">error_dir</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">error_dir</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">FileExistsError</span><span class="p">:</span>
+                <span class="k">pass</span>  <span class="c1"># created by another thread</span>
+        <span class="n">error_path</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+        <span class="k">return</span>
+
+    <span class="c1"># Got valid result</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Downloaded text for article </span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">out_path</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="news_from_dict"><a class="viewcode-back" href="../../../api/cryptocompsdk.news.html#cryptocompsdk.news.parse.news_from_dict">[docs]</a><span class="k">def</span> <span class="nf">news_from_dict</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NewsData</span><span class="p">:</span>
@@ -430,6 +539,14 @@
 
 
 <div class="viewcode-block" id="CouldNotGetNewsException"><a class="viewcode-back" href="../../../api/cryptocompsdk.news.html#cryptocompsdk.news.parse.CouldNotGetNewsException">[docs]</a><span class="k">class</span> <span class="nc">CouldNotGetNewsException</span><span class="p">(</span><span class="n">ResponseException</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="NoValidNewsURLException"><a class="viewcode-back" href="../../../api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NoValidNewsURLException">[docs]</a><span class="k">class</span> <span class="nc">NoValidNewsURLException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="InvalidNewsResponseException"><a class="viewcode-back" href="../../../api/cryptocompsdk.news.html#cryptocompsdk.news.parse.InvalidNewsResponseException">[docs]</a><span class="k">class</span> <span class="nc">InvalidNewsResponseException</span><span class="p">(</span><span class="n">ResponseException</span><span class="p">):</span>
     <span class="k">pass</span></div>
 </pre></div>
 
@@ -444,7 +561,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, Nick DeRobertis
+        &copy; Copyright 2021, Nick DeRobertis
 
     </p>
   </div>

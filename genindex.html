@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -8,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; cryptocompsdk 0.4.1 documentation</title>
+  <title>Index &mdash; cryptocompsdk 0.4.2 documentation</title>
   
 
   
@@ -26,7 +25,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
     
@@ -43,6 +41,7 @@
   <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="_static/gallery-binder.css" type="text/css" />
   <link rel="stylesheet" href="_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery-rendered-html.css" type="text/css" />
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" /> 
 </head>
@@ -68,7 +67,7 @@
             
             
               <div class="version">
-                0.4.1
+                0.4.2
               </div>
             
           
@@ -658,6 +657,13 @@
 </li>
       </ul></li>
       <li>
+    cryptocompsdk.logger
+
+      <ul>
+        <li><a href="api/cryptocompsdk.html#module-cryptocompsdk.logger">module</a>
+</li>
+      </ul></li>
+      <li>
     cryptocompsdk.main
 
       <ul>
@@ -820,6 +826,10 @@
       <li><a href="api/cryptocompsdk.blockchain.history.html#cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord.difficulty">difficulty (cryptocompsdk.blockchain.history.parse.BlockchainHistoryRecord attribute)</a>
 </li>
       <li><a href="api/cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.parse.ExchangeInfo.displaytotalvolume24_h">displaytotalvolume24_h (cryptocompsdk.exchanges.info.parse.ExchangeInfo attribute)</a>
+</li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.download_article">download_article() (cryptocompsdk.news.parse.NewsRecord method)</a>
+</li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.download_articles">download_articles() (cryptocompsdk.news.parse.NewsData method)</a>
 </li>
       <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.downvotes">downvotes (cryptocompsdk.news.parse.NewsRecord attribute)</a>
 </li>
@@ -1155,9 +1165,11 @@
 </li>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.Parent.internal_id">internal_id (cryptocompsdk.social.current.parse.Parent attribute)</a>
 </li>
+      <li><a href="api/cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.parse.ExchangeInfo.internal_name">internal_name (cryptocompsdk.exchanges.info.parse.ExchangeInfo attribute)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.parse.ExchangeInfo.internal_name">internal_name (cryptocompsdk.exchanges.info.parse.ExchangeInfo attribute)</a>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.InvalidNewsResponseException">InvalidNewsResponseException</a>
 </li>
       <li><a href="api/cryptocompsdk.general.html#cryptocompsdk.general.parse.InvalidTypeException">InvalidTypeException</a>
 </li>
@@ -1323,6 +1335,8 @@
 </li>
         <li><a href="api/cryptocompsdk.history.html#module-cryptocompsdk.history.parse">cryptocompsdk.history.parse</a>
 </li>
+        <li><a href="api/cryptocompsdk.html#module-cryptocompsdk.logger">cryptocompsdk.logger</a>
+</li>
         <li><a href="api/cryptocompsdk.html#module-cryptocompsdk.main">cryptocompsdk.main</a>
 </li>
         <li><a href="api/cryptocompsdk.news.html#module-cryptocompsdk.news">cryptocompsdk.news</a>
@@ -1386,10 +1400,10 @@
 </li>
       <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.news_from_dict">news_from_dict() (in module cryptocompsdk.news.parse)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.news_to_dict">news_to_dict() (in module cryptocompsdk.news.parse)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.api.NewsAPI">NewsAPI (class in cryptocompsdk.news.api)</a>
 </li>
       <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData">NewsData (class in cryptocompsdk.news.parse)</a>
@@ -1414,6 +1428,10 @@
 </li>
       <li><a href="api/cryptocompsdk.general.html#cryptocompsdk.general.parse.NotTypeException">NotTypeException</a>
 </li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NoValidNewsURLException">NoValidNewsURLException</a>
+</li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.download_articles.params.num_threads">num_threads (cryptocompsdk.news.parse.NewsData.download_articles parameter)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -1428,13 +1446,15 @@
 </li>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.CodeRepository.open_pull_issues">open_pull_issues (cryptocompsdk.social.current.parse.CodeRepository attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.CodeRepository.open_total_issues">open_total_issues (cryptocompsdk.social.current.parse.CodeRepository attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/cryptocompsdk.exchanges.info.html#cryptocompsdk.exchanges.info.parse.ExchangeInfo.order_book">order_book (cryptocompsdk.exchanges.info.parse.ExchangeInfo attribute)</a>
 </li>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.PageViewsSplit.orderbook">orderbook (cryptocompsdk.social.current.parse.PageViewsSplit attribute)</a>
+</li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.download_articles.params.out_folder">out_folder (cryptocompsdk.news.parse.NewsData.download_articles parameter)</a>
 </li>
       <li><a href="api/cryptocompsdk.social.current.html#cryptocompsdk.social.current.parse.PageViewsSplit.overview">overview (cryptocompsdk.social.current.parse.PageViewsSplit attribute)</a>
 </li>
@@ -1601,6 +1621,8 @@
       <li><a href="api/cryptocompsdk.html#cryptocompsdk.response.ResponseAPIBase">ResponseAPIBase (class in cryptocompsdk.response)</a>
 </li>
       <li><a href="api/cryptocompsdk.html#cryptocompsdk.response.ResponseException">ResponseException</a>
+</li>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsData.download_articles.params.restart">restart (cryptocompsdk.news.parse.NewsData.download_articles parameter)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1957,6 +1979,10 @@
 </li>
       </ul></li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/cryptocompsdk.news.html#cryptocompsdk.news.parse.NewsRecord.download_article.params.use_alt_url">use_alt_url (cryptocompsdk.news.parse.NewsRecord.download_article parameter)</a>
+</li>
+  </ul></td>
 </tr></table>
 
 <h2 id="V">V</h2>
@@ -2000,7 +2026,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, Nick DeRobertis
+        &copy; Copyright 2021, Nick DeRobertis
 
     </p>
   </div>

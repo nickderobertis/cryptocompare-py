@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk.social.history package &mdash; cryptocompsdk 0.4.1 documentation</title>
+  <title>cryptocompsdk.social.history package &mdash; cryptocompsdk 0.4.2 documentation</title>
   
 
   
@@ -25,7 +25,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     
@@ -42,6 +41,7 @@
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery-binder.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-rendered-html.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="cryptocompsdk.social.current package" href="cryptocompsdk.social.current.html" /> 
@@ -68,7 +68,7 @@
             
             
               <div class="version">
-                0.4.1
+                0.4.2
               </div>
             
           
@@ -111,6 +111,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#submodules">Submodules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.config">cryptocompsdk.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.logger">cryptocompsdk.logger module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.main">cryptocompsdk.main module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.request">cryptocompsdk.request module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cryptocompsdk.html#module-cryptocompsdk.response">cryptocompsdk.response module</a></li>
@@ -225,16 +226,11 @@
 <dl class="py class">
 <dt id="cryptocompsdk.social.history.parse.RateLimit">
 <em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.social.history.parse.</code><code class="sig-name descname">RateLimit</code><a class="reference internal" href="../_modules/cryptocompsdk/social/history/parse.html#RateLimit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.history.parse.RateLimit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="cryptocompsdk.social.history.parse.RateLimit.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/history/parse.html#RateLimit.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.history.parse.RateLimit.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -252,7 +248,7 @@
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/history/parse.html#RateLimit.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.history.parse.RateLimit.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -267,16 +263,11 @@
 <dt id="cryptocompsdk.social.history.parse.SocialData.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response</span></em>, <em class="sig-param"><span class="n">message</span></em>, <em class="sig-param"><span class="n">has_warning</span></em>, <em class="sig-param"><span class="n">param_with_error</span></em>, <em class="sig-param"><span class="n">type</span></em>, <em class="sig-param"><span class="n">rate_limit</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/history/parse.html#SocialData.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialData.data">
-<code class="sig-name descname">data</code><em class="property">: List[SocialRecord]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">data</code><em class="property">: List<span class="p">[</span><a class="reference internal" href="#cryptocompsdk.social.history.parse.SocialRecord" title="cryptocompsdk.social.history.parse.SocialRecord">cryptocompsdk.social.history.parse.SocialRecord</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.data" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -296,7 +287,7 @@
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialData.has_warning">
-<code class="sig-name descname">has_warning</code><em class="property">: Optional[bool]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.has_warning" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">has_warning</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)">bool</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.has_warning" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -304,29 +295,29 @@
 <em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.is_empty" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialData.message">
-<code class="sig-name descname">message</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.message" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">message</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.message" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialData.param_with_error">
-<code class="sig-name descname">param_with_error</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.param_with_error" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">param_with_error</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.param_with_error" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialData.rate_limit">
-<code class="sig-name descname">rate_limit</code><em class="property">: Optional[RateLimit]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.rate_limit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rate_limit</code><em class="property">: Optional<span class="p">[</span><a class="reference internal" href="#cryptocompsdk.social.history.parse.RateLimit" title="cryptocompsdk.social.history.parse.RateLimit">cryptocompsdk.social.history.parse.RateLimit</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.rate_limit" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialData.response">
-<code class="sig-name descname">response</code><em class="property">: Optional[str]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.response" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">response</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.response" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -334,7 +325,7 @@
 <em class="property">property </em><code class="sig-name descname">time_from</code><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.time_from" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -354,7 +345,7 @@
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/history/parse.html#SocialData.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -366,7 +357,7 @@
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialData.type">
-<code class="sig-name descname">type</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.type" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">type</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialData.type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -374,91 +365,86 @@
 <dl class="py class">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord">
 <em class="property">class </em><code class="sig-prename descclassname">cryptocompsdk.social.history.parse.</code><code class="sig-name descname">SocialRecord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time</span></em>, <em class="sig-param"><span class="n">comments</span></em>, <em class="sig-param"><span class="n">posts</span></em>, <em class="sig-param"><span class="n">followers</span></em>, <em class="sig-param"><span class="n">points</span></em>, <em class="sig-param"><span class="n">overview_page_views</span></em>, <em class="sig-param"><span class="n">analysis_page_views</span></em>, <em class="sig-param"><span class="n">markets_page_views</span></em>, <em class="sig-param"><span class="n">charts_page_views</span></em>, <em class="sig-param"><span class="n">trades_page_views</span></em>, <em class="sig-param"><span class="n">forum_page_views</span></em>, <em class="sig-param"><span class="n">influence_page_views</span></em>, <em class="sig-param"><span class="n">total_page_views</span></em>, <em class="sig-param"><span class="n">fb_likes</span></em>, <em class="sig-param"><span class="n">fb_talking_about</span></em>, <em class="sig-param"><span class="n">twitter_followers</span></em>, <em class="sig-param"><span class="n">twitter_following</span></em>, <em class="sig-param"><span class="n">twitter_lists</span></em>, <em class="sig-param"><span class="n">twitter_favourites</span></em>, <em class="sig-param"><span class="n">twitter_statuses</span></em>, <em class="sig-param"><span class="n">reddit_subscribers</span></em>, <em class="sig-param"><span class="n">reddit_active_users</span></em>, <em class="sig-param"><span class="n">reddit_posts_per_hour</span></em>, <em class="sig-param"><span class="n">reddit_posts_per_day</span></em>, <em class="sig-param"><span class="n">reddit_comments_per_hour</span></em>, <em class="sig-param"><span class="n">reddit_comments_per_day</span></em>, <em class="sig-param"><span class="n">code_repo_stars</span></em>, <em class="sig-param"><span class="n">code_repo_forks</span></em>, <em class="sig-param"><span class="n">code_repo_subscribers</span></em>, <em class="sig-param"><span class="n">code_repo_open_pull_issues</span></em>, <em class="sig-param"><span class="n">code_repo_closed_pull_issues</span></em>, <em class="sig-param"><span class="n">code_repo_open_issues</span></em>, <em class="sig-param"><span class="n">code_repo_closed_issues</span></em>, <em class="sig-param"><span class="n">code_repo_contributors</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/history/parse.html#SocialRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.__init__">
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time</span></em>, <em class="sig-param"><span class="n">comments</span></em>, <em class="sig-param"><span class="n">posts</span></em>, <em class="sig-param"><span class="n">followers</span></em>, <em class="sig-param"><span class="n">points</span></em>, <em class="sig-param"><span class="n">overview_page_views</span></em>, <em class="sig-param"><span class="n">analysis_page_views</span></em>, <em class="sig-param"><span class="n">markets_page_views</span></em>, <em class="sig-param"><span class="n">charts_page_views</span></em>, <em class="sig-param"><span class="n">trades_page_views</span></em>, <em class="sig-param"><span class="n">forum_page_views</span></em>, <em class="sig-param"><span class="n">influence_page_views</span></em>, <em class="sig-param"><span class="n">total_page_views</span></em>, <em class="sig-param"><span class="n">fb_likes</span></em>, <em class="sig-param"><span class="n">fb_talking_about</span></em>, <em class="sig-param"><span class="n">twitter_followers</span></em>, <em class="sig-param"><span class="n">twitter_following</span></em>, <em class="sig-param"><span class="n">twitter_lists</span></em>, <em class="sig-param"><span class="n">twitter_favourites</span></em>, <em class="sig-param"><span class="n">twitter_statuses</span></em>, <em class="sig-param"><span class="n">reddit_subscribers</span></em>, <em class="sig-param"><span class="n">reddit_active_users</span></em>, <em class="sig-param"><span class="n">reddit_posts_per_hour</span></em>, <em class="sig-param"><span class="n">reddit_posts_per_day</span></em>, <em class="sig-param"><span class="n">reddit_comments_per_hour</span></em>, <em class="sig-param"><span class="n">reddit_comments_per_day</span></em>, <em class="sig-param"><span class="n">code_repo_stars</span></em>, <em class="sig-param"><span class="n">code_repo_forks</span></em>, <em class="sig-param"><span class="n">code_repo_subscribers</span></em>, <em class="sig-param"><span class="n">code_repo_open_pull_issues</span></em>, <em class="sig-param"><span class="n">code_repo_closed_pull_issues</span></em>, <em class="sig-param"><span class="n">code_repo_open_issues</span></em>, <em class="sig-param"><span class="n">code_repo_closed_issues</span></em>, <em class="sig-param"><span class="n">code_repo_contributors</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/history/parse.html#SocialRecord.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.analysis_page_views">
-<code class="sig-name descname">analysis_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.analysis_page_views" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">analysis_page_views</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.analysis_page_views" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.charts_page_views">
-<code class="sig-name descname">charts_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.charts_page_views" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">charts_page_views</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.charts_page_views" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.code_repo_closed_issues">
-<code class="sig-name descname">code_repo_closed_issues</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_closed_issues" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">code_repo_closed_issues</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_closed_issues" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.code_repo_closed_pull_issues">
-<code class="sig-name descname">code_repo_closed_pull_issues</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_closed_pull_issues" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">code_repo_closed_pull_issues</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_closed_pull_issues" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.code_repo_contributors">
-<code class="sig-name descname">code_repo_contributors</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_contributors" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">code_repo_contributors</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_contributors" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.code_repo_forks">
-<code class="sig-name descname">code_repo_forks</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_forks" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">code_repo_forks</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_forks" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.code_repo_open_issues">
-<code class="sig-name descname">code_repo_open_issues</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_open_issues" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">code_repo_open_issues</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_open_issues" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.code_repo_open_pull_issues">
-<code class="sig-name descname">code_repo_open_pull_issues</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_open_pull_issues" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">code_repo_open_pull_issues</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_open_pull_issues" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.code_repo_stars">
-<code class="sig-name descname">code_repo_stars</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_stars" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">code_repo_stars</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_stars" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.code_repo_subscribers">
-<code class="sig-name descname">code_repo_subscribers</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_subscribers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">code_repo_subscribers</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.code_repo_subscribers" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.comments">
-<code class="sig-name descname">comments</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.comments" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">comments</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.comments" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.fb_likes">
-<code class="sig-name descname">fb_likes</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.fb_likes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fb_likes</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.fb_likes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.fb_talking_about">
-<code class="sig-name descname">fb_talking_about</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.fb_talking_about" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fb_talking_about</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.fb_talking_about" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.followers">
-<code class="sig-name descname">followers</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.followers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">followers</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.followers" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.forum_page_views">
-<code class="sig-name descname">forum_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.forum_page_views" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">forum_page_views</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.forum_page_views" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -473,7 +459,7 @@
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.influence_page_views">
-<code class="sig-name descname">influence_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.influence_page_views" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">influence_page_views</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.influence_page_views" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -481,64 +467,64 @@
 <em class="property">property </em><code class="sig-name descname">is_empty</code><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.is_empty" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.markets_page_views">
-<code class="sig-name descname">markets_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.markets_page_views" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">markets_page_views</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.markets_page_views" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.overview_page_views">
-<code class="sig-name descname">overview_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.overview_page_views" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">overview_page_views</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.overview_page_views" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.points">
-<code class="sig-name descname">points</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.points" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">points</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.points" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.posts">
-<code class="sig-name descname">posts</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.posts" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">posts</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.posts" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.reddit_active_users">
-<code class="sig-name descname">reddit_active_users</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.reddit_active_users" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">reddit_active_users</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.reddit_active_users" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.reddit_comments_per_day">
-<code class="sig-name descname">reddit_comments_per_day</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.reddit_comments_per_day" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">reddit_comments_per_day</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.reddit_comments_per_day" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.reddit_comments_per_hour">
-<code class="sig-name descname">reddit_comments_per_hour</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.reddit_comments_per_hour" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">reddit_comments_per_hour</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.reddit_comments_per_hour" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.reddit_posts_per_day">
-<code class="sig-name descname">reddit_posts_per_day</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.reddit_posts_per_day" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">reddit_posts_per_day</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.reddit_posts_per_day" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.reddit_posts_per_hour">
-<code class="sig-name descname">reddit_posts_per_hour</code><em class="property">: Optional[float]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.reddit_posts_per_hour" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">reddit_posts_per_hour</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.reddit_posts_per_hour" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.reddit_subscribers">
-<code class="sig-name descname">reddit_subscribers</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.reddit_subscribers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">reddit_subscribers</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.reddit_subscribers" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.time">
-<code class="sig-name descname">time</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.time" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">time</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.time" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -546,44 +532,44 @@
 <code class="sig-name descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/history/parse.html#SocialRecord.to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.total_page_views">
-<code class="sig-name descname">total_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.total_page_views" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">total_page_views</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.total_page_views" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.trades_page_views">
-<code class="sig-name descname">trades_page_views</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.trades_page_views" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">trades_page_views</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.trades_page_views" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.twitter_favourites">
-<code class="sig-name descname">twitter_favourites</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.twitter_favourites" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">twitter_favourites</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.twitter_favourites" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.twitter_followers">
-<code class="sig-name descname">twitter_followers</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.twitter_followers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">twitter_followers</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.twitter_followers" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.twitter_following">
-<code class="sig-name descname">twitter_following</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.twitter_following" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">twitter_following</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.twitter_following" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.twitter_lists">
-<code class="sig-name descname">twitter_lists</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.twitter_lists" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">twitter_lists</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.twitter_lists" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt id="cryptocompsdk.social.history.parse.SocialRecord.twitter_statuses">
-<code class="sig-name descname">twitter_statuses</code><em class="property">: Optional[int]</em><em class="property"> = None</em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.twitter_statuses" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">twitter_statuses</code><em class="property">: Optional<span class="p">[</span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)">int</a><span class="p">]</span></em><a class="headerlink" href="#cryptocompsdk.social.history.parse.SocialRecord.twitter_statuses" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -603,7 +589,7 @@
 <code class="sig-prename descclassname">cryptocompsdk.social.history.parse.</code><code class="sig-name descname">social_data_to_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/cryptocompsdk/social/history/parse.html#social_data_to_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#cryptocompsdk.social.history.parse.social_data_to_dict" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.8)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.9)"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -630,7 +616,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, Nick DeRobertis
+        &copy; Copyright 2021, Nick DeRobertis
 
     </p>
   </div>
