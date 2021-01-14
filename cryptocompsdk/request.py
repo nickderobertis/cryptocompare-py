@@ -3,6 +3,7 @@ from typing import Optional, Dict, Any, Callable
 import requests
 
 from cryptocompsdk.config import MAX_LIMIT_PER_API_CALL
+from cryptocompsdk.logger import logger
 from cryptocompsdk.response import ResponseException, ResponseAPIBase
 
 
@@ -34,7 +35,7 @@ class APIBase:
             payload = api_key_dict
 
         result = requests.get(url, params=payload)
-        print(result.request.url)
+        logger.debug(f'Requested {result.request.url}')
         return Request(url, payload, result)
 
     def filter_payload(self, payload: Optional[Dict[str, Any]]):
