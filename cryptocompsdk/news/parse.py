@@ -1,8 +1,15 @@
+import os
 from copy import deepcopy
-from typing import Optional, Any, List, cast
+from multiprocessing.pool import ThreadPool
+from pathlib import Path
+from typing import Optional, Any, List, cast, Union
+from urllib.parse import urlparse
 
 import pandas as pd
+import requests
+from tqdm import tqdm
 
+from cryptocompsdk.logger import logger
 from cryptocompsdk.response import ResponseException, ResponseAPIBase
 from cryptocompsdk.general.parse import from_int, from_none, from_union, from_float, from_str, to_float, from_bool, \
     from_dict, to_class, is_type, from_int_or_str, from_na, from_str_number, from_list, from_stringified_bool, \
@@ -128,6 +135,51 @@ class NewsRecord:
                 return False
         return True
 
+    def download_article(self, use_alt_url: bool = False) -> str:
+        """
+        Download and return the HTML of this news article
+
+        :param use_alt_url: The default is to use the url given in the guid attribute,
+            if True then use url attribute instead of guid
+        :return:
+        """
+        if not use_alt_url:
+            url = self.guid
+            alt_url = self.url
+        else:
+            url = self.url
+            alt_url = None
+
+        if pd.isnull(url):
+            valid_url = False
+        else:
+            parsed = urlparse(url)
+            valid_url = bool(parsed.scheme and parsed.netloc)
+
+        if not valid_url:
+            if alt_url is not None:
+                return self.download_article(use_alt_url=True)
+            raise NoValidNewsURLException(f'Url {url} is invalid')
+
+        headers = {
+            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36'
+        }
+
+        if url is None:
+            # Should not happen, for typing purposes
+            raise ValueError('must provide a url')
+
+        resp = requests.get(url, headers=headers)
+        status_code = resp.status_code
+        text = resp.text
+
+        if alt_url is not None and status_code != 200:
+            return self.download_article(use_alt_url=True)
+        elif status_code != 200:
+            raise InvalidNewsResponseException(f'Got status code {status_code} for request to {url}. Response: {text}')
+
+        return text
+
 
 class RateLimit:
     pass
@@ -235,7 +287,7 @@ class NewsData(ResponseAPIBase):
         if self.data is None:
             raise ValueError('cannot determine time from as there is no data')
 
-        times = [record.published_on for record in self.data]
+        times = [record.published_on for record in self.data if record.published_on is not None]
         if not times:
             raise ValueError('could not calculate time from as there is no data')
         min_times = min(times)
@@ -257,6 +309,63 @@ class NewsData(ResponseAPIBase):
                 # First non-empty record from end, we have now hit the actual data section, stop deleting
                 break
 
+    def download_articles(self, out_folder: Union[str, Path] = 'articles', num_threads: int = 20,
+                          restart: bool = False):
+        """
+        Download the HTML of all news articles in this collection and save to files in a folder
+
+        :param out_folder: Where to save the articles
+        :param num_threads: How many concurrent requests to execute
+        :param restart: False to not download where an article already exists, True to re-download in that case
+        :return:
+        """
+        if self.data is None:
+            raise ValueError('Cannot download articles as the data attribute is None')
+
+        out_folder = Path(out_folder)
+        if not os.path.exists(out_folder):
+            os.makedirs(out_folder)
+
+        with ThreadPool(num_threads) as pool:
+            results = []
+            for article in self.data:
+                res = pool.apply_async(_download_and_save_article, (article, out_folder, restart))
+                results.append(res)
+
+            for result in tqdm(results):
+                result.get()
+
+
+def _download_and_save_article(article: NewsRecord, out_folder: Path, restart: bool = False):
+    out_path = out_folder / f'{article.id}.html'
+    error_dir = out_folder / 'Error Responses'
+    error_path = error_dir / f'{article.id}.txt'
+
+    if not restart and out_path.exists():
+        logger.info(f'Found existing text for article {article.id} and restart=False, skipping download')
+        return
+
+    try:
+        text = article.download_article()
+    except (
+        requests.ConnectionError,
+        requests.TooManyRedirects,
+        NoValidNewsURLException,
+        InvalidNewsResponseException
+    ) as e:
+        logger.error(f'Got error {e} while downloading {article.id} from urls: {article.guid} and {article.url}')
+        if not os.path.exists(error_dir):
+            try:
+                os.makedirs(error_dir)
+            except FileExistsError:
+                pass  # created by another thread
+        error_path.write_text(str(e))
+        return
+
+    # Got valid result
+    logger.debug(f'Downloaded text for article {article.id}')
+    out_path.write_text(text)
+
 
 def news_from_dict(s: Any) -> NewsData:
     return NewsData.from_dict(s)
@@ -267,4 +376,12 @@ def news_to_dict(x: NewsData) -> Any:
 
 
 class CouldNotGetNewsException(ResponseException):
+    pass
+
+
+class NoValidNewsURLException(Exception):
+    pass
+
+
+class InvalidNewsResponseException(ResponseException):
     pass

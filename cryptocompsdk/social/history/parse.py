@@ -311,7 +311,7 @@ class SocialData(ResponseAPIBase):
 
     @property
     def time_from(self) -> int:
-        times = [record.time for record in self.data]
+        times = [record.time for record in self.data if record.time is not None]
         if not times:
             raise ValueError('could not calculate time from as there is no data')
         min_times = min(times)
