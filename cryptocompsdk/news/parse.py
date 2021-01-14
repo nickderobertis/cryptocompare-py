@@ -154,7 +154,7 @@ class NewsRecord:
             valid_url = False
         else:
             parsed = urlparse(url)
-            valid_url = parsed.scheme and parsed.netloc
+            valid_url = bool(parsed.scheme and parsed.netloc)
 
         if not valid_url:
             if alt_url is not None:
@@ -164,6 +164,10 @@ class NewsRecord:
         headers = {
             'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36'
         }
+
+        if url is None:
+            # Should not happen, for typing purposes
+            raise ValueError('must provide a url')
 
         resp = requests.get(url, headers=headers)
         status_code = resp.status_code
@@ -315,6 +319,9 @@ class NewsData(ResponseAPIBase):
         :param restart: False to not download where an article already exists, True to re-download in that case
         :return:
         """
+        if self.data is None:
+            raise ValueError('Cannot download articles as the data attribute is None')
+
         out_folder = Path(out_folder)
         if not os.path.exists(out_folder):
             os.makedirs(out_folder)
