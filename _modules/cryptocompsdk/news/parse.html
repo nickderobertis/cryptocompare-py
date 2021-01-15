@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cryptocompsdk.news.parse &mdash; cryptocompsdk 0.4.2 documentation</title>
+  <title>cryptocompsdk.news.parse &mdash; cryptocompsdk 0.4.3 documentation</title>
   
 
   
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.4.2
+                0.4.3
               </div>
             
           
@@ -516,7 +516,7 @@
         <span class="n">NoValidNewsURLException</span><span class="p">,</span>
         <span class="n">InvalidNewsResponseException</span>
     <span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Got error </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1"> while downloading </span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s1"> from urls: </span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">guid</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Got error while downloading </span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s1"> from urls: </span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">guid</span><span class="si">}</span><span class="s1"> and </span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s1">. See </span><span class="si">{</span><span class="n">error_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">error_dir</span><span class="p">):</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">error_dir</span><span class="p">)</span>
