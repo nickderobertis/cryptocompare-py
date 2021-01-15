@@ -353,7 +353,7 @@ def _download_and_save_article(article: NewsRecord, out_folder: Path, restart: b
         NoValidNewsURLException,
         InvalidNewsResponseException
     ) as e:
-        logger.error(f'Got error {e} while downloading {article.id} from urls: {article.guid} and {article.url}')
+        logger.error(f'Got error while downloading {article.id} from urls: {article.guid} and {article.url}. See {error_path}')
         if not os.path.exists(error_dir):
             try:
                 os.makedirs(error_dir)
