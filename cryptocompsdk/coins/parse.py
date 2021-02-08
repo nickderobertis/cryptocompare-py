@@ -81,7 +81,7 @@ class Coin:
     block_number: Optional[int]
     net_hashes_per_second: Optional[float]
     block_reward: Optional[float]
-    block_time: Optional[int]
+    block_time: Optional[float]
 
     def __init__(self, id: Optional[int], url: Optional[str], image_url: Optional[str],
                  content_created_on: Optional[int], name: Optional[str], symbol: Optional[str],
@@ -91,7 +91,7 @@ class Coin:
                  total_coins_free_float: Optional[str], sort_order: Optional[int], sponsored: Optional[bool],
                  taxonomy: Optional[Taxonomy], is_trading: Optional[bool], total_coins_mined: Optional[float],
                  block_number: Optional[int], net_hashes_per_second: Optional[float], block_reward: Optional[float],
-                 block_time: Optional[int]) -> None:
+                 block_time: Optional[float]) -> None:
         self.id = id
         self.url = url
         self.image_url = image_url
@@ -145,7 +145,7 @@ class Coin:
         block_number = from_union([from_int, from_none], obj.get("BlockNumber"))
         net_hashes_per_second = from_union([from_float, from_none], obj.get("NetHashesPerSecond"))
         block_reward = from_union([from_float, from_none], obj.get("BlockReward"))
-        block_time = from_union([from_int, from_none], obj.get("BlockTime"))
+        block_time = from_union([from_float, from_none], obj.get("BlockTime"))
         return Coin(id, url, image_url, content_created_on, name, symbol, coin_name, full_name, algorithm, proof_type,
                     fully_premined, total_coin_supply, built_on, smart_contract_address, pre_mined_value,
                     total_coins_free_float, sort_order, sponsored, taxonomy, is_trading, total_coins_mined,
@@ -185,7 +185,7 @@ class Coin:
         result["BlockNumber"] = from_union([from_int, from_none], self.block_number)
         result["NetHashesPerSecond"] = from_union([to_float, from_none], self.net_hashes_per_second)
         result["BlockReward"] = from_union([to_float, from_none], self.block_reward)
-        result["BlockTime"] = from_union([from_int, from_none], self.block_time)
+        result["BlockTime"] = from_union([from_float, from_none], self.block_time)
         return result
 
 
