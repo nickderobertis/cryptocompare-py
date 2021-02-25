@@ -4,6 +4,7 @@ name: Update Template using Cruft
 on:
   schedule:
     - cron: '0 3 * * *'  # every day at 3:00 AM
+  workflow_dispatch: {}
 
 
 jobs:
@@ -45,6 +46,14 @@ jobs:
       id: workflow_update_check
       if: steps.template_check.outputs.template_update == 'true'
       run: bash scripts/workflows-updated.sh
+    - name: Show variables
+      id: show_variables
+      run: |
+        echo "Template update: $TEMPLATE_UPDATE";
+        echo "Workflow update: $WORKFLOW_UPDATE";
+      env:
+        TEMPLATE_UPDATE: ${{ steps.template_check.outputs.template_update }}
+        WORKFLOW_UPDATE: ${{ steps.workflow_update_check.outputs.workflow_updated }}
     - name: Check if Issue Exists
       uses: nickderobertis/check-if-issue-exists-action@master
       id: check_if_issue_exists
