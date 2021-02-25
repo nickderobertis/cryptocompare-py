@@ -1,9 +1,10 @@
 {
     "template": "https://github.com/nickderobertis/cookiecutter-pypi-sphinx",
-    "commit": "b7eab35a0360b489172e7b20ac0dcae23a17a446",
+    "commit": "604aa66b42474363bdb3e57f5c80d7195a7297c9",
     "context": {
         "cookiecutter": {
             "package_name": "cryptocompsdk",
+            "package_directory": "py_qs_example",
             "full_name": "Cryptocompare-Py",
             "repo_name": "cryptocompare-py",
             "repo_username": "nickderobertis",
@@ -11,6 +12,8 @@
             "package_author": "Nick DeRobertis",
             "author_email": "whoopnip@gmail.com",
             "google_analytics_id": "UA-160614930-1",
+            "logo_url": "",
+            "install_packages": "",
             "_template": "https://github.com/nickderobertis/cookiecutter-pypi-sphinx"
         }
     }
