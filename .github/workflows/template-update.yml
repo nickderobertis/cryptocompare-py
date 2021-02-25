@@ -70,7 +70,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.gh_token }}
     - name: Create PR with template update
-      if: steps.template_check.outputs.template_update == 'true' && !steps.workflow_update_check.outputs.workflow_updated
+      if: steps.template_check.outputs.template_update == 'true' && steps.workflow_update_check.outputs.workflow_updated == 'false'
       uses: peter-evans/create-pull-request@v2
       with:
         token: ${{ secrets.gh_token }}
